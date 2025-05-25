@@ -14,7 +14,7 @@ theme:
   name: material
 nav:
   - Home: index.md
-  - Introducción a JavaScript: intro_javascript.md
+  - Ejemplo Lista Tarea 01: ejemplo_01.md
   - Referencias: referencias.md
 
 # Customization
