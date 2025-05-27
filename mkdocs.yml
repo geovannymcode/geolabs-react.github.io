@@ -13,8 +13,9 @@ copyright: "Copyright &copy; 2025 Geovanny Mendoza"
 theme:
   name: material
 nav:
-  - Home: index.md
+  - Introducción a JavaScript: index.md
   - Ejemplo Lista Tarea 01: ejemplo_01.md
+  - Introducción a React: intro_react.md
   - Referencias: referencias.md
 
 # Customization

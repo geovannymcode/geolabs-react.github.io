@@ -90,6 +90,7 @@ console.log(segundo); // "verde"
 ```
 
 #### ✅ Cuándo usarlo:
+
 - Para extraer propiedades dentro de funciones, loops o directamente en argumentos.
 
 ---
@@ -129,6 +130,7 @@ console.log(sumar(1, 2, 3, 4)); // 10
 ### 5. Template Literals
 
 #### 📘 Descripción:
+
 Permiten construir cadenas de texto con variables embebidas usando **backticks** \` y `${variable}`.
 
 #### 🧪 Ejemplo:
@@ -141,6 +143,7 @@ console.log(mensaje); // El producto Laptop cuesta $1200
 ```
 
 #### ✅ Cuándo usarlo:
+
 - Al construir mensajes, HTML dinámico, o logs de consola.
 - Mejora la legibilidad frente a `"Hola " + nombre + ", bienvenido"`.
 
@@ -149,6 +152,7 @@ console.log(mensaje); // El producto Laptop cuesta $1200
 ### 6. Funciones de Arrays: `map`, `filter`, `find`, `some`, `every`
 
 #### 📘 Descripción:
+
 Permiten trabajar de forma declarativa con colecciones. Son fundamentales en React para renderizar listas o filtrar datos.
 
 #### 🧪 Ejemplo - `map`:
@@ -184,6 +188,7 @@ console.log(todasCompletadas);  // false
 ```
 
 #### ✅ Cuándo usarlo:
+
 - `map`: transformar cada elemento de un array.
 - `filter`: obtener subconjuntos que cumplan una condición.
 - `find`: obtener el primer elemento que cumpla una condición.
@@ -195,6 +200,7 @@ console.log(todasCompletadas);  // false
 ## 🧩 ¿Y cómo se relaciona esto con React?
 
 Todos estos conceptos se usan directamente cuando:
+
 - Creamos componentes (`const`, `arrow functions`)
 - Manipulamos `props` y `state` (`destructuring`, `spread`)
 - Mostramos listas (`map`)

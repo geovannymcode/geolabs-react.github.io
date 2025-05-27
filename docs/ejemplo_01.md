@@ -1,4 +1,3 @@
-
 # 💻 Ejemplo del mundo real: Lista de tareas (sin React)
 
 En esta sección crearemos una aplicación sencilla utilizando solo **HTML y JavaScript moderno**, sin frameworks ni bibliotecas externas. Esta práctica tiene como objetivo aplicar los conceptos aprendidos en la Hora 1:
@@ -112,24 +111,29 @@ function renderTasks() {
 ### 🧠 Explicación del código paso a paso:
 
 #### 1. Variables iniciales
+
 - `tasks`: array donde se guardan todas las tareas.
 - `form`, `input`, `list`: referencias a elementos HTML.
 
 #### 2. Manejo del formulario
+
 - Escuchamos el evento `submit` del formulario.
 - Evitamos que la página se recargue (`e.preventDefault()`).
 - Si el campo no está vacío, se llama a `addTask()`.
 
 #### 3. Agregar tarea
+
 - Crea un nuevo objeto con `id`, `title` y `completed`.
 - Se agrega al array `tasks`.
 - Se llama a `renderTasks()` para actualizar la vista.
 
 #### 4. Cambiar estado de la tarea
+
 - `toggleTask(id)`: busca la tarea por ID y cambia su estado (`completed`).
 - Llama a `renderTasks()` para reflejar el cambio.
 
 #### 5. Renderizar tareas
+
 - Limpia el contenido actual del `<ul>`.
 - Recorre todas las tareas y crea dinámicamente un `<li>` con:
   - Un checkbox que refleja y modifica el estado.
@@ -143,5 +147,3 @@ function renderTasks() {
 La aplicación te permitirá agregar tareas, verlas en lista, marcarlas como completadas con un checkbox y visualizarlas con estilo tachado.
 
 ---
-
-> Esta versión sin React sirve como punto de comparación para lo que construiremos en la Hora 2: una versión equivalente usando componentes, estado (`useState`) y props en React.
