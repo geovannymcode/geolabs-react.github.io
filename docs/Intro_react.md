@@ -137,5 +137,3 @@ La aplicación mostrará una lista de tareas, cada una representada por un compo
 
 ---
 
-> En la Hora 3 trabajaremos con `useState` para gestionar el estado dinámico y permitir que el usuario agregue nuevas tareas desde un formulario.
-
