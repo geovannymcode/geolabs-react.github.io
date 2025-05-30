@@ -1,4 +1,3 @@
-
 # Fundamentos de JavaScript Moderno (ES6+)
 
 ## 🎯 Objetivo de esta hora

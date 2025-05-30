@@ -1,4 +1,3 @@
-
 # 💻 Ejemplo del mundo real: Lista de tareas con React (versión estática)
 
 En este ejemplo vamos a construir una versión **estática** de la aplicación de tareas utilizando **React y JSX**. Esta versión no tendrá lógica de estado ni eventos aún; su objetivo es aplicar lo aprendido en la Hora 2:

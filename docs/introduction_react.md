@@ -1,5 +1,4 @@
-
-# 🕐 Hora 2: Introducción a React + JSX + Componentes
+# Introducción a React + JSX + Componentes
 
 ## 🎯 Objetivo de esta hora
 
