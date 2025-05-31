@@ -1,24 +1,27 @@
-# Introducción a React + JSX + Componentes
+
+# Introducción a React, JSX y Componentes
 
 ## 🎯 Objetivo de esta hora
 
-Comprender la estructura básica de una aplicación React, aprender cómo se escriben los componentes funcionales y cómo usar JSX para construir interfaces dinámicas.
+Familiarizarse con los fundamentos esenciales de React, incluyendo el uso de JSX, la construcción de componentes funcionales y el paso de datos mediante `props`. Al finalizar esta hora, tendrás una comprensión clara de cómo estructurar una aplicación React sencilla y cómo renderizar componentes reutilizables en la interfaz de usuario.
 
 ---
 
 ## 🧠 Conceptos clave
 
-| Tema               | Descripción                                                                 |
-|--------------------|-----------------------------------------------------------------------------|
-| ¿Qué es React?     | Librería declarativa para construir interfaces de usuario basada en componentes reutilizables. |
-| JSX                | Sintaxis que combina JavaScript y HTML. Se transpila a `React.createElement`. |
-| Componentes        | Funciones que retornan JSX y representan partes reutilizables de la UI.     |
-| Props              | Parámetros que se pasan a los componentes para hacerlos dinámicos.          |
-| Proyecto con Vite  | Crear una app React con una estructura moderna y rápida para desarrollo.    |
+| Concepto           | Explicación detallada                                                                                       |
+|--------------------|-------------------------------------------------------------------------------------------------------------|
+| **¿Qué es React?** | Es una biblioteca de JavaScript para construir interfaces de usuario. Su enfoque principal es la reutilización de componentes y la actualización eficiente del DOM usando un modelo declarativo. |
+| **JSX**            | Es una sintaxis que permite escribir HTML dentro de JavaScript. Aunque parece HTML, es transformado por React en llamadas a `React.createElement`. |
+| **Componentes**    | Son funciones de JavaScript que retornan JSX. Cada componente representa una unidad reutilizable de la interfaz. |
+| **Props**          | Son los "parámetros" que se envían a los componentes. Permiten personalizar su comportamiento y contenido.   |
+| **Vite**           | Es una herramienta de construcción rápida y moderna para proyectos frontend. Se usa aquí para crear la aplicación base de React con configuración mínima. |
 
 ---
 
-## 📁 Estructura inicial del proyecto con Vite
+## ⚙️ Crear la aplicación con Vite
+
+Ejecuta los siguientes comandos en tu terminal para crear y correr tu proyecto React con Vite:
 
 ```bash
 npm create vite@latest tarea-react -- --template react
@@ -26,6 +29,8 @@ cd tarea-react
 npm install
 npm run dev
 ```
+
+Estructura del proyecto inicial:
 
 ```
 tarea-react/
@@ -39,9 +44,9 @@ tarea-react/
 
 ---
 
-## 📄 src/main.jsx
+## 📄 `src/main.jsx`
 
-Este archivo es el punto de entrada de la aplicación. Renderiza el componente principal (`App`) en el DOM.
+Este es el **punto de entrada de la aplicación**. Aquí React se conecta con el HTML tradicional (`index.html`) e inyecta la app React dentro del elemento con ID `root`.
 
 ```jsx
 import React from 'react'
@@ -55,11 +60,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 )
 ```
 
+> 🔍 `React.StrictMode` es una herramienta para detectar problemas potenciales durante el desarrollo.
+
 ---
 
-## 📄 src/App.jsx
+## 📄 `src/App.jsx`
 
-Componente principal donde gestionaremos la lista de tareas. Usaremos `useState` y `props`.
+Este componente representa la **estructura principal de nuestra aplicación**. Por ahora contiene una lista de tareas simulada y muestra cada una mediante el componente `TaskItem`.
 
 ```jsx
 import TaskItem from './components/TaskItem'
@@ -85,11 +92,13 @@ function App() {
 export default App
 ```
 
+> 💡 Se utiliza `.map()` para renderizar múltiples componentes `TaskItem` de forma dinámica.
+
 ---
 
-## 📄 src/components/TaskItem.jsx
+## 📄 `src/components/TaskItem.jsx`
 
-Componente que representa cada tarea. Recibe `titulo` y `completado` como props.
+Este componente recibe dos `props` desde el componente padre: el `titulo` de la tarea y si está `completado`. Muestra el texto con un estilo tachado si está marcada como hecha.
 
 ```jsx
 function TaskItem({ titulo, completado }) {
@@ -107,32 +116,38 @@ export default TaskItem
 
 ---
 
-## 🧠 Explicación paso a paso
+## 🧠 Explicación pedagógica paso a paso
 
-### 1. ¿Qué es JSX?
-JSX permite escribir código que **parece HTML dentro de JavaScript**, pero en realidad se transforma en llamadas a `React.createElement`.
+### Paso 1: JSX — HTML en JavaScript
+
+JSX permite escribir estructuras similares a HTML dentro del código JavaScript. Esto mejora la claridad visual del código y permite componer interfaces complejas fácilmente.
 
 ```jsx
-const titulo = <h1>Hola Mundo</h1>
+const elemento = <h2>Hola Mundo</h2>;
 ```
 
-### 2. ¿Qué es un componente?
-Una función que retorna JSX. Puede recibir `props` como parámetros:
+### Paso 2: Componentes funcionales
+
+Un componente es simplemente una función que devuelve JSX:
 
 ```jsx
 function Saludo({ nombre }) {
-  return <p>Hola {nombre}</p>
+  return <p>Hola {nombre}</p>;
 }
 ```
 
-### 3. ¿Qué son props?
-Las props son como los "argumentos" que se pasan a los componentes para hacerlos reutilizables y dinámicos.
+Este componente puede ser reutilizado con diferentes `props`.
+
+### Paso 3: Props — parámetros visuales
+
+Los `props` permiten enviar datos a los componentes. Esto hace que nuestros componentes sean reutilizables y modulares.
+
+```jsx
+<TaskItem titulo="Leer documentación" completado={true} />
+```
 
 ---
 
 ## ✅ Resultado esperado
 
-La aplicación mostrará una lista de tareas, cada una representada por un componente `TaskItem`, con texto tachado si la tarea está completada.
-
----
-
+La aplicación mostrará una lista de tareas, cada una con su título. Las tareas completadas se verán con texto tachado. Aunque aún no hay lógica para agregar o modificar tareas, este es el primer paso para construir una app funcional con React.

@@ -17,6 +17,7 @@ nav:
   - Ejemplo Lista Tarea 01: ejemplo_01.md
   - Introducción a React: introduction_react.md
   - Ejemplo Lista Tarea 02: ejemplo_02.md
+  - Manejo de Estado con useState: manejo_estado.md
   - Referencias: referencias.md
 
 # Customization
