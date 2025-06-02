@@ -1,39 +1,38 @@
-
-# 🕐 Hora 3: Manejo de estado con `useState` y eventos
+# Manejo de estado con `useState` y gestión de eventos en React
 
 ## 🎯 Objetivo de esta hora
 
-Aprender a manejar el estado interno de los componentes usando el hook `useState` y gestionar eventos de formulario en React. Implementaremos una versión dinámica de la lista de tareas, permitiendo al usuario **agregar nuevas tareas** y actualizar la interfaz en tiempo real.
+Dominar el manejo del estado en React utilizando el hook `useState` y comprender cómo gestionar eventos del usuario (como formularios) para construir una interfaz interactiva. En esta sesión transformaremos la aplicación estática de tareas en una solución dinámica que reacciona a la entrada del usuario en tiempo real.
 
 ---
 
 ## 🧠 Conceptos clave
 
-| Concepto       | Explicación                                                                 |
-|----------------|------------------------------------------------------------------------------|
-| `useState`     | Hook de React que permite declarar y actualizar variables de estado.        |
-| Eventos        | Mecanismo para capturar acciones del usuario (como clicks o envío de formularios). |
-| Formularios    | Elementos que permiten al usuario introducir datos en la interfaz.          |
-| Renderizado    | React renderiza automáticamente cuando cambia el estado.                    |
+| Concepto       | Explicación profesional                                                                 |
+|----------------|------------------------------------------------------------------------------------------|
+| `useState`     | Hook fundamental de React que permite declarar variables de estado y actualizarlas dentro de componentes funcionales. |
+| Eventos        | Permiten capturar y responder a acciones del usuario, como escribir en un campo de texto o enviar un formulario. |
+| Formularios    | Estructuras HTML que permiten la entrada de datos. En React se controlan con `useState` para mantener sincronización entre la vista y el estado. |
+| Re-renderizado | React vuelve a renderizar el componente cuando el estado cambia, garantizando que la UI siempre refleje el estado actual. |
 
 ---
 
-## 🧩 Estructura de archivos
+## 🧩 Estructura del proyecto
 
 ```plaintext
 tarea-react/
 └── src/
     ├── App.jsx
-    ├── components/
-    │   ├── TaskItem.jsx
-    │   └── TaskForm.jsx
+    └── components/
+        ├── TaskItem.jsx
+        └── TaskForm.jsx
 ```
 
 ---
 
-## 📄 `App.jsx`
+## 📄 `App.jsx` – Componente raíz
 
-Este archivo define la lógica principal de la aplicación: estado de tareas, función para agregar nuevas tareas y renderizado del formulario + lista.
+Este componente gestiona el estado de las tareas. Define la función `agregarTarea`, que permite insertar nuevas tareas en la lista, y delega responsabilidades a los componentes hijos (`TaskForm` y `TaskItem`).
 
 ```jsx
 import { useState } from 'react'
@@ -70,9 +69,9 @@ export default App
 
 ---
 
-## 📄 `TaskForm.jsx`
+## 📄 `TaskForm.jsx` – Componente controlado de entrada
 
-Componente de formulario controlado: gestiona el valor del input y envía el dato al componente padre.
+Maneja internamente el valor del campo de entrada usando `useState` y envía la información al componente padre cuando se envía el formulario.
 
 ```jsx
 import { useState } from 'react'
@@ -105,9 +104,9 @@ export default TaskForm
 
 ---
 
-## 📄 `TaskItem.jsx`
+## 📄 `TaskItem.jsx` – Componente de presentación
 
-Sin cambios respecto a la Hora 2, aún muestra tareas recibidas por `props`.
+Recibe los datos de la tarea como props (`titulo`, `completado`) y los renderiza. En esta etapa no tiene lógica interactiva, solo muestra el contenido.
 
 ```jsx
 function TaskItem({ titulo, completado }) {
@@ -125,29 +124,36 @@ export default TaskItem
 
 ---
 
-## 🧠 Explicación paso a paso
+## 🧠 Explicación pedagógica paso a paso
 
-### Paso 1: `useState`
-- Declaramos el estado `tareas` con `useState([])` para guardar la lista.
-- Usamos `setTareas` para actualizar la lista de forma reactiva.
+### Paso 1: Declarar el estado con `useState`
 
-### Paso 2: Manejo de eventos
-- Usamos `onSubmit` en el formulario para capturar el evento cuando el usuario agrega una tarea.
-- Usamos `onChange` para actualizar el valor del input conforme el usuario escribe.
+El hook `useState([])` inicializa el estado de `tareas` como un array vacío. Cada vez que agregamos una nueva tarea, usamos `setTareas([...tareas, nuevaTarea])` para actualizar la lista sin mutar el estado original.
 
-### Paso 3: Comunicación padre-hijo
-- El componente `App` pasa la función `agregarTarea` como `prop` al componente `TaskForm`.
-- `TaskForm` la llama al enviar el formulario, pasando el valor ingresado.
+### Paso 2: Capturar eventos del formulario
 
-### Paso 4: Actualización de interfaz
-- Cada vez que se agrega una nueva tarea, React vuelve a renderizar el componente `App` y muestra la lista actualizada.
+Usamos `onSubmit` para interceptar el envío del formulario y evitar el comportamiento por defecto del navegador (recargar la página). Luego validamos que el input no esté vacío antes de enviar los datos al componente padre.
+
+### Paso 3: Comunicación entre componentes
+
+- `App` define la lógica de negocio (`agregarTarea`).
+- `TaskForm` captura el texto ingresado por el usuario.
+- A través de `props`, se conecta `TaskForm` con `App` y se desencadena la acción correspondiente.
+
+### Paso 4: Actualización automática de la interfaz
+
+Al ejecutar `setTareas`, React detecta que el estado cambió y vuelve a renderizar automáticamente los componentes afectados (en este caso, la lista de tareas).
 
 ---
 
 ## ✅ Resultado esperado
 
-- El usuario puede escribir una tarea en el formulario.
-- Al hacer clic en “Agregar”, la tarea aparece en la lista.
-- La interfaz se actualiza automáticamente sin recargar la página.
+El usuario podrá:
+
+- Ingresar una nueva tarea en un campo de texto.
+- Hacer clic en “Agregar” para que la tarea se muestre en la lista.
+- Observar que la interfaz responde inmediatamente, sin necesidad de recargar la página.
 
 ---
+
+> Este ejercicio marca el inicio del desarrollo de una aplicación verdaderamente interactiva. En la siguiente hora incorporaremos funcionalidades adicionales como marcar tareas completadas, eliminar tareas y aplicar filtros visuales condicionales.

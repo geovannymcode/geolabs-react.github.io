@@ -1,39 +1,40 @@
 
-# 💻 Ejemplo del mundo real: Lista de tareas dinámica con React (`useState` + eventos)
+# 💻 Ejemplo del mundo real: Lista de tareas dinámica en React (`useState` + eventos)
 
-En esta sección crearemos una versión completamente funcional de nuestra aplicación de tareas. Usaremos **`useState` para manejar el estado**, y componentes reutilizables para capturar datos, renderizar la lista y actualizarla dinámicamente.
+Este ejemplo práctico implementa una aplicación React completa con `useState` y eventos, aplicando los conceptos clave vistos en la Hora 3. Es una base sólida para comprender cómo React maneja datos internos, entradas del usuario y re-renderizado de la interfaz de forma declarativa.
 
 ---
 
-## ✅ ¿Qué podrá hacer el usuario?
+## 🎯 Funcionalidades implementadas
 
-- Escribir una tarea en el formulario.
-- Agregarla a la lista sin recargar la página.
-- Visualizar tareas agregadas al instante.
+- Ingreso de texto por parte del usuario mediante un formulario controlado.
+- Gestión de estado para almacenar y renderizar tareas.
+- Comunicación entre componentes padre e hijo a través de `props`.
+- Actualización automática de la interfaz sin recargas.
 
 ---
 
 ## 📁 Estructura del proyecto
 
-```
+```plaintext
 tarea-react/
 ├── src/
 │   ├── App.jsx
 │   └── components/
-│       ├── TaskItem.jsx
-│       └── TaskForm.jsx
+│       ├── TaskForm.jsx
+│       └── TaskItem.jsx
 ```
 
 ---
 
 ## 📄 App.jsx
 
-Define el estado de la aplicación, contiene la lista de tareas y gestiona la función para agregar nuevas.
+El componente principal `App` mantiene el estado global de la lista de tareas. Define la función `agregarTarea` que será pasada a `TaskForm`.
 
 ```jsx
 import { useState } from 'react'
-import TaskItem from './components/TaskItem'
 import TaskForm from './components/TaskForm'
+import TaskItem from './components/TaskItem'
 
 function App() {
   const [tareas, setTareas] = useState([])
@@ -48,13 +49,17 @@ function App() {
   }
 
   return (
-    <div>
+    <div style={{ maxWidth: "600px", margin: "0 auto" }}>
       <h1>📝 Lista de Tareas</h1>
       <TaskForm onAdd={agregarTarea} />
       <ul>
-        {tareas.map((t) => (
-          <TaskItem key={t.id} titulo={t.titulo} completado={t.completado} />
-        ))}
+        {tareas.length === 0 ? (
+          <p>No hay tareas todavía. ¡Agrega una!</p>
+        ) : (
+          tareas.map((t) => (
+            <TaskItem key={t.id} titulo={t.titulo} completado={t.completado} />
+          ))
+        )}
       </ul>
     </div>
   )
@@ -65,9 +70,17 @@ export default App
 
 ---
 
+## 🧠 Explicación del flujo
+
+- `useState([])` inicializa la lista de tareas como un array vacío.
+- La función `agregarTarea` crea una nueva tarea y actualiza el estado usando spread operator (`...`).
+- Al cambiar el estado, React vuelve a renderizar el componente y muestra la nueva tarea.
+
+---
+
 ## 📄 TaskForm.jsx
 
-Formulario controlado: el input es manejado con estado local y envía la tarea al componente padre (`App`).
+Este componente gestiona el formulario. Internamente maneja el estado del input con `useState`. Al enviar el formulario, llama a `onAdd` (recibido como prop desde `App`).
 
 ```jsx
 import { useState } from 'react'
@@ -77,20 +90,22 @@ function TaskForm({ onAdd }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (titulo.trim() === "") return
-    onAdd(titulo)
+    const valor = titulo.trim()
+    if (valor === "") return
+    onAdd(valor)
     setTitulo("")
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} style={{ marginBottom: "1rem" }}>
       <input
         type="text"
         value={titulo}
         onChange={(e) => setTitulo(e.target.value)}
         placeholder="Nueva tarea"
+        style={{ padding: "0.5rem", width: "80%" }}
       />
-      <button type="submit">Agregar</button>
+      <button type="submit" style={{ padding: "0.5rem" }}>Agregar</button>
     </form>
   )
 }
@@ -102,13 +117,16 @@ export default TaskForm
 
 ## 📄 TaskItem.jsx
 
-Componente presentacional que recibe `titulo` y `completado` como props y los muestra.
+Este componente muestra una tarea individual. Por ahora es solo visual, pero en la siguiente hora se expandirá para incluir acciones como completar o eliminar.
 
 ```jsx
 function TaskItem({ titulo, completado }) {
   return (
-    <li>
-      <span style={{ textDecoration: completado ? 'line-through' : 'none' }}>
+    <li style={{ marginBottom: "0.5rem" }}>
+      <span style={{
+        textDecoration: completado ? "line-through" : "none",
+        fontSize: "1.1rem"
+      }}>
         {titulo}
       </span>
     </li>
@@ -120,28 +138,21 @@ export default TaskItem
 
 ---
 
-## 🧠 Explicación profesional
-
-### 🟢 Estado con `useState`
-- `tareas`: representa la lista completa de tareas.
-- `setTareas`: función que actualiza ese estado de forma inmutable.
-
-### 🔄 Comunicación entre componentes
-- `App` pasa `agregarTarea` como prop a `TaskForm`.
-- `TaskForm` lo ejecuta cuando el usuario envía el formulario.
-- `App` actualiza su estado y React vuelve a renderizar.
-
-### 🧩 Reactividad en acción
-Cada vez que `setTareas` actualiza la lista, React detecta el cambio y renderiza de nuevo el componente `App`, reflejando instantáneamente los cambios en la UI.
-
----
-
 ## ✅ Resultado esperado
 
-Una lista dinámica de tareas donde el usuario puede:
-
-- Ingresar texto en un formulario.
-- Ver nuevas tareas agregadas automáticamente a la interfaz.
-- Tener una experiencia interactiva sin recargar la página.
+- El usuario puede escribir una tarea.
+- Al presionar "Agregar", se inserta en la lista.
+- Si no hay tareas, aparece un mensaje indicando que la lista está vacía.
+- Cada acción se refleja al instante gracias al estado de React.
 
 ---
+
+## 🔁 Recomendaciones para extensión en clase
+
+- Agregar `console.log(tareas)` para mostrar cómo cambia el estado.
+- Usar herramientas como React Developer Tools para observar el flujo de estado.
+- Discutir el patrón de lifting state up aplicado entre `TaskForm` y `App`.
+
+---
+
+> Esta implementación sirve como puente hacia la Hora 4, donde agregaremos funcionalidades como marcar tareas como completadas, eliminarlas y gestionar el estado visual de la interfaz de manera más robusta.
