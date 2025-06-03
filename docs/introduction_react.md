@@ -1,153 +1,149 @@
-
-# Introducción a React, JSX y Componentes
+# Manejo de Estado con `useState` y Gestión de Eventos en React
 
 ## 🎯 Objetivo de esta hora
 
-Familiarizarse con los fundamentos esenciales de React, incluyendo el uso de JSX, la construcción de componentes funcionales y el paso de datos mediante `props`. Al finalizar esta hora, tendrás una comprensión clara de cómo estructurar una aplicación React sencilla y cómo renderizar componentes reutilizables en la interfaz de usuario.
+Introducir el concepto de **estado** en React utilizando el hook `useState` y enseñar cómo capturar y gestionar eventos para crear interfaces verdaderamente interactivas. Esta hora está dedicada a consolidar la transición de una interfaz estática a una dinámica, donde los componentes reaccionan ante la entrada del usuario.
 
 ---
 
 ## 🧠 Conceptos clave
 
-| Concepto           | Explicación detallada                                                                                       |
-|--------------------|-------------------------------------------------------------------------------------------------------------|
-| **¿Qué es React?** | Es una biblioteca de JavaScript para construir interfaces de usuario. Su enfoque principal es la reutilización de componentes y la actualización eficiente del DOM usando un modelo declarativo. |
-| **JSX**            | Es una sintaxis que permite escribir HTML dentro de JavaScript. Aunque parece HTML, es transformado por React en llamadas a `React.createElement`. |
-| **Componentes**    | Son funciones de JavaScript que retornan JSX. Cada componente representa una unidad reutilizable de la interfaz. |
-| **Props**          | Son los "parámetros" que se envían a los componentes. Permiten personalizar su comportamiento y contenido.   |
-| **Vite**           | Es una herramienta de construcción rápida y moderna para proyectos frontend. Se usa aquí para crear la aplicación base de React con configuración mínima. |
+| Concepto          | Descripción                                                                                          |
+|-------------------|------------------------------------------------------------------------------------------------------|
+| `useState`        | Permite a los componentes funcionales mantener y actualizar datos que afectan la interfaz.           |
+| Estado            | Representa la información dinámica de un componente, como inputs, listas o banderas de visibilidad. |
+| Eventos           | Respuestas del navegador a acciones del usuario (`onClick`, `onChange`, `onSubmit`, etc.).          |
+| Formularios       | Entrada de datos del usuario. En React se controlan con estado para sincronizar la vista y el modelo.|
+| Lifting State Up  | Patrón donde el componente padre gestiona el estado que comparten varios hijos.                     |
 
 ---
 
-## ⚙️ Crear la aplicación con Vite
+## 📌 ¿Qué es el estado en React?
 
-Ejecuta los siguientes comandos en tu terminal para crear y correr tu proyecto React con Vite:
-
-```bash
-npm create vite@latest tarea-react -- --template react
-cd tarea-react
-npm install
-npm run dev
-```
-
-Estructura del proyecto inicial:
-
-```
-tarea-react/
-├── index.html
-└── src/
-    ├── main.jsx
-    ├── App.jsx
-    └── components/
-        └── TaskItem.jsx
-```
-
----
-
-## 📄 `src/main.jsx`
-
-Este es el **punto de entrada de la aplicación**. Aquí React se conecta con el HTML tradicional (`index.html`) e inyecta la app React dentro del elemento con ID `root`.
+El estado es una estructura que permite a un componente "recordar" información entre renderizados.
 
 ```jsx
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
+import { useState } from 'react';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
-```
-
-> 🔍 `React.StrictMode` es una herramienta para detectar problemas potenciales durante el desarrollo.
-
----
-
-## 📄 `src/App.jsx`
-
-Este componente representa la **estructura principal de nuestra aplicación**. Por ahora contiene una lista de tareas simulada y muestra cada una mediante el componente `TaskItem`.
-
-```jsx
-import TaskItem from './components/TaskItem'
-
-function App() {
-  const tareas = [
-    { id: 1, titulo: "Aprender React", completado: false },
-    { id: 2, titulo: "Practicar ejercicios", completado: true }
-  ]
+function Ejemplo() {
+  const [contador, setContador] = useState(0);
 
   return (
-    <div>
-      <h1>📝 Lista de Tareas</h1>
-      <ul>
-        {tareas.map(t => (
-          <TaskItem key={t.id} titulo={t.titulo} completado={t.completado} />
-        ))}
-      </ul>
-    </div>
-  )
+    <button onClick={() => setContador(contador + 1)}>
+      Clics: {contador}
+    </button>
+  );
 }
-
-export default App
 ```
 
-> 💡 Se utiliza `.map()` para renderizar múltiples componentes `TaskItem` de forma dinámica.
+### 🔍 Explicación:
+- `useState(0)`: Inicializa el estado con `0`.
+- `contador`: Valor actual del estado.
+- `setContador`: Función para actualizar el estado.
+- Cuando se llama `setContador`, React vuelve a renderizar el componente con el nuevo valor.
 
 ---
 
-## 📄 `src/components/TaskItem.jsx`
+## ✏️ Formularios controlados
 
-Este componente recibe dos `props` desde el componente padre: el `titulo` de la tarea y si está `completado`. Muestra el texto con un estilo tachado si está marcada como hecha.
+Un formulario controlado en React vincula el valor del campo de entrada directamente al estado del componente.
 
 ```jsx
-function TaskItem({ titulo, completado }) {
+function Formulario() {
+  const [nombre, setNombre] = useState("");
+
+  const manejarEnvio = (e) => {
+    e.preventDefault();
+    alert(`Hola ${nombre}`);
+  };
+
   return (
-    <li>
-      <span style={{ textDecoration: completado ? 'line-through' : 'none' }}>
-        {titulo}
-      </span>
-    </li>
-  )
+    <form onSubmit={manejarEnvio}>
+      <input
+        type="text"
+        value={nombre}
+        onChange={(e) => setNombre(e.target.value)}
+      />
+      <button type="submit">Enviar</button>
+    </form>
+  );
 }
+```
 
-export default TaskItem
+### 🔍 Detalles:
+- El `input` tiene su valor controlado por `nombre`.
+- Cada vez que el usuario escribe, se actualiza el estado.
+- Al enviar el formulario, se evita el comportamiento por defecto (`preventDefault`) y se utiliza el valor almacenado.
+
+---
+
+## 🔁 Manejo de eventos en React
+
+React encapsula los eventos del DOM en un sistema propio llamado **Synthetic Events**. Algunos eventos comunes:
+
+| Evento        | Descripción                              |
+|---------------|------------------------------------------|
+| `onClick`     | Clic en un botón o elemento              |
+| `onChange`    | Cambios en campos de texto o selectores  |
+| `onSubmit`    | Envío de formularios                     |
+| `onMouseEnter`| Cursor entra en un elemento              |
+
+```jsx
+<button onClick={() => alert("¡Clic!")}>Haz clic</button>
 ```
 
 ---
 
-## 🧠 Explicación pedagógica paso a paso
+## 🔄 Comunicación entre componentes
 
-### Paso 1: JSX — HTML en JavaScript
-
-JSX permite escribir estructuras similares a HTML dentro del código JavaScript. Esto mejora la claridad visual del código y permite componer interfaces complejas fácilmente.
+Cuando se requiere pasar información o comportamiento de un componente a otro, se utilizan `props`.
 
 ```jsx
-const elemento = <h2>Hola Mundo</h2>;
-```
+function Padre() {
+  const saludar = (nombre) => console.log("Hola", nombre);
+  return <Hijo onSaludar={saludar} />;
+}
 
-### Paso 2: Componentes funcionales
-
-Un componente es simplemente una función que devuelve JSX:
-
-```jsx
-function Saludo({ nombre }) {
-  return <p>Hola {nombre}</p>;
+function Hijo({ onSaludar }) {
+  return <button onClick={() => onSaludar("Estudiante")}>Saludar</button>;
 }
 ```
 
-Este componente puede ser reutilizado con diferentes `props`.
-
-### Paso 3: Props — parámetros visuales
-
-Los `props` permiten enviar datos a los componentes. Esto hace que nuestros componentes sean reutilizables y modulares.
-
-```jsx
-<TaskItem titulo="Leer documentación" completado={true} />
-```
+### 📌 Lifting State Up
+Cuando un componente hijo necesita actualizar información que pertenece al padre, se usa una función pasada por `props`.
 
 ---
 
-## ✅ Resultado esperado
+## 🧠 Casos de uso típicos en apps reales
 
-La aplicación mostrará una lista de tareas, cada una con su título. Las tareas completadas se verán con texto tachado. Aunque aún no hay lógica para agregar o modificar tareas, este es el primer paso para construir una app funcional con React.
+- Formularios de autenticación.
+- Listas que crecen dinámicamente (como tareas o comentarios).
+- Contadores y toggle buttons.
+- Mostrar/ocultar elementos condicionalmente.
+
+---
+
+## 📋 Buenas prácticas
+
+- **No mutar el estado directamente**: Siempre usar la función de actualización.
+- **Mantener el estado lo más simple posible**: Usar estructuras planas y claras.
+- **Agrupar lógica relacionada**: Por ejemplo, mantener lógica de formularios en su propio componente.
+
+---
+
+## 🧪 Ejercicio en clase
+
+1. Crear un componente `Contador`.
+2. Crear un input controlado y mostrar su valor.
+3. Crear un botón que agregue valores a una lista visualizada.
+4. Bonus: Mostrar un mensaje si la lista está vacía.
+
+---
+
+## ✅ Conclusión
+
+React es declarativo: describe **qué** debe pasar cuando cambian los datos. Con `useState` y los eventos, podemos capturar interacciones del usuario y hacer que la interfaz responda de forma inmediata y eficiente.
+
+---
+
+> En la siguiente hora, extenderemos esta lógica incorporando más acciones: completar tareas, eliminarlas y aplicar filtros visuales, desarrollando así una experiencia de usuario más rica y profesional.
