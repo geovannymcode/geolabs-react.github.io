@@ -1,159 +1,163 @@
-# Manejo de estado con `useState` y gestión de eventos en React
+# Manejo de Estado con `useState` y Gestión de Eventos en React
 
 ## 🎯 Objetivo de esta hora
 
-Dominar el manejo del estado en React utilizando el hook `useState` y comprender cómo gestionar eventos del usuario (como formularios) para construir una interfaz interactiva. En esta sesión transformaremos la aplicación estática de tareas en una solución dinámica que reacciona a la entrada del usuario en tiempo real.
+Aprender a construir componentes interactivos en React utilizando el hook `useState` para manejar datos dinámicos, y eventos del navegador como `onClick`, `onChange` y `onSubmit` para capturar acciones del usuario. Esta base es esencial para cualquier aplicación React moderna.
 
 ---
 
 ## 🧠 Conceptos clave
 
-| Concepto       | Explicación profesional                                                                 |
-|----------------|------------------------------------------------------------------------------------------|
-| `useState`     | Hook fundamental de React que permite declarar variables de estado y actualizarlas dentro de componentes funcionales. |
-| Eventos        | Permiten capturar y responder a acciones del usuario, como escribir en un campo de texto o enviar un formulario. |
-| Formularios    | Estructuras HTML que permiten la entrada de datos. En React se controlan con `useState` para mantener sincronización entre la vista y el estado. |
-| Re-renderizado | React vuelve a renderizar el componente cuando el estado cambia, garantizando que la UI siempre refleje el estado actual. |
+| Concepto          | Descripción                                                                                          |
+|-------------------|------------------------------------------------------------------------------------------------------|
+| `useState`        | Hook que permite a los componentes funcionales tener y modificar su propio estado.                  |
+| Estado            | Datos dinámicos que afectan lo que se muestra en pantalla.                                           |
+| Eventos           | Acciones del usuario que disparan funciones (`onClick`, `onChange`, `onSubmit`).                    |
+| Formularios       | Entrada de datos del usuario controlada por estado.                                                  |
+| Comunicación      | Paso de funciones entre componentes usando `props`.                                                  |
 
 ---
 
-## 🧩 Estructura del proyecto
+## 📘 1. Declarar y actualizar estado con `useState`
 
-```plaintext
-tarea-react/
-└── src/
-    ├── App.jsx
-    └── components/
-        ├── TaskItem.jsx
-        └── TaskForm.jsx
-```
-
----
-
-## 📄 `App.jsx` – Componente raíz
-
-Este componente gestiona el estado de las tareas. Define la función `agregarTarea`, que permite insertar nuevas tareas en la lista, y delega responsabilidades a los componentes hijos (`TaskForm` y `TaskItem`).
+`useState` es un hook que se importa desde React y permite a un componente recordar valores entre renderizados.
 
 ```jsx
 import { useState } from 'react'
-import TaskItem from './components/TaskItem'
-import TaskForm from './components/TaskForm'
 
-function App() {
-  const [tareas, setTareas] = useState([])
-
-  const agregarTarea = (titulo) => {
-    const nuevaTarea = {
-      id: Date.now(),
-      titulo,
-      completado: false
-    }
-    setTareas([...tareas, nuevaTarea])
-  }
+function Contador() {
+  const [contador, setContador] = useState(0)
 
   return (
-    <div>
-      <h1>📝 Lista de Tareas</h1>
-      <TaskForm onAdd={agregarTarea} />
-      <ul>
-        {tareas.map((t) => (
-          <TaskItem key={t.id} titulo={t.titulo} completado={t.completado} />
-        ))}
-      </ul>
-    </div>
+    <button onClick={() => setContador(contador + 1)}>
+      Has hecho clic {contador} veces
+    </button>
   )
 }
-
-export default App
 ```
 
 ---
 
-## 📄 `TaskForm.jsx` – Componente controlado de entrada
-
-Maneja internamente el valor del campo de entrada usando `useState` y envía la información al componente padre cuando se envía el formulario.
+## 📘 2. Formularios controlados
 
 ```jsx
-import { useState } from 'react'
-
-function TaskForm({ onAdd }) {
-  const [titulo, setTitulo] = useState("")
+function Formulario() {
+  const [nombre, setNombre] = useState("")
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (titulo.trim() === "") return
-    onAdd(titulo)
-    setTitulo("")
+    alert(`Hola, ${nombre}`)
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        value={titulo}
-        onChange={(e) => setTitulo(e.target.value)}
-        placeholder="Nueva tarea"
+        value={nombre}
+        onChange={(e) => setNombre(e.target.value)}
+        placeholder="Escribe tu nombre"
       />
-      <button type="submit">Agregar</button>
+      <button type="submit">Enviar</button>
     </form>
   )
 }
-
-export default TaskForm
 ```
 
 ---
 
-## 📄 `TaskItem.jsx` – Componente de presentación
-
-Recibe los datos de la tarea como props (`titulo`, `completado`) y los renderiza. En esta etapa no tiene lógica interactiva, solo muestra el contenido.
+## 📘 3. Comunicación entre componentes
 
 ```jsx
-function TaskItem({ titulo, completado }) {
+function App() {
+  const [mensaje, setMensaje] = useState("")
+
+  const actualizarMensaje = (nuevo) => setMensaje(nuevo)
+
   return (
-    <li>
-      <span style={{ textDecoration: completado ? 'line-through' : 'none' }}>
-        {titulo}
-      </span>
-    </li>
+    <div>
+      <h1>{mensaje}</h1>
+      <Entrada onTextoCambio={actualizarMensaje} />
+    </div>
   )
 }
 
-export default TaskItem
+function Entrada({ onTextoCambio }) {
+  return (
+    <input
+      type="text"
+      onChange={(e) => onTextoCambio(e.target.value)}
+      placeholder="Escribe algo"
+    />
+  )
+}
 ```
 
 ---
 
-## 🧠 Explicación pedagógica paso a paso
+## 📘 4. Patrón: "Lifting State Up"
 
-### Paso 1: Declarar el estado con `useState`
-
-El hook `useState([])` inicializa el estado de `tareas` como un array vacío. Cada vez que agregamos una nueva tarea, usamos `setTareas([...tareas, nuevaTarea])` para actualizar la lista sin mutar el estado original.
-
-### Paso 2: Capturar eventos del formulario
-
-Usamos `onSubmit` para interceptar el envío del formulario y evitar el comportamiento por defecto del navegador (recargar la página). Luego validamos que el input no esté vacío antes de enviar los datos al componente padre.
-
-### Paso 3: Comunicación entre componentes
-
-- `App` define la lógica de negocio (`agregarTarea`).
-- `TaskForm` captura el texto ingresado por el usuario.
-- A través de `props`, se conecta `TaskForm` con `App` y se desencadena la acción correspondiente.
-
-### Paso 4: Actualización automática de la interfaz
-
-Al ejecutar `setTareas`, React detecta que el estado cambió y vuelve a renderizar automáticamente los componentes afectados (en este caso, la lista de tareas).
+Cuando varios componentes necesitan compartir datos, se eleva el estado al ancestro común. Es un patrón común cuando un hijo envía datos al padre para que este actualice su estado.
 
 ---
 
-## ✅ Resultado esperado
+## 🧪 Ejercicio propuesto (para desarrollar en vivo)
 
-El usuario podrá:
+Construyamos juntos un mini componente práctico que aplique lo aprendido:
 
-- Ingresar una nueva tarea en un campo de texto.
-- Hacer clic en “Agregar” para que la tarea se muestre en la lista.
-- Observar que la interfaz responde inmediatamente, sin necesidad de recargar la página.
+### Requisitos del ejercicio:
+
+1. Crear un campo de texto y un botón para agregar elementos.
+2. Mostrar una lista con los elementos ingresados.
+3. Mostrar un mensaje como “No hay elementos aún” si la lista está vacía.
+
+### Código guiado:
+
+```jsx
+import { useState } from 'react'
+
+function ListaDinamica() {
+  const [texto, setTexto] = useState("")
+  const [elementos, setElementos] = useState([])
+
+  const agregarElemento = () => {
+    const valor = texto.trim()
+    if (valor !== "") {
+      setElementos([...elementos, valor])
+      setTexto("")
+    }
+  }
+
+  return (
+    <div>
+      <h2>Mi Lista</h2>
+      <input
+        type="text"
+        value={texto}
+        onChange={(e) => setTexto(e.target.value)}
+        placeholder="Agregar elemento"
+      />
+      <button onClick={agregarElemento}>Agregar</button>
+
+      {elementos.length === 0 ? (
+        <p>No hay elementos aún.</p>
+      ) : (
+        <ul>
+          {elementos.map((el, index) => (
+            <li key={index}>{el}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
+}
+```
 
 ---
 
-> Este ejercicio marca el inicio del desarrollo de una aplicación verdaderamente interactiva. En la siguiente hora incorporaremos funcionalidades adicionales como marcar tareas completadas, eliminar tareas y aplicar filtros visuales condicionales.
+## ✅ Cierre
+
+- `useState` permite que React se comporte como una interfaz viva, que cambia con las acciones del usuario.
+- Los eventos capturan estas acciones y permiten manipular el flujo de datos.
+- El siguiente paso es implementar esto en una aplicación completa de lista de tareas, con interacción real.
+
+---
