@@ -1,5 +1,5 @@
 
-# 🕐 Hora 4: Renderizado condicional, marcado de tareas completadas y eliminación
+# Renderizado condicional, marcado de tareas completadas y eliminación
 
 ## 🎯 Objetivo de esta hora
 
@@ -20,7 +20,7 @@ Dominar técnicas fundamentales de interacción en React, como el renderizado co
 
 ---
 
-## 📘 Explicación pedagógica
+## 📘 Explicación
 
 ### 1. Marcar tareas como completadas
 
