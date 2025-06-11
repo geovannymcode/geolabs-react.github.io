@@ -8,4 +8,5 @@
 
 # 📥 Instalación en macOS
 
-!include "../docs/instalaciones_mac.md"
+Puedes consultar la guía paso a paso aquí:  
+👉 [Guía de instalación en macOS](instalaciones_mac.md)
