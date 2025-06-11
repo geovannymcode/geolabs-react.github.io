@@ -156,7 +156,7 @@ export default TaskItem
 
 ---
 
-## 🧠 Reflexión pedagógica
+## 🧠 Reflexión
 
 Este ejemplo representa un **flujo típico en aplicaciones interactivas**: el usuario toma una acción, se actualiza el estado, y la interfaz responde dinámicamente. Además de reforzar `useState` y listas dinámicas, se introduce una lógica condicional simple pero poderosa — una habilidad esencial en React.
 

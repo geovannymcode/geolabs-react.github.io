@@ -1,6 +1,6 @@
 # 💻 Ejemplo del mundo real: Lista de tareas con React (versión estática)
 
-En este ejemplo vamos a construir una versión **estática** de la aplicación de tareas utilizando **React y JSX**. Esta versión no tendrá lógica de estado ni eventos aún; su objetivo es aplicar lo aprendido en la Hora 2:
+En este ejemplo construiremos una versión **estática** de la aplicación de tareas utilizando **React y JSX**. Aunque no tendrá lógica de estado ni eventos, sentará las bases para las siguientes etapas. Aplicaremos:
 
 ✅ Componentes funcionales  
 ✅ Uso de `props`  
@@ -9,9 +9,22 @@ En este ejemplo vamos a construir una versión **estática** de la aplicación d
 
 ---
 
+## 🛠️ Prerrequisitos
+
+Asegúrate de tener instalado **Node.js**. Luego, abre una terminal y ejecuta:
+
+```bash
+npm create vite@latest tarea-react -- --template react
+cd tarea-react
+npm install
+npm run dev
+```
+
+---
+
 ## 📁 Estructura del proyecto
 
-```plaintext
+```
 tarea-react/
 ├── index.html
 └── src/
@@ -25,7 +38,7 @@ tarea-react/
 
 ## 📄 1. `index.html`
 
-Este archivo se encuentra en la raíz del proyecto (`tarea-react/`) y contiene el punto de montaje de la app.
+Archivo base ubicado en la raíz. Define el contenedor donde React renderiza la app.
 
 ```html
 <!DOCTYPE html>
@@ -42,11 +55,13 @@ Este archivo se encuentra en la raíz del proyecto (`tarea-react/`) y contiene e
 </html>
 ```
 
+🔎 **Nota:** El `div` con ID `root` es donde React montará la aplicación.
+
 ---
 
 ## 📄 2. `main.jsx`
 
-Archivo que renderiza el componente raíz (`App`) dentro del elemento con ID `root`.
+Punto de entrada. Monta el componente principal (`App`) en el DOM.
 
 ```jsx
 import React from 'react'
@@ -60,11 +75,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 )
 ```
 
+💡 `React.StrictMode` ayuda a identificar problemas potenciales en desarrollo.
+
 ---
 
 ## 📄 3. `App.jsx`
 
-Este es el componente principal. Aquí se define una lista de tareas simulada (como si viniera de una base de datos o API) y se renderiza dinámicamente con `.map()`.
+Componente principal. Contiene una lista simulada de tareas y renderiza cada una con `TaskItem`.
 
 ```jsx
 import TaskItem from './components/TaskItem'
@@ -99,7 +116,7 @@ export default App
 
 ## 📄 4. `TaskItem.jsx`
 
-Este componente funcional recibe props (`titulo` y `completado`) y los usa para mostrar cada tarea. Aplica un estilo tachado si la tarea está completada.
+Componente presentacional que muestra cada tarea y aplica estilo según si está completada.
 
 ```jsx
 function TaskItem({ titulo, completado }) {
@@ -117,24 +134,28 @@ export default TaskItem
 
 ---
 
-## 🧠 Explicación paso a paso
+## 🔍 Explicación técnica
 
-### Paso 1: Estructura del proyecto
-Creamos una carpeta `components` donde se colocarán los componentes reutilizables como `TaskItem`.
+### 📌 Uso de props
 
-### Paso 2: Uso de props
-Pasamos datos (`titulo` y `completado`) desde el componente padre (`App`) hacia el componente hijo (`TaskItem`) usando props.
+Los datos `titulo` y `completado` se pasan desde `App` al componente `TaskItem` como propiedades.
 
-### Paso 3: Uso de `.map()` en JSX
-Recorremos un array de objetos para generar múltiples instancias del componente `TaskItem`. Esto es clave en React para renderizar listas.
+### 🔁 Renderizado dinámico
 
-### Paso 4: JSX con lógica condicional
-Aplicamos una condición dentro del estilo para mostrar el texto tachado si la tarea está marcada como completada.
+Se utiliza `.map()` sobre el arreglo de tareas para generar múltiples elementos `TaskItem`.
+
+### 🎨 Estilo condicional
+
+El texto se tacha si la tarea está marcada como completada (`completed: true`).
 
 ---
 
 ## ✅ Resultado esperado
 
-Una interfaz básica en React que muestra una lista de tareas con texto normal o tachado según si están completadas. Aunque aún no es interactiva, representa la base de la aplicación que construiremos completamente en la siguiente hora con `useState`.
+Una interfaz básica con una lista de tareas. Las tareas completadas aparecerán con texto tachado. Esta es la base visual sobre la cual construiremos interactividad en la Hora 3 y Hora 4.
 
 ---
+
+## 🧪 Ejercicio propuesto
+
+Modifica `App.jsx` para que la lista de tareas se obtenga desde un archivo externo `data.js` que contenga el array `tareas`. Importa este array usando `import { tareas } from './data.js'`.

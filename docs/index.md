@@ -97,7 +97,9 @@ console.log(segundo); // "verde"
 ### 4. Spread y Rest Operators (`...`)
 
 #### 📘 Descripción:
+
 El operador `...` se usa para dos cosas:
+
 - **Spread**: Expande elementos de un array u objeto.
 - **Rest**: Agrupa múltiples elementos en un array u objeto.
 
