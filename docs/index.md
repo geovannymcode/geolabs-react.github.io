@@ -130,4 +130,57 @@ La correcta visualización del mensaje indica que el entorno React ha sido confi
 
 ---
 
+# Conceptos Fundamentales en React: Componentes y Estado
+
+## Introducción
+
+Antes de iniciar el desarrollo de aplicaciones con React, es esencial comprender dos conceptos clave: **los componentes** y **el estado**. Estos elementos constituyen la base del modelo de desarrollo de React y permiten construir interfaces modulares, reactivas y reutilizables de forma eficiente.
+
+---
+
+## ¿Qué es un Componente?
+
+Un **componente** es una unidad encapsulada de código que representa una sección específica de la interfaz de usuario. En React, los componentes pueden reutilizarse, combinarse y anidarse para construir estructuras complejas manteniendo una alta cohesión y bajo acoplamiento.
+
+### Características principales:
+- Reutilizables y testables.
+- Pueden contener estado o ser completamente funcionales.
+- Permiten estructurar la interfaz de forma jerárquica y escalable.
+
+### Ejemplo visual de estructura de componentes:
+
+A continuación, se presenta una interfaz simulada de una aplicación de productos que ilustra la composición jerárquica típica en React:
+
+![Estructura de componentes con navegación y renderizado dinámico](./files/image1.png)
+
+En esta interfaz:
+- `ProductApp` es el componente raíz que encapsula la estructura general.
+- `MenuItem` representa cada elemento de navegación lateral.
+- Al seleccionar una opción como `ProductCard` o `PersonForm`, React renderiza el componente correspondiente en el área principal sin recargar la página.
+
+---
+
+## ¿Qué es el Estado?
+
+El **estado** (state) en React representa la información dinámica que maneja un componente. Esta información puede modificarse a lo largo del tiempo como resultado de interacciones del usuario o eventos del sistema.
+
+### Ejemplo práctico con formulario:
+
+![Estado del componente: formulario dinámico](./files/image2.png)
+
+En este caso:
+- El componente `PersonForm` es responsable de capturar y gestionar la información del usuario.
+- Al iniciarse, el estado del formulario está vacío.
+- A medida que se completan los campos (`First Name`, `Last Name`, `Email`, etc.), el estado del componente se actualiza.
+- Estas actualizaciones son gestionadas por React para reflejar los cambios en la interfaz de manera inmediata y eficiente.
+
+### Beneficios del estado:
+- Permite mantener sincronización entre la interfaz visual y los datos del componente.
+- Habilita comportamientos dinámicos y reactividad frente a eventos del usuario.
+
+---
+
+## Conclusión
+
+Comprender a fondo los conceptos de **componentes** y **estado** es esencial para desarrollar aplicaciones modernas con React. Los componentes promueven la reutilización, el orden y la mantenibilidad del código, mientras que el estado permite construir interfaces dinámicas, interactivas y reactivas. En la siguiente etapa se aplicarán estos conocimientos fundamentales en el desarrollo práctico de una aplicación funcional con React.
 
