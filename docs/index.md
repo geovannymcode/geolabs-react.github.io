@@ -1,186 +1,211 @@
-# Introducción a React
+# Fundamentos de JavaScript Moderno (ES6+)
 
-## ¿Qué es React?
+## 🎯 Objetivo de esta hora
 
-**React** es una **librería declarativa y eficiente de JavaScript**, orientada a la construcción de interfaces de usuario interactivas. Su diseño permite crear aplicaciones de diversa complejidad, desde soluciones simples hasta sistemas robustos y escalables. Al ser una librería, React puede integrarse de forma directa en archivos HTML, aunque también admite implementaciones modernas mediante herramientas de desarrollo avanzadas.
-
-### Características clave de React:
-
-- **Declaratividad**: Permite describir el estado deseado de la interfaz y React se encarga de actualizar el DOM de manera eficiente.
-- **Actualizaciones selectivas del DOM**: Solo se renderizan los elementos que cambian, lo que mejora notablemente el rendimiento de la aplicación.
-- **Flujo de datos unidireccional**: La información fluye en una sola dirección, evitando mutaciones impredecibles y facilitando la depuración.
-- **Componentes reutilizables**: Las aplicaciones se construyen a partir de módulos encapsulados que pueden mantener su propio estado o ser completamente funcionales.
-
-## Versatilidad de React
-
-React no se limita al desarrollo web en el navegador. Gracias a su ecosistema, también permite:
-
-- Renderizado en el **servidor** utilizando Node.js.
-- Creación de **aplicaciones móviles** con React Native.
-- Desarrollo de **aplicaciones de escritorio** mediante Electron.
-
-Esta versatilidad permite a los desarrolladores utilizar el mismo enfoque y base de código para distintas plataformas.
-
-## Primer ejemplo: Hola Mundo con React
-
-Se presenta un ejemplo básico para demostrar la sintaxis de React y la utilización de JSX:
-
-```jsx
-const divRoot = document.querySelector('#root');
-
-ReactDOM.render(
-  <h1>Hola Mundo</h1>,
-  divRoot
-);
-```
-
-- Se obtiene una referencia al elemento HTML con `id="root"`.
-- Se utiliza `ReactDOM.render()` para insertar un elemento JSX (`<h1>Hola Mundo</h1>`) en dicho nodo del DOM.
-
-Este ejemplo permite visualizar de forma inmediata el resultado de una aplicación React renderizada en el navegador.
-
-## JSX: JavaScript + XML
-
-JSX es una extensión de sintaxis que combina JavaScript con una sintaxis similar a XML. Permite escribir código de forma declarativa y legible, facilitando la construcción de interfaces.
-
-El siguiente ejemplo en JavaScript puro logra lo mismo que el anterior en JSX:
-
-```javascript
-const h1 = document.createElement('h1');
-h1.textContent = 'Hola Mundo';
-divRoot.appendChild(h1);
-```
-
-Este contraste demuestra la eficiencia y simplicidad que ofrece JSX al compararlo con la manipulación directa del DOM.
+Comprender y aplicar las características principales de **JavaScript moderno (ES6 en adelante)**, las cuales son esenciales para desarrollar interfaces modernas con React. Esta base permitirá escribir código más limpio, legible y mantenible, además de facilitar la transición hacia el desarrollo con componentes funcionales y hooks.
 
 ---
 
-# Primer Proyecto React: Configuración y Primeros Pasos
-
-## Introducción
-
-En esta sección se abordará la creación de una aplicación React desde sus fundamentos, sin el uso de herramientas automatizadas como Vite o Create React App. Este enfoque permite comprender en profundidad el ciclo de vida de una aplicación React y las bibliotecas esenciales involucradas.
-
-## Estructura del Proyecto
-
-1. Crear una carpeta en el escritorio denominada `01-intro-product-app`. Se recomienda mantener una nomenclatura numérica secuencial (01, 02, 03, etc.) para organizar los proyectos de forma ordenada y facilitar su seguimiento.
-
-2. Abrir dicha carpeta en un editor de código (por ejemplo, Visual Studio Code).
-
-3. Generar un archivo `index.html` con la siguiente estructura inicial:
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>React App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-
-    <!-- Inclusión de bibliotecas necesarias -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <!-- Código React personalizado -->
-    <script type="text/babel">
-      const productName = "Zapatos deportivos";
-      const h1Tag = <h1>Hola, este es el producto: {productName}</h1>;
-
-      const divRoot = document.querySelector("#root");
-      ReactDOM.render(h1Tag, divRoot);
-    </script>
-  </body>
-</html>
-```
-
-## Desglose del Código
-
-- **Babel**: Esta herramienta transforma código JSX en JavaScript convencional comprensible por cualquier navegador. Aunque no se utiliza así en entornos productivos, resulta muy útil para fines educativos.
-- **React** y **ReactDOM**: Son las bibliotecas clave para construir interfaces y renderizarlas eficientemente en el DOM.
-- **Elemento **``** con id **``: Actúa como el contenedor principal donde se montará la interfaz de usuario React.
-
-## Renderizado de Variables con JSX
-
-React permite incorporar variables dentro del código JSX utilizando llaves `{}`. Por ejemplo:
-
-```jsx
-const productName = "Zapatos deportivos";
-<h1>Hola, este es el producto: {productName}</h1>
-```
-
-Durante el renderizado, React reemplazará automáticamente `productName` por su valor correspondiente.
-
-## Recomendaciones de Buenas Prácticas
-
-- Se sugiere finalizar todas las sentencias con punto y coma `;` para evitar ambigüedades durante la interpretación del código.
-- Familiarizarse con los atajos del navegador para acceder a las herramientas de desarrollo (por ejemplo: `Ctrl + Shift + I` o `F12`) facilita la detección de errores.
-
-## Resultado Esperado
-
-Al abrir el archivo `index.html` en el navegador, se debería visualizar el siguiente mensaje en pantalla:
-
-```
-Hola, este es el producto: Zapatos deportivos
-```
-
-La correcta visualización del mensaje indica que el entorno React ha sido configurado adecuadamente.
+## 🧠 Conceptos clave con ejemplos
 
 ---
 
-# Conceptos Fundamentales en React: Componentes y Estado
+### 1. `const` y `let`
 
-## Introducción
+#### 📘 Descripción:
+- `const`: se usa para declarar **constantes**. No se puede cambiar su valor (reasignar).
+- `let`: se usa para declarar **variables** que pueden cambiar a lo largo del tiempo.
+- Ambas respetan el **alcance de bloque** (`{}`), a diferencia de `var` que tiene alcance de función.
 
-Antes de iniciar el desarrollo de aplicaciones con React, es esencial comprender dos conceptos clave: **los componentes** y **el estado**. Estos elementos constituyen la base del modelo de desarrollo de React y permiten construir interfaces modulares, reactivas y reutilizables de forma eficiente.
+#### 🧪 Ejemplo:
+```js
+const nombre = "Ana";
+let edad = 30;
 
----
+edad = 31; // válido
+nombre = "Pedro"; // ❌ Error: no se puede reasignar una constante
+```
 
-## ¿Qué es un Componente?
-
-Un **componente** es una unidad encapsulada de código que representa una sección específica de la interfaz de usuario. En React, los componentes pueden reutilizarse, combinarse y anidarse para construir estructuras complejas manteniendo una alta cohesión y bajo acoplamiento.
-
-### Características principales:
-- Reutilizables y testables.
-- Pueden contener estado o ser completamente funcionales.
-- Permiten estructurar la interfaz de forma jerárquica y escalable.
-
-### Ejemplo visual de estructura de componentes:
-
-A continuación, se presenta una interfaz simulada de una aplicación de productos que ilustra la composición jerárquica típica en React:
-
-![Estructura de componentes con navegación y renderizado dinámico](./files/image1.png)
-
-En esta interfaz:
-- `ProductApp` es el componente raíz que encapsula la estructura general.
-- `MenuItem` representa cada elemento de navegación lateral.
-- Al seleccionar una opción como `ProductCard` o `PersonForm`, React renderiza el componente correspondiente en el área principal sin recargar la página.
+#### ✅ Cuándo usarlo:
+- Usa `const` por defecto.
+- Usa `let` si sabes que la variable cambiará su valor (como un contador, input, etc.).
 
 ---
 
-## ¿Qué es el Estado?
+### 2. Arrow Functions (Funciones flecha)
 
-El **estado** (state) en React representa la información dinámica que maneja un componente. Esta información puede modificarse a lo largo del tiempo como resultado de interacciones del usuario o eventos del sistema.
+#### 📘 Descripción:
+Las **arrow functions** son una forma más concisa de declarar funciones. No tienen su propio `this`, lo cual es útil en callbacks y funciones anidadas.
 
-### Ejemplo práctico con formulario:
+#### 🧪 Ejemplo:
+```js
+// Función tradicional
+function saludar(nombre) {
+  return `Hola, ${nombre}`;
+}
 
-![Estado del componente: formulario dinámico](./files/image2.png)
+// Función flecha equivalente
+const saludar = (nombre) => `Hola, ${nombre}`;
+```
 
-En este caso:
-- El componente `PersonForm` es responsable de capturar y gestionar la información del usuario.
-- Al iniciarse, el estado del formulario está vacío.
-- A medida que se completan los campos (`First Name`, `Last Name`, `Email`, etc.), el estado del componente se actualiza.
-- Estas actualizaciones son gestionadas por React para reflejar los cambios en la interfaz de manera inmediata y eficiente.
+#### 🧩 Otro ejemplo:
+```js
+const numeros = [1, 2, 3];
+const alCuadrado = numeros.map(num => num * num);
+console.log(alCuadrado); // [1, 4, 9]
+```
 
-### Beneficios del estado:
-- Permite mantener sincronización entre la interfaz visual y los datos del componente.
-- Habilita comportamientos dinámicos y reactividad frente a eventos del usuario.
+#### ✅ Cuándo usarlo:
+- Para funciones pequeñas, especialmente dentro de `.map`, `.filter`, `.forEach`.
+- Para mantener el contexto de `this` en componentes y objetos.
 
 ---
 
-## Conclusión
+### 3. Destructuring (Desestructuración)
 
-Comprender a fondo los conceptos de **componentes** y **estado** es esencial para desarrollar aplicaciones modernas con React. Los componentes promueven la reutilización, el orden y la mantenibilidad del código, mientras que el estado permite construir interfaces dinámicas, interactivas y reactivas. En la siguiente etapa se aplicarán estos conocimientos fundamentales en el desarrollo práctico de una aplicación funcional con React.
+#### 📘 Descripción:
+Permite extraer valores de arrays u objetos en variables individuales, haciendo el código más limpio.
 
+#### 🧪 Ejemplo con objetos:
+```js
+const persona = {
+  nombre: "Carlos",
+  edad: 28,
+  ciudad: "Bogotá"
+};
+
+const { nombre, edad } = persona;
+console.log(nombre); // "Carlos"
+console.log(edad);   // 28
+```
+
+#### 🧪 Ejemplo con arrays:
+```js
+const colores = ["rojo", "verde", "azul"];
+const [primero, segundo] = colores;
+
+console.log(primero); // "rojo"
+console.log(segundo); // "verde"
+```
+
+#### ✅ Cuándo usarlo:
+
+- Para extraer propiedades dentro de funciones, loops o directamente en argumentos.
+
+---
+
+### 4. Spread y Rest Operators (`...`)
+
+#### 📘 Descripción:
+
+El operador `...` se usa para dos cosas:
+
+- **Spread**: Expande elementos de un array u objeto.
+- **Rest**: Agrupa múltiples elementos en un array u objeto.
+
+#### 🧪 Ejemplo - Spread:
+```js
+const numeros = [1, 2, 3];
+const nuevosNumeros = [...numeros, 4]; // [1, 2, 3, 4]
+
+const usuario = { nombre: "Ana", edad: 25 };
+const usuarioActualizado = { ...usuario, ciudad: "Lima" };
+// { nombre: "Ana", edad: 25, ciudad: "Lima" }
+```
+
+#### 🧪 Ejemplo - Rest:
+```js
+function sumar(...numeros) {
+  return numeros.reduce((acc, n) => acc + n, 0);
+}
+
+console.log(sumar(1, 2, 3, 4)); // 10
+```
+
+#### ✅ Cuándo usarlo:
+- Spread: Para copiar/modificar objetos y arrays sin mutarlos.
+- Rest: Para recibir múltiples argumentos en una función.
+
+---
+
+### 5. Template Literals
+
+#### 📘 Descripción:
+
+Permiten construir cadenas de texto con variables embebidas usando **backticks** \` y `${variable}`.
+
+#### 🧪 Ejemplo:
+```js
+const producto = "Laptop";
+const precio = 1200;
+
+const mensaje = `El producto ${producto} cuesta $${precio}`;
+console.log(mensaje); // El producto Laptop cuesta $1200
+```
+
+#### ✅ Cuándo usarlo:
+
+- Al construir mensajes, HTML dinámico, o logs de consola.
+- Mejora la legibilidad frente a `"Hola " + nombre + ", bienvenido"`.
+
+---
+
+### 6. Funciones de Arrays: `map`, `filter`, `find`, `some`, `every`
+
+#### 📘 Descripción:
+
+Permiten trabajar de forma declarativa con colecciones. Son fundamentales en React para renderizar listas o filtrar datos.
+
+#### 🧪 Ejemplo - `map`:
+```js
+const tareas = [
+  { id: 1, titulo: "Estudiar", completado: false },
+  { id: 2, titulo: "Hacer ejercicio", completado: true }
+];
+
+const titulos = tareas.map(t => t.titulo);
+console.log(titulos); // ["Estudiar", "Hacer ejercicio"]
+```
+
+#### 🧪 Ejemplo - `filter`:
+```js
+const pendientes = tareas.filter(t => !t.completado);
+console.log(pendientes); // Solo las tareas no completadas
+```
+
+#### 🧪 Ejemplo - `find`:
+```js
+const tarea = tareas.find(t => t.id === 2);
+console.log(tarea); // { id: 2, titulo: "Hacer ejercicio", completado: true }
+```
+
+#### 🧪 Ejemplo - `some` / `every`:
+```js
+const hayPendientes = tareas.some(t => !t.completado);
+const todasCompletadas = tareas.every(t => t.completado);
+
+console.log(hayPendientes);     // true
+console.log(todasCompletadas);  // false
+```
+
+#### ✅ Cuándo usarlo:
+
+- `map`: transformar cada elemento de un array.
+- `filter`: obtener subconjuntos que cumplan una condición.
+- `find`: obtener el primer elemento que cumpla una condición.
+- `some`: verificar si al menos uno cumple.
+- `every`: verificar si todos cumplen.
+
+---
+
+## 🧩 ¿Y cómo se relaciona esto con React?
+
+Todos estos conceptos se usan directamente cuando:
+
+- Creamos componentes (`const`, `arrow functions`)
+- Manipulamos `props` y `state` (`destructuring`, `spread`)
+- Mostramos listas (`map`)
+- Creamos elementos dinámicos (`template literals`)
+- Filtramos datos antes de renderizar (`filter`, `find`)
+
+---
