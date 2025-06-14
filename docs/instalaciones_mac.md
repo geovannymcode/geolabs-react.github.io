@@ -104,5 +104,3 @@ export default App;
 Guarda y verás los cambios automáticamente en el navegador.
 
 ---
-
-¿Quieres que continúe con la parte de cómo organizar componentes, props, estado (`useState`), o pasar a temas más avanzados como rutas (`react-router-dom`) o peticiones a APIs?

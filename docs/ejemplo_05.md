@@ -1,4 +1,4 @@
-# Ejercicio Práctico: Uso de Props en React con Ejemplo del Mundo Real
+# Ejercicio Práctico: Uso de Props en React
 
 ## Objetivo
 Este ejercicio tiene como propósito reforzar el conocimiento sobre el uso de **props** en componentes de React mediante un ejemplo del mundo real. Implementaremos una tarjeta de perfil de usuario que reciba datos como propiedades para ser renderizados dinámicamente.
