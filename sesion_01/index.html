@@ -1,0 +1,1037 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="GeoLabs Workshop-React Docs">
+      
+      
+        <meta name="author" content="Geovanny Mendoza">
+      
+      
+        <link rel="canonical" href="https://geovannymcode.github.io/geolabs-react.github.io/sesion_01/">
+      
+      
+        <link rel="prev" href="../ejemplo_01/">
+      
+      
+        <link rel="next" href="../sesion_02/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Introducción a React - GeoLabs Workshop-React</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduccion-a-react" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="GeoLabs Workshop-React" class="md-header__button md-logo" aria-label="GeoLabs Workshop-React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoLabs Workshop-React
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introducción a React
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://geovannymcode.github.io/geolabs-react.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    /geovannymcode/geolabs-react.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GeoLabs Workshop-React" class="md-nav__button md-logo" aria-label="GeoLabs Workshop-React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GeoLabs Workshop-React
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://geovannymcode.github.io/geolabs-react.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    /geovannymcode/geolabs-react.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a JavaScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo Lista Tarea 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Introducción a React
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a React
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es React?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es React?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-clave-de-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características clave de React:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versatilidad-de-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versatilidad de React
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primer-ejemplo-hola-mundo-con-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primer ejemplo: Hola Mundo con React
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsx-javascript-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSX: JavaScript + XML
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Apuntes de React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo Lista Tarea 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manejo de Estado con useState
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo Lista Tarea 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Renderizado condicional
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo Lista Tarea 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Referencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es React?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es React?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-clave-de-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características clave de React:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versatilidad-de-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versatilidad de React
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primer-ejemplo-hola-mundo-con-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primer ejemplo: Hola Mundo con React
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsx-javascript-xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSX: JavaScript + XML
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduccion-a-react">Introducción a React</h1>
+<h2 id="que-es-react">¿Qué es React?</h2>
+<p><strong>React</strong> es una <strong>librería declarativa y eficiente de JavaScript</strong>, orientada a la construcción de interfaces de usuario interactivas. Su diseño permite crear aplicaciones de diversa complejidad, desde soluciones simples hasta sistemas robustos y escalables. Al ser una librería, React puede integrarse de forma directa en archivos HTML, aunque también admite implementaciones modernas mediante herramientas de desarrollo avanzadas.</p>
+<h3 id="caracteristicas-clave-de-react">Características clave de React:</h3>
+<ul>
+<li><strong>Declaratividad</strong>: Permite describir el estado deseado de la interfaz y React se encarga de actualizar el DOM de manera eficiente.</li>
+<li><strong>Actualizaciones selectivas del DOM</strong>: Solo se renderizan los elementos que cambian, lo que mejora notablemente el rendimiento de la aplicación.</li>
+<li><strong>Flujo de datos unidireccional</strong>: La información fluye en una sola dirección, evitando mutaciones impredecibles y facilitando la depuración.</li>
+<li><strong>Componentes reutilizables</strong>: Las aplicaciones se construyen a partir de módulos encapsulados que pueden mantener su propio estado o ser completamente funcionales.</li>
+</ul>
+<h2 id="versatilidad-de-react">Versatilidad de React</h2>
+<p>React no se limita al desarrollo web en el navegador. Gracias a su ecosistema, también permite:</p>
+<ul>
+<li>Renderizado en el <strong>servidor</strong> utilizando Node.js.</li>
+<li>Creación de <strong>aplicaciones móviles</strong> con React Native.</li>
+<li>Desarrollo de <strong>aplicaciones de escritorio</strong> mediante Electron.</li>
+</ul>
+<p>Esta versatilidad permite a los desarrolladores utilizar el mismo enfoque y base de código para distintas plataformas.</p>
+<h2 id="primer-ejemplo-hola-mundo-con-react">Primer ejemplo: Hola Mundo con React</h2>
+<p>Se presenta un ejemplo básico para demostrar la sintaxis de React y la utilización de JSX:</p>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">divRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#root&#39;</span><span class="p">);</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Hola</span><span class="w"> </span><span class="nx">Mundo</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nx">divRoot</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">);</span>
+</span></code></pre></div>
+<ul>
+<li>Se obtiene una referencia al elemento HTML con <code>id="root"</code>.</li>
+<li>Se utiliza <code>ReactDOM.render()</code> para insertar un elemento JSX (<code>&lt;h1&gt;Hola Mundo&lt;/h1&gt;</code>) en dicho nodo del DOM.</li>
+</ul>
+<p>Este ejemplo permite visualizar de forma inmediata el resultado de una aplicación React renderizada en el navegador.</p>
+<h2 id="jsx-javascript-xml">JSX: JavaScript + XML</h2>
+<p>JSX es una extensión de sintaxis que combina JavaScript con una sintaxis similar a XML. Permite escribir código de forma declarativa y legible, facilitando la construcción de interfaces.</p>
+<p>El siguiente ejemplo en JavaScript puro logra lo mismo que el anterior en JSX:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">h1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">);</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nx">h1</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hola Mundo&#39;</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nx">divRoot</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">h1</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Este contraste demuestra la eficiencia y simplicidad que ofrece JSX al compararlo con la manipulación directa del DOM.</p>
+<hr />
+<h1 id="primer-proyecto-react-configuracion-y-primeros-pasos">Primer Proyecto React: Configuración y Primeros Pasos</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>En esta sección se abordará la creación de una aplicación React desde sus fundamentos, sin el uso de herramientas automatizadas como Vite o Create React App. Este enfoque permite comprender en profundidad el ciclo de vida de una aplicación React y las bibliotecas esenciales involucradas.</p>
+<h2 id="estructura-del-proyecto">Estructura del Proyecto</h2>
+<ol>
+<li>
+<p>Crear una carpeta en el escritorio denominada <code>01-intro-product-app</code>. Se recomienda mantener una nomenclatura numérica secuencial (01, 02, 03, etc.) para organizar los proyectos de forma ordenada y facilitar su seguimiento.</p>
+</li>
+<li>
+<p>Abrir dicha carpeta en un editor de código (por ejemplo, Visual Studio Code).</p>
+</li>
+<li>
+<p>Generar un archivo <code>index.html</code> con la siguiente estructura inicial:</p>
+</li>
+</ol>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>React App<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;root&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="cm">&lt;!-- Inclusión de bibliotecas necesarias --&gt;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/react@18/umd/react.development.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/react-dom@18/umd/react-dom.development.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="cm">&lt;!-- Código React personalizado --&gt;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/babel&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">productName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Zapatos deportivos&quot;</span><span class="p">;</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">h1Tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hola</span><span class="p">,</span><span class="w"> </span><span class="nx">este</span><span class="w"> </span><span class="nx">es</span><span class="w"> </span><span class="nx">el</span><span class="w"> </span><span class="nx">producto</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">productName</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h1&gt;;</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">divRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;#root&quot;</span><span class="p">);</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">      </span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">h1Tag</span><span class="p">,</span><span class="w"> </span><span class="nx">divRoot</span><span class="p">);</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="desglose-del-codigo">Desglose del Código</h2>
+<ul>
+<li><strong>Babel</strong>: Esta herramienta transforma código JSX en JavaScript convencional comprensible por cualquier navegador. Aunque no se utiliza así en entornos productivos, resulta muy útil para fines educativos.</li>
+<li><strong>React</strong> y <strong>ReactDOM</strong>: Son las bibliotecas clave para construir interfaces y renderizarlas eficientemente en el DOM.</li>
+<li><strong>Elemento </strong><code>** con id **</code>: Actúa como el contenedor principal donde se montará la interfaz de usuario React.</li>
+</ul>
+<h2 id="renderizado-de-variables-con-jsx">Renderizado de Variables con JSX</h2>
+<p>React permite incorporar variables dentro del código JSX utilizando llaves <code>{}</code>. Por ejemplo:</p>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">productName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Zapatos deportivos&quot;</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Hola</span><span class="p">,</span><span class="w"> </span><span class="nx">este</span><span class="w"> </span><span class="nx">es</span><span class="w"> </span><span class="nx">el</span><span class="w"> </span><span class="nx">producto</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">productName</span><span class="p">}&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Durante el renderizado, React reemplazará automáticamente <code>productName</code> por su valor correspondiente.</p>
+<h2 id="recomendaciones-de-buenas-practicas">Recomendaciones de Buenas Prácticas</h2>
+<ul>
+<li>Se sugiere finalizar todas las sentencias con punto y coma <code>;</code> para evitar ambigüedades durante la interpretación del código.</li>
+<li>Familiarizarse con los atajos del navegador para acceder a las herramientas de desarrollo (por ejemplo: <code>Ctrl + Shift + I</code> o <code>F12</code>) facilita la detección de errores.</li>
+</ul>
+<h2 id="resultado-esperado">Resultado Esperado</h2>
+<p>Al abrir el archivo <code>index.html</code> en el navegador, se debería visualizar el siguiente mensaje en pantalla:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Hola, este es el producto: Zapatos deportivos
+</span></code></pre></div>
+<p>La correcta visualización del mensaje indica que el entorno React ha sido configurado adecuadamente.</p>
+<hr />
+<h1 id="conceptos-fundamentales-en-react-componentes-y-estado">Conceptos Fundamentales en React: Componentes y Estado</h1>
+<h2 id="introduccion_1">Introducción</h2>
+<p>Antes de iniciar el desarrollo de aplicaciones con React, es esencial comprender dos conceptos clave: <strong>los componentes</strong> y <strong>el estado</strong>. Estos elementos constituyen la base del modelo de desarrollo de React y permiten construir interfaces modulares, reactivas y reutilizables de forma eficiente.</p>
+<hr />
+<h2 id="que-es-un-componente">¿Qué es un Componente?</h2>
+<p>Un <strong>componente</strong> es una unidad encapsulada de código que representa una sección específica de la interfaz de usuario. En React, los componentes pueden reutilizarse, combinarse y anidarse para construir estructuras complejas manteniendo una alta cohesión y bajo acoplamiento.</p>
+<h3 id="caracteristicas-principales">Características principales:</h3>
+<ul>
+<li>Reutilizables y testables.</li>
+<li>Pueden contener estado o ser completamente funcionales.</li>
+<li>Permiten estructurar la interfaz de forma jerárquica y escalable.</li>
+</ul>
+<h3 id="ejemplo-visual-de-estructura-de-componentes">Ejemplo visual de estructura de componentes:</h3>
+<p>A continuación, se presenta una interfaz simulada de una aplicación de productos que ilustra la composición jerárquica típica en React:</p>
+<p><img alt="Estructura de componentes con navegación y renderizado dinámico" src="../files/imagen1.png" /></p>
+<p>En esta interfaz:
+- <code>ProductApp</code> es el componente raíz que encapsula la estructura general.
+- <code>MenuItem</code> representa cada elemento de navegación lateral.
+- Al seleccionar una opción como <code>ProductCard</code> o <code>PersonForm</code>, React renderiza el componente correspondiente en el área principal sin recargar la página.</p>
+<hr />
+<h2 id="que-es-el-estado">¿Qué es el Estado?</h2>
+<p>El <strong>estado</strong> (state) en React representa la información dinámica que maneja un componente. Esta información puede modificarse a lo largo del tiempo como resultado de interacciones del usuario o eventos del sistema.</p>
+<h3 id="ejemplo-practico-con-formulario">Ejemplo práctico con formulario:</h3>
+<p><img alt="Estado del componente: formulario dinámico" src="../files/imagen2.png" /></p>
+<p>En este caso:
+- El componente <code>PersonForm</code> es responsable de capturar y gestionar la información del usuario.
+- Al iniciarse, el estado del formulario está vacío.
+- A medida que se completan los campos (<code>First Name</code>, <code>Last Name</code>, <code>Email</code>, etc.), el estado del componente se actualiza.
+- Estas actualizaciones son gestionadas por React para reflejar los cambios en la interfaz de manera inmediata y eficiente.</p>
+<h3 id="beneficios-del-estado">Beneficios del estado:</h3>
+<ul>
+<li>Permite mantener sincronización entre la interfaz visual y los datos del componente.</li>
+<li>Habilita comportamientos dinámicos y reactividad frente a eventos del usuario.</li>
+</ul>
+<hr />
+<h2 id="conclusion">Conclusión</h2>
+<p>Comprender a fondo los conceptos de <strong>componentes</strong> y <strong>estado</strong> es esencial para desarrollar aplicaciones modernas con React. Los componentes promueven la reutilización, el orden y la mantenibilidad del código, mientras que el estado permite construir interfaces dinámicas, interactivas y reactivas. En la siguiente etapa se aplicarán estos conocimientos fundamentales en el desarrollo práctico de una aplicación funcional con React.</p>
+<hr />
+<h1 id="creacion-del-primer-componente-en-react">Creación del Primer Componente en React</h1>
+<h2 id="introduccion_2">Introducción</h2>
+<p>En esta sección se da continuidad al desarrollo de una aplicación React, estructurando correctamente el primer componente funcional en un archivo independiente. Se abordan principios de organización del proyecto, convenciones para exportación e importación de componentes, y se destaca la eficiencia del entorno de desarrollo proporcionado por Vite.</p>
+<hr />
+<h2 id="organizacion-del-proyecto">Organización del Proyecto</h2>
+<p>Aunque es posible definir la lógica principal directamente en <code>main.jsx</code>, se recomienda trasladar los componentes a archivos independientes para mejorar la legibilidad, escalabilidad y mantenimiento del código. Es una práctica ampliamente adoptada en proyectos profesionales.</p>
+<p>Una estructura mínima sugerida sería:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>src/
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>├──<span class="w"> </span>main.jsx
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>└──<span class="w"> </span>HelloWorldApp.jsx
+</span></code></pre></div>
+<hr />
+<h2 id="definicion-del-componente-helloworldapp">Definición del Componente <code>HelloWorldApp</code></h2>
+<p>El archivo <code>HelloWorldApp.jsx</code> contendrá un componente funcional básico. Existen dos enfoques válidos para su exportación:</p>
+<p><strong>Exportación nombrada:</strong>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">HelloWorldApp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Hello</span><span class="w"> </span><span class="nx">World</span><span class="w"> </span><span class="nx">App</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<p><strong>Exportación por defecto:</strong>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">HelloWorldApp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Hello</span><span class="w"> </span><span class="nx">World</span><span class="w"> </span><span class="nx">App</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<p>La elección entre estos enfoques depende de las necesidades del proyecto y del estilo preferido por el equipo de desarrollo.</p>
+<hr />
+<h2 id="importacion-del-componente">Importación del Componente</h2>
+<p>Desde <code>main.jsx</code>, se realiza la importación del componente y su posterior renderizado en el DOM:</p>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-dom/client&#39;</span><span class="p">;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">HelloWorldApp</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./HelloWorldApp&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// o &#39;default&#39; si aplica</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)).</span><span class="nx">render</span><span class="p">(</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="p">&lt;</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">HelloWorldApp</span><span class="w"> </span><span class="p">/&gt;</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="p">&lt;/</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">);</span>
+</span></code></pre></div>
+<hr />
+<h2 id="consideraciones-sobre-exportaciones">Consideraciones sobre Exportaciones</h2>
+<ul>
+<li><strong>Exportaciones nombradas</strong>: permiten una mayor granularidad y reutilización.</li>
+<li><strong>Exportaciones por defecto</strong>: facilitan la importación cuando se exporta un único valor principal desde un archivo.</li>
+</ul>
+<p>Ambos enfoques son funcionales; su elección debe priorizar la claridad, mantenibilidad y consistencia del código base.</p>
+<hr />
+<h2 id="ventajas-del-desarrollo-con-vite">Ventajas del Desarrollo con Vite</h2>
+<p>Vite proporciona una experiencia de desarrollo sumamente eficiente gracias a la recarga en caliente (<em>Hot Module Replacement</em>). Al guardar un archivo, los cambios se reflejan automáticamente en el navegador, sin necesidad de recargar manualmente.</p>
+<h3 id="ejemplo-practico">Ejemplo práctico:</h3>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="err">¡</span><span class="nx">Mi</span><span class="w"> </span><span class="nx">primer</span><span class="w"> </span><span class="nx">componente</span><span class="w"> </span><span class="nx">en</span><span class="w"> </span><span class="nx">React</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+</span></code></pre></div>
+<p>Al modificar el texto y guardar el archivo, el resultado se actualiza de inmediato en la interfaz.</p>
+<hr />
+<h2 id="componentes-funcionales-y-sintaxis-moderna">Componentes Funcionales y Sintaxis Moderna</h2>
+<p>Es posible definir componentes React utilizando funciones tradicionales o funciones de flecha. El siguiente ejemplo demuestra el uso de una función de flecha, habitual en desarrollos contemporáneos:</p>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">HelloWorldApp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Arrow</span><span class="w"> </span><span class="nb">Function</span><span class="w"> </span><span class="nx">Component</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">};</span>
+</span></code></pre></div>
+<p>Este patrón es recomendable por su sintaxis concisa y su compatibilidad con otras características modernas de React, como hooks y lógica declarativa.</p>
+<hr />
+<h2 id="conclusion_1">Conclusión</h2>
+<p>Se ha implementado exitosamente un componente funcional básico en React, cumpliendo con las buenas prácticas de modularidad y organización del código. Asimismo, se han explorado diferentes formas de exportación e importación de componentes, y se ha destacado el valor de herramientas como Vite en el proceso de desarrollo moderno. Este componente servirá como base para futuras ampliaciones en la arquitectura de la aplicación.</p>
+<hr />
+<h1 id="uso-de-fragmentos-en-react-agrupacion-de-elementos-sin-etiquetas-adicionales">Uso de Fragmentos en React: Agrupación de Elementos sin Etiquetas Adicionales</h1>
+<h2 id="introduccion_3">Introducción</h2>
+<p>En esta sección se aborda una característica fundamental de React: el uso de <strong>fragmentos</strong> para estructurar múltiples elementos JSX sin la necesidad de introducir nodos HTML adicionales en el DOM. Esta práctica permite una representación más limpia y semántica del código, evitando interferencias en el diseño y mejorando el rendimiento general.</p>
+<hr />
+<h2 id="el-problema-multiples-elementos-sin-nodo-padre">El Problema: Múltiples Elementos sin Nodo Padre</h2>
+<p>Cuando un componente React intenta retornar múltiples elementos hermanos (por ejemplo, un <code>&lt;h1&gt;</code> seguido de un <code>&lt;p&gt;</code>) sin un contenedor común, se produce un error de sintaxis, comúnmente reportado como: <em>"JSX expressions must have one parent element"</em>.</p>
+<h3 id="ejemplo-no-valido">Ejemplo no válido:</h3>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Título</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Subtítulo</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">);</span>
+</span></code></pre></div>
+<p>Este enfoque es inválido ya que React requiere que cada componente devuelva un único nodo raíz.</p>
+<hr />
+<h2 id="solucion-1-envolver-en-un-div">Solución 1: Envolver en un <code>div</code></h2>
+<p>Una solución inicial consiste en encapsular los elementos dentro de una etiqueta <code>div</code>:</p>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Título</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Subtítulo</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">);</span>
+</span></code></pre></div>
+<p>Aunque funcional, esta práctica puede introducir nodos HTML innecesarios que afectan el diseño (por ejemplo, en estructuras Flexbox) o el rendimiento.</p>
+<hr />
+<h2 id="solucion-2-uso-de-fragment-de-react">Solución 2: Uso de <code>Fragment</code> de React</h2>
+<p>React ofrece el componente <code>Fragment</code>, que permite agrupar elementos JSX sin generar nodos adicionales en el DOM:</p>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Fragment</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="p">&lt;</span><span class="nt">Fragment</span><span class="p">&gt;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Título</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Subtítulo</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span><span class="p">&lt;/</span><span class="nt">Fragment</span><span class="p">&gt;</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="p">);</span>
+</span></code></pre></div>
+<p>Este enfoque mantiene la estructura limpia del DOM, evitando etiquetas HTML superfluas.</p>
+<hr />
+<h2 id="solucion-3-sintaxis-abreviada-de-fragmentos">Solución 3: Sintaxis Abreviada de Fragmentos</h2>
+<p>Como alternativa al uso explícito de <code>Fragment</code>, React permite utilizar una sintaxis más concisa:</p>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="p">&lt;&gt;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Título</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Subtítulo</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span><span class="p">&lt;/&gt;</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="p">);</span>
+</span></code></pre></div>
+<p>Esta sintaxis representa la forma más recomendada y moderna para agrupar elementos sin nodos adicionales.</p>
+<hr />
+<h2 id="ventajas-del-uso-de-fragmentos">Ventajas del Uso de Fragmentos</h2>
+<ul>
+<li>Elimina la introducción de nodos HTML innecesarios.</li>
+<li>Mejora la semántica del código y la estructura del DOM.</li>
+<li>Optimiza el rendimiento de renderizado.</li>
+<li>Facilita la organización de componentes con múltiples elementos hermanos.</li>
+</ul>
+<hr />
+<h2 id="buenas-practicas-en-jsx">Buenas Prácticas en JSX</h2>
+<ul>
+<li>Todo componente React debe retornar un único nodo raíz.</li>
+<li>En caso de múltiples elementos al mismo nivel, se recomienda utilizar fragmentos.</li>
+<li>Evitar el uso de <code>div</code> innecesarios que puedan alterar el diseño o dificultar la interpretación del código.</li>
+</ul>
+<hr />
+<h2 id="conclusion_2">Conclusión</h2>
+<p>El uso de <strong>fragmentos en React</strong> es una herramienta esencial para estructurar componentes de forma eficiente, elegante y semánticamente correcta. Permite agrupar múltiples elementos sin sobrecargar el DOM con etiquetas innecesarias, favoreciendo la claridad del código y el rendimiento de la aplicación. Esta técnica constituye una práctica estándar en el desarrollo moderno con React.</p>
+<hr />
+<h1 id="estilos-globales-en-react-integracion-y-buenas-practicas">Estilos Globales en React: Integración y Buenas Prácticas</h1>
+<h2 id="introduccion_4">Introducción</h2>
+<p>En esta sección se presenta la forma adecuada de aplicar estilos globales en una aplicación React, permitiendo personalizar la apariencia de todos los componentes desde un único punto central. React es agnóstico en cuanto a las herramientas de estilizado, ofreciendo flexibilidad para emplear bibliotecas como Tailwind, Material UI, Styled Components, entre otros. En este caso, se aborda una estrategia básica utilizando hojas de estilo CSS tradicionales.</p>
+<hr />
+<h2 id="creacion-de-un-estilo-global">Creación de un Estilo Global</h2>
+<p>El primer paso consiste en crear una hoja de estilos dentro del directorio <code>src</code>. El nombre del archivo puede ser arbitrario (por ejemplo, <code>index.css</code> o <code>global.css</code>), siempre que tenga la extensión <code>.css</code>. A continuación, se define un conjunto básico de reglas globales de estilo:</p>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">html</span><span class="o">,</span><span class="w"> </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#21232a</span><span class="p">;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">Helvetica</span><span class="p">,</span><span class="w"> </span><span class="n">Arial</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.3</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Estas reglas establecen un color de fondo, tipografía base, tamaño de fuente y espaciado general para toda la aplicación.</p>
+<hr />
+<h2 id="importacion-del-estilo-global-en-la-aplicacion">Importación del Estilo Global en la Aplicación</h2>
+<p>Una vez creado el archivo CSS, es indispensable importarlo explícitamente para que surta efecto en la aplicación. Esta importación debe realizarse en el punto de entrada principal, habitualmente el archivo <code>main.jsx</code> o <code>main.tsx</code>, de la siguiente manera:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;./index.css&#39;</span><span class="p">;</span>
+</span></code></pre></div>
+<p>Esto asegura que los estilos definidos se apliquen globalmente a todos los componentes renderizados por la aplicación.</p>
+<hr />
+<h2 id="ventajas-del-enfoque">Ventajas del Enfoque</h2>
+<ul>
+<li><strong>Simplicidad</strong>: Permite comenzar rápidamente sin configuración adicional.</li>
+<li><strong>Compatibilidad</strong>: Funciona con cualquier herramienta de bundling como Vite o Webpack.</li>
+<li><strong>Eficiencia</strong>: Los cambios se reflejan inmediatamente gracias al hot reload de Vite.</li>
+</ul>
+<hr />
+<h2 id="recomendaciones-adicionales">Recomendaciones Adicionales</h2>
+<ul>
+<li>Se puede organizar y ordenar alfabéticamente las reglas CSS para mejorar la legibilidad y mantenimiento del código.</li>
+<li>Es recomendable emplear <code>rem</code> en lugar de <code>px</code> para facilitar la adaptabilidad a distintos tamaños de pantalla.</li>
+</ul>
+<hr />
+<h2 id="conclusion_3">Conclusión</h2>
+<p>Aplicar estilos globales en React es un paso esencial para establecer una base visual coherente en toda la aplicación. Utilizar una hoja de estilos centralizada permite controlar la estética de manera sencilla y eficaz. A medida que el proyecto evoluciona, es posible integrar enfoques más avanzados como CSS Modules, Styled Components o CSS-in-JS según los requerimientos del equipo de desarrollo.</p>
+<p>Esta técnica representa una práctica recomendada para proyectos en etapas iniciales o prototipos rápidos, y constituye la base para comprender mecanismos de estilizado más sofisticados en el ecosistema de React.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Geovanny Mendoza
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/geovannymcode" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/geovannycode" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/geovannycode/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>
