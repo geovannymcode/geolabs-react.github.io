@@ -18,10 +18,10 @@ nav:
   - Introducción a React: sesion_01.md
   - Apuntes de React: sesion_02.md
   - Ejemplo Lista Tarea 02: ejemplo_02.md
-  #- Manejo de Estado con useState: sesion_03.md
-  #- Ejemplo Lista Tarea 03: ejemplo_03.md
-  #- Renderizado condicional: sesion_04.md
-  #- Ejemplo Lista Tarea 04: ejemplo_04.md
+  - Manejo de Estado con useState: sesion_03.md
+  - Ejemplo Lista Tarea 03: ejemplo_03.md
+  - Renderizado condicional: sesion_04.md
+  - Ejemplo Lista Tarea 04: ejemplo_04.md
   - Referencias: referencias.md
 
 # Customization
