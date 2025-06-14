@@ -151,7 +151,7 @@ Un **componente** es una unidad encapsulada de código que representa una secci�
 
 A continuación, se presenta una interfaz simulada de una aplicación de productos que ilustra la composición jerárquica típica en React:
 
-![Estructura de componentes con navegación y renderizado dinámico](./files/image1.png)
+![Estructura de componentes con navegación y renderizado dinámico](./files/imagen1.png)
 
 En esta interfaz:
 - `ProductApp` es el componente raíz que encapsula la estructura general.
@@ -166,7 +166,7 @@ El **estado** (state) en React representa la información dinámica que maneja u
 
 ### Ejemplo práctico con formulario:
 
-![Estado del componente: formulario dinámico](./files/image2.png)
+![Estado del componente: formulario dinámico](./files/imagen2.png)
 
 En este caso:
 - El componente `PersonForm` es responsable de capturar y gestionar la información del usuario.
