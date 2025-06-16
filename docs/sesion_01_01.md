@@ -1,4 +1,4 @@
-# 🚀 Inicio Profesional de Proyectos React: Vite vs Create React App - Guía Súper Detallada
+# 🚀 Inicio de Proyectos React: Vite vs Create React App
 
 ## 📋 Índice
 1. [¿Por qué necesitamos herramientas especiales?](#por-qué-necesitamos-herramientas)
