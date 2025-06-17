@@ -1,4 +1,4 @@
-# 📝 Lista de Tareas con React - Guía Súper Detallada para Principiantes
+# 📝 Lista de Tareas con React
 
 ## 📋 Índice
 1. [¿Qué vamos a construir?](#qué-vamos-a-construir)
