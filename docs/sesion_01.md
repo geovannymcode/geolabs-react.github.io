@@ -1041,6 +1041,7 @@ body {
 ### 💡 Proyecto de práctica sugerido
 
 Crea una app de lista de tareas con React que incluya:
+
 - Componente de formulario para agregar tareas
 - Lista de tareas con checkbox
 - Contador de tareas pendientes

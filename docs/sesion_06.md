@@ -1,5 +1,5 @@
 
-# Resumen Profesional: Validación de Props en React con PropTypes
+# Validación de Props en React con PropTypes
 
 ## Introducción
 En esta clase se abordó el uso de **PropTypes**, una funcionalidad muy útil en aplicaciones React para validar el tipo y la obligatoriedad de las propiedades (props) que recibe un componente. Esto resulta especialmente valioso en equipos de desarrollo o proyectos escalables, donde es importante establecer contratos claros entre componentes.
