@@ -1,5 +1,5 @@
 
-# Uso Profesional de Default Props en React
+# Uso de Default Props en React
 
 ## Introducción
 En el desarrollo de aplicaciones React, es común que ciertos componentes requieran valores predeterminados para sus propiedades (props). Esto garantiza un comportamiento predecible cuando los props no son proporcionados por el componente padre. En esta sesión, se exploró el uso adecuado de los **default props** y su relación con `PropTypes` para mejorar la robustez y mantenibilidad del código.
