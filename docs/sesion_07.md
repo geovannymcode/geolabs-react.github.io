@@ -1,4 +1,4 @@
-# 🎣 Introducción a Hooks: useEffect y useContext - Guía para Principiantes
+# 🎣 Introducción a Hooks: useEffect y useContext
 
 ## 📋 Índice
 1. [¿Qué son los Hooks?](#que-son-hooks)
