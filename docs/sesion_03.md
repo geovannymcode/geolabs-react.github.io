@@ -159,5 +159,3 @@ function ListaDinamica() {
 - `useState` permite que React se comporte como una interfaz viva, que cambia con las acciones del usuario.
 - Los eventos capturan estas acciones y permiten manipular el flujo de datos.
 - El siguiente paso es implementar esto en una aplicación completa de lista de tareas, con interacción real.
-
----

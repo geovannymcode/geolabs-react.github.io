@@ -634,6 +634,7 @@ Esta versión estática es la base perfecta para:
 ## 🎯 Resumen
 
 Has aprendido a:
+
 - ✅ Estructurar una aplicación React
 - ✅ Crear componentes reutilizables
 - ✅ Pasar datos con props
