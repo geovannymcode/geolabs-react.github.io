@@ -881,6 +881,7 @@ function SistemaVotacion() {
 ### Mejores prácticas:
 
 ✅ **DO's**:
+
 - Usa el updater function para estado basado en anterior
 - Mantén el estado lo más simple posible
 - Eleva el estado cuando sea compartido
@@ -888,6 +889,7 @@ function SistemaVotacion() {
 - Nombra handlers como `handleX` o `onX`
 
 ❌ **DON'Ts**:
+
 - No mutes el estado directamente
 - No uses hooks condicionalmente
 - No olvides `key` en listas
