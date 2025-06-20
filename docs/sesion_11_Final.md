@@ -128,7 +128,7 @@ Agrega estos scripts en la sección `"scripts"` de tu `package.json`:
 
 ---
 
-## Fase 2: Desarrollo de la Aplicación (45 min)
+## Fase 2: Desarrollo de la Aplicación
 
 ### 2.1 Crear la Estructura de Carpetas
 
@@ -347,7 +347,7 @@ Deberías ver tu aplicación funcionando en `http://localhost:5173`
 
 ---
 
-## Fase 3: Testing de Componentes (45 min)
+## Fase 3: Testing de Componentes
 
 ### 3.1 ¿Por qué Testing?
 
@@ -563,87 +563,6 @@ Es importante probar que nuestra aplicación maneja correctamente los casos de e
 - Verifican que el componente maneja correctamente los estados de carga, éxito y error
 - Aseguran que las peticiones HTTP se hacen correctamente
 - Garantizan que la interfaz se actualiza apropiadamente según la respuesta de la API
-```
-      thumbnail: 'https://ejemplo.com/imagen1.jpg'
-    },
-    {
-      id: 2,
-      title: 'Producto 2',
-      description: 'Descripción del producto 2',
-      price: 200,
-      thumbnail: 'https://ejemplo.com/imagen2.jpg'
-    }
-  ];
-
-  beforeEach(() => {
-    // Limpiar mocks antes de cada test
-    mockFetch.mockClear();
-  });
-
-  it('debería mostrar mensaje de carga inicialmente', () => {
-    // Simular una petición que nunca se resuelve
-    mockFetch.mockImplementation(() => new Promise(() => {}));
-    
-    render(<ProductList />);
-    
-    // Verificar que se muestre el mensaje de carga
-    expect(screen.getByText(/Cargando productos/)).toBeInTheDocument();
-  });
-
-  it('debería renderizar productos después de cargarlos exitosamente', async () => {
-    // Simular una respuesta exitosa de la API
-    mockFetch.mockResolvedValue({
-      ok: true,
-      json: () => Promise.resolve({
-        products: mockProducts
-      })
-    });
-
-    render(<ProductList />);
-
-    // Verificar que inicialmente se muestre el mensaje de carga
-    expect(screen.getByText(/Cargando productos/)).toBeInTheDocument();
-
-    // Esperar a que los productos se carguen
-    await waitFor(() => {
-      expect(screen.getByText('Producto 1')).toBeInTheDocument();
-      expect(screen.getByText('Producto 2')).toBeInTheDocument();
-    });
-
-    // Verificar que el mensaje de carga desaparezca
-    expect(screen.queryByText(/Cargando productos/)).not.toBeInTheDocument();
-  });
-
-  it('debería mostrar mensaje de error si la petición falla', async () => {
-    // Simular una respuesta de error
-    mockFetch.mockResolvedValue({
-      ok: false
-    });
-
-    render(<ProductList />);
-
-    // Esperar a que se muestre el mensaje de error
-    await waitFor(() => {
-      expect(screen.getByText(/Error/)).toBeInTheDocument();
-    });
-
-    // Verificar que no se muestren productos
-    expect(screen.queryByText('Producto 1')).not.toBeInTheDocument();
-  });
-
-  it('debería hacer la petición a la URL correcta', () => {
-    mockFetch.mockResolvedValue({
-      ok: true,
-      json: () => Promise.resolve({ products: [] })
-    });
-
-    render(<ProductList />);
-
-    // Verificar que se haga la petición a la URL correcta
-    expect(mockFetch).toHaveBeenCalledWith('https://dummyjson.com/products?limit=10');
-  });
-});
-```
 
 **¿Qué estamos probando?**
 - El estado de carga inicial
@@ -1351,24 +1270,699 @@ describe('ProductList con búsqueda', () => {
 
 ---
 
-### 2. **Routing (Navegación)**
-📘 **¿Qué aprender?**
-- **React Router**: Navegar entre diferentes páginas/vistas
-- Parámetros en URLs (`/product/123`)
-- Navegación programática y protección de rutas
+# Workshop React - Paso 6: Build y Deploy con Netlify
 
-💡 **Ejemplo de uso:**
-```jsx
-// Navegar de la lista de productos a detalle de producto
-<Route path="/products" component={ProductList} />
-<Route path="/product/:id" component={ProductDetail} />
+## 🚀 Llevando tu Aplicación a Producción
+
+En este paso final, aprenderás a publicar tu aplicación React en internet para que cualquiera pueda acceder a ella. Usaremos Netlify, una plataforma gratuita y fácil de usar para principiantes.
+
+---
+
+## 6.1 Preparar el Proyecto para Producción
+
+### Verificar que Todo Funciona Localmente
+
+Antes de hacer deploy, asegúrate de que todo funcione correctamente:
+
+```bash
+# Ejecutar tests para verificar que todo esté bien
+npm test
+
+# Probar el build de producción
+npm run build
+
+# Ver el build localmente
+npm run preview
 ```
 
-### 3. **Estado Global**
-📘 **¿Qué aprender?**
-- **Context API**: Compartir estado entre componentes sin prop drilling
-- **Redux**: Librería para manejar estado complejo de aplicaciones grandes
-- **Zustand**: Alternativa más simple a Redux
+📘 **¿Qué hace cada comando?**
+- `npm test`: Ejecuta todos los tests para verificar que no hay errores
+- `npm run build`: Crea una versión optimizada para producción
+- `npm run preview`: Te permite ver cómo se verá en producción
 
-💡 **¿Cuándo necesitas estado global?**
-Cuando varios componentes necesitan acceder a los mismos datos (usuario logueado, carrito de compras, configuración, etc.)
+💡 **¿Por qué es importante probar el build?**
+A veces el código funciona en desarrollo pero falla en producción debido a optimizaciones y configuraciones diferentes.
+
+### Verificar Variables de Entorno
+
+Si tu aplicación usa variables de entorno, verifica que estén configuradas:
+
+```javascript
+// src/config/environment.js
+export const config = {
+  apiUrl: import.meta.env.VITE_API_URL || 'https://dummyjson.com',
+  environment: import.meta.env.MODE,
+  isDevelopment: import.meta.env.DEV,
+  isProduction: import.meta.env.PROD,
+};
+```
+
+📘 **¿Qué son las variables de entorno?**
+- Valores que pueden cambiar según donde esté ejecutándose la app (desarrollo, testing, producción)
+- En Vite, las variables deben empezar con `VITE_`
+- Se definen en archivos `.env`, `.env.local`, `.env.production`
+
+💡 **Ejemplo de .env.production:**
+```bash
+VITE_API_URL=https://api.mitienda.com
+VITE_GOOGLE_ANALYTICS_ID=UA-123456789-1
+```
+
+---
+
+## 6.2 Subir el Proyecto a GitHub
+
+### Paso 1: Inicializar Git (si no lo has hecho)
+
+```bash
+# Inicializar repositorio git
+git init
+
+# Agregar todos los archivos
+git add .
+
+# Hacer primer commit
+git commit -m "feat: aplicación React completa con routing y carrito"
+```
+
+📘 **¿Qué es Git?**
+- Sistema de control de versiones que guarda el historial de cambios de tu código
+- Te permite colaborar con otros desarrolladores
+- GitHub es una plataforma que aloja repositorios Git en la nube
+
+### Paso 2: Crear Repositorio en GitHub
+
+1. Ve a [github.com](https://github.com) y crea una cuenta si no tienes
+2. Haz click en "New repository" (botón verde)
+3. Nombra tu repositorio (ej: `mi-tienda-react`)
+4. Selecciona "Public" para que sea gratuito
+5. **NO** selecciones "Initialize with README" (ya tienes código)
+6. Haz click en "Create repository"
+
+### Paso 3: Conectar tu Proyecto Local con GitHub
+
+```bash
+# Agregar el repositorio remoto (reemplaza con tu URL)
+git remote add origin https://github.com/TU_USUARIO/mi-tienda-react.git
+
+# Cambiar a la rama main (GitHub usa main por defecto)
+git branch -M main
+
+# Subir el código
+git push -u origin main
+```
+
+📘 **¿Qué hace cada comando?**
+- `git remote add origin`: Conecta tu proyecto local con el repositorio en GitHub
+- `git branch -M main`: Cambia el nombre de la rama principal a "main"
+- `git push -u origin main`: Sube tu código a GitHub por primera vez
+
+💡 **¿Problemas con autenticación?**
+GitHub requiere autenticación. Opciones:
+- **HTTPS con token**: Genera un Personal Access Token en GitHub Settings
+- **SSH**: Configura llaves SSH (más seguro)
+- **GitHub CLI**: `gh auth login` para autenticación fácil
+
+### Paso 4: Verificar que se Subió Correctamente
+
+Ve a tu repositorio en GitHub y verifica que todos los archivos estén ahí:
+- `src/` con todos tus componentes
+- `package.json` con las dependencias
+- `vite.config.js` con la configuración
+- Tests y otros archivos
+
+---
+
+## 6.3 Deploy Automático con Netlify
+
+### Paso 1: Crear Cuenta en Netlify
+
+1. Ve a [netlify.com](https://netlify.com)
+2. Haz click en "Sign up"
+3. Selecciona "GitHub" para registrarte con tu cuenta de GitHub
+4. Autoriza a Netlify para acceder a tus repositorios
+
+📘 **¿Por qué usar Netlify?**
+- **Gratuito**: Plan free generoso para proyectos personales
+- **Fácil**: Deploy automático desde GitHub
+- **Rápido**: CDN global para cargar tu app rápidamente
+- **HTTPS**: Certificados SSL gratuitos
+- **Builds automáticos**: Se actualiza cuando haces push a GitHub
+
+### Paso 2: Crear Nuevo Sitio
+
+1. En el dashboard de Netlify, haz click en "New site from Git"
+2. Selecciona "GitHub"
+3. Autoriza a Netlify (si no lo hiciste antes)
+4. Busca y selecciona tu repositorio `mi-tienda-react`
+
+### Paso 3: Configurar Build Settings
+
+En la pantalla de configuración:
+
+```bash
+# Build command (comando para crear el build)
+npm run build
+
+# Publish directory (carpeta donde está el build)
+dist
+
+# Branch to deploy (rama a desplegar)
+main
+```
+
+⚠️ **IMPORTANTE**: Aunque configures esto manualmente, es MUY recomendable crear también el archivo `netlify.toml` (explicado más abajo) para evitar errores comunes.
+
+📘 **¿Por qué estas configuraciones?**
+- `npm run build`: Le dice a Netlify cómo crear la versión de producción
+- `dist`: Vite genera el build en la carpeta `dist` (no `build` como Create React App)
+- `main`: La rama principal que se desplegará automáticamente
+
+💡 **Para otros frameworks:**
+- **Create React App**: Build command `npm run build`, publish directory `build`
+- **Next.js**: Build command `npm run build`, publish directory `out` (con export)
+- **Nuxt.js**: Build command `npm run generate`, publish directory `dist`
+
+### Paso 4: Deploy!
+
+1. Haz click en "Deploy site"
+2. Netlify comenzará a:
+   - Clonar tu repositorio
+   - Instalar dependencias (`npm install`)
+   - Ejecutar el build (`npm run build`)
+   - Publicar los archivos
+3. En unos minutos tendrás un enlace como `https://amazing-fermat-123456.netlify.app`
+
+### Paso 5: Configurar Dominio Personalizado (Opcional)
+
+1. En el dashboard del sitio, ve a "Domain settings"
+2. Haz click en "Add custom domain"
+3. Ingresa tu dominio (ej: `mitienda.com`)
+4. Sigue las instrucciones para configurar DNS
+
+📘 **¿Cómo conseguir un dominio?**
+- **Gratuitos**: `.tk`, `.ml`, `.ga` en Freenom
+- **Baratos**: Namecheap, GoDaddy, Google Domains
+- **Para estudiantes**: GitHub Student Pack incluye dominios gratis
+
+---
+
+## 6.4 Configuración Avanzada de Deploy
+
+### Variables de Entorno en Netlify
+
+1. En tu sitio de Netlify, ve a "Site settings"
+2. En el menú lateral, selecciona "Environment variables"
+3. Haz click en "Add variable"
+4. Agrega tus variables:
+   ```
+   Key: VITE_API_URL
+   Value: https://api.mitienda.com
+   ```
+
+📘 **¿Por qué variables de entorno en producción?**
+- **Seguridad**: No exponer datos sensibles en el código
+- **Flexibilidad**: Diferentes configuraciones para desarrollo/producción
+- **APIs**: URLs diferentes para development y production
+
+### Configuración de Netlify con netlify.toml (IMPORTANTE)
+
+Crea `netlify.toml` en la raíz de tu proyecto (no en `public/`):
+
+```toml
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+```
+
+📘 **¿Por qué usar netlify.toml en lugar de _redirects?**
+- **Más confiable**: Netlify lo detecta automáticamente
+- **Configuración centralizada**: Build settings y redirects en un archivo
+- **Menos errores**: Evita problemas de configuración manual en el dashboard
+- **Versionado**: Se guarda en Git junto con tu código
+
+💡 **Estructura correcta del proyecto:**
+```
+/mi-tienda-react
+├── dist/              ⬅️ carpeta generada por Vite
+├── src/
+├── public/
+├── netlify.toml       ⬅️ 🔥 DEBE estar en la raíz
+├── vite.config.js
+├── package.json
+```
+
+### Aplicar la Configuración
+
+```bash
+# Agregar el archivo de configuración
+git add netlify.toml
+git commit -m "fix: add Netlify config to serve dist correctly"
+git push
+```
+
+📘 **¿Qué hace cada configuración?**
+- `command = "npm run build"`: Le dice a Netlify cómo construir tu app
+- `publish = "dist"`: Especifica que los archivos finales están en la carpeta `dist`
+- `redirects`: Todas las rutas van a `index.html` para que React Router funcione
+
+### Optimizaciones de Performance
+
+Crea `public/_headers`:
+
+```bash
+# Cachear archivos estáticos por 1 año
+/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cachear assets de Vite
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# No cachear el HTML principal
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+```
+
+📘 **¿Qué hacen estos headers?**
+- **Cache-Control**: Define cuánto tiempo el navegador guarda archivos en caché
+- **max-age=31536000**: 1 año en segundos
+- **immutable**: El archivo nunca cambia (perfecto para assets con hash)
+- **must-revalidate**: Verificar con el servidor antes de usar caché
+
+---
+
+## 6.5 Deploy Automático con GitHub Actions (Avanzado)
+
+Para mayor control, puedes usar GitHub Actions:
+
+Crea `.github/workflows/deploy.yml`:
+
+```yaml
+name: Deploy to Netlify
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run tests
+      run: npm test
+      
+    - name: Build
+      run: npm run build
+      env:
+        VITE_API_URL: ${{ secrets.VITE_API_URL }}
+        
+    - name: Deploy to Netlify
+      uses: nwtgck/actions-netlify@v2.0
+      with:
+        publish-dir: './dist'
+        production-branch: main
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        deploy-message: "Deploy from GitHub Actions"
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+```
+
+📘 **¿Qué hace GitHub Actions?**
+- **CI/CD**: Integración y deploy continuo
+- **Automático**: Se ejecuta en cada push a la rama main
+- **Tests**: Ejecuta tests antes de hacer deploy
+- **Secrets**: Variables seguras para tokens y configuraciones
+
+---
+
+## 6.6 Monitoreo y Analytics
+
+### Google Analytics (Opcional)
+
+Instala analytics:
+
+```bash
+npm install gtag
+```
+
+Configura en `src/main.jsx`:
+
+```jsx
+import { gtag } from 'gtag';
+
+// Configurar Google Analytics
+if (import.meta.env.PROD && import.meta.env.VITE_GA_ID) {
+  gtag('config', import.meta.env.VITE_GA_ID, {
+    page_title: document.title,
+    page_location: window.location.href
+  });
+}
+```
+
+### Netlify Analytics
+
+1. En tu sitio de Netlify, ve a "Analytics"
+2. Habilita "Netlify Analytics" (plan paid, pero hay trial gratuito)
+3. Ve métricas de:
+   - Visitantes únicos
+   - Page views
+   - Referrers
+   - Geolocalización
+
+📘 **¿Qué métricas son importantes?**
+- **Page views**: Qué páginas visitan más
+- **Bounce rate**: % que sale inmediatamente
+- **Load time**: Qué tan rápido carga tu app
+- **Mobile vs Desktop**: Dispositivos de tus usuarios
+
+---
+
+## 6.7 Alternativas de Deploy
+
+### GitHub Pages (Gratuito)
+
+```bash
+# Instalar gh-pages
+npm install --save-dev gh-pages
+
+# Agregar script en package.json
+"scripts": {
+  "deploy": "gh-pages -d dist"
+}
+
+# Hacer deploy
+npm run build
+npm run deploy
+```
+
+📘 **GitHub Pages vs Netlify:**
+- **GitHub Pages**: Gratuito, pero solo sitios estáticos
+- **Netlify**: Más funciones (redirects, forms, functions)
+- **Ambos**: Perfectos para React apps
+
+### Vercel (Alternativa Premium)
+
+```bash
+# Instalar Vercel CLI
+npm install -g vercel
+
+# Deploy
+vercel
+
+# Deploy a producción
+vercel --prod
+```
+
+📘 **¿Cuándo usar Vercel?**
+- Creado por el equipo de Next.js
+- Excelente para React/Next.js
+- Funciones serverless fáciles
+- Analytics y performance insights
+
+### Railway (Para Full-Stack)
+
+Si tu app necesita backend:
+
+```bash
+# Instalar Railway CLI
+npm install -g @railway/cli
+
+# Login y deploy
+railway login
+railway deploy
+```
+
+📘 **¿Cuándo usar Railway?**
+- Cuando necesitas base de datos
+- Apps full-stack (frontend + backend)
+- Variables de entorno más complejas
+- Servicios adicionales (Redis, PostgreSQL)
+
+---
+
+## 6.8 Solución de Problemas Comunes
+
+### Error: "Page Not Found" en Rutas (SOLUCIÓN CONFIRMADA)
+
+**Problema**: `/product/123` funciona localmente pero da 404 en producción.
+
+**❌ Método anterior (menos confiable)**:
+```bash
+# public/_redirects
+/*    /index.html   200
+```
+
+**✅ Solución confirmada que SIEMPRE funciona**:
+
+1. **Crea `netlify.toml` en la raíz del proyecto** (no en `public/`):
+
+```toml
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+```
+
+2. **Verifica la estructura de tu repositorio**:
+```
+/mi-tienda-react
+├── dist/              ⬅️ carpeta generada por Vite
+├── src/
+├── public/
+├── netlify.toml       ⬅️ 🔥 DEBE estar aquí
+├── vite.config.js
+├── package.json
+```
+
+3. **Commit y push para que Netlify lo detecte**:
+```bash
+git add netlify.toml
+git commit -m "fix: add Netlify config to serve dist correctly"
+git push
+```
+
+4. **Verifica en Netlify Dashboard**:
+   - Ve a tu sitio → "Site settings" → "Build & deploy"
+   - Confirma que aparezca:
+     - **Build command**: `npm run build`
+     - **Publish directory**: `dist`
+
+📘 **¿Por qué esta solución es mejor?**
+- **Más confiable**: Netlify lee automáticamente `netlify.toml`
+- **Versionado**: El archivo se guarda en Git con tu código
+- **Menos errores**: No depende de configuración manual del dashboard
+- **Centralizado**: Build settings y redirects en un solo lugar
+
+### Error: Variables de Entorno No Funcionan
+
+**Problema**: `import.meta.env.VITE_API_URL` es `undefined`.
+
+**Soluciones**:
+1. Variables deben empezar con `VITE_`
+2. Definir en Netlify environment variables
+3. Verificar que estén en `.env.production`
+
+### Build Falla por Errores de Linting
+
+**Problema**: Build falla por warnings de ESLint.
+
+**Solución**: Configurar Vite para no fallar por warnings:
+
+```javascript
+// vite.config.js
+export default defineConfig({
+  plugins: [react()],
+  build: {
+    rollupOptions: {
+      onwarn(warning, warn) {
+        // Ignorar warnings específicos
+        if (warning.code === 'UNUSED_EXTERNAL_IMPORT') return;
+        warn(warning);
+      }
+    }
+  }
+});
+```
+
+### App Carga Lento
+
+**Problemas comunes**:
+- Imágenes muy grandes
+- Muchas dependencias
+- Sin lazy loading
+
+**Soluciones**:
+```javascript
+// 1. Lazy loading de páginas
+const ProductDetail = lazy(() => import('./pages/ProductDetail'));
+
+// 2. Optimizar imágenes
+<img 
+  src={product.thumbnail} 
+  loading="lazy"
+  width="300" 
+  height="200"
+/>
+
+// 3. Analizar bundle
+npm run build -- --analyze
+```
+
+---
+
+## 6.9 Mantenimiento Post-Deploy
+
+### Actualizaciones Automáticas
+
+Una vez configurado, tu flujo será:
+
+```bash
+# 1. Hacer cambios localmente
+git add .
+git commit -m "feat: nueva funcionalidad"
+git push origin main
+
+# 2. Netlify automáticamente:
+# - Detecta el push
+# - Ejecuta tests
+# - Hace build
+# - Despliega si todo está bien
+```
+
+### Monitoreo de Errores
+
+Considera usar servicios como:
+- **Sentry**: Para tracking de errores en producción
+- **LogRocket**: Para reproducir sesiones de usuario
+- **Hotjar**: Para heatmaps y análisis de UX
+
+### Backups y Rollbacks
+
+```bash
+# Ver deploys anteriores en Netlify
+# Hacer rollback desde el dashboard
+
+# O con CLI
+netlify sites:list
+netlify rollback
+```
+
+---
+
+## 6.10 Optimizaciones de Performance
+
+### Análisis de Bundle
+
+```bash
+# Ver qué librerías ocupan más espacio
+npm run build -- --analyze
+
+# Alternativa con webpack-bundle-analyzer
+npm install -g webpack-bundle-analyzer
+npx webpack-bundle-analyzer dist
+```
+
+### Code Splitting
+
+```jsx
+// Lazy loading de páginas
+import { lazy, Suspense } from 'react';
+
+const ProductDetail = lazy(() => import('./pages/ProductDetail'));
+const Cart = lazy(() => import('./pages/Cart'));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Cargando...</div>}>
+      <Routes>
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </Suspense>
+  );
+}
+```
+
+### Optimización de Imágenes
+
+```jsx
+// Componente de imagen optimizada
+function OptimizedImage({ src, alt, ...props }) {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+      {...props}
+      style={{
+        ...props.style,
+        maxWidth: '100%',
+        height: 'auto'
+      }}
+    />
+  );
+}
+```
+
+---
+
+## 🎯 Resumen del Deploy
+
+### ✅ Lo que hemos logrado:
+
+**Preparación:**
+- ✅ Verificar que todo funciona localmente
+- ✅ Configurar variables de entorno
+- ✅ Optimizar para producción
+
+**GitHub:**
+- ✅ Subir código a repositorio
+- ✅ Configurar Git correctamente
+- ✅ Mantener historial de cambios
+
+**Netlify Deploy:**
+- ✅ Deploy automático desde GitHub
+- ✅ Configuración de build correcto
+- ✅ URL pública funcionando
+- ✅ HTTPS automático
+
+**Optimizaciones:**
+- ✅ Redirects para React Router
+- ✅ Headers de performance
+- ✅ Variables de entorno seguras
+
+### 🚀 Tu aplicación ahora está en línea!
+
+**URLs de ejemplo:**
+- **Staging**: `https://gilded-praline-e439e2.netlify.app/`
+- **Custom domain**: `https://mitienda.com` (si configuraste)
