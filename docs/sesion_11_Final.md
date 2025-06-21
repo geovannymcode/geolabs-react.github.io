@@ -10,6 +10,7 @@ Al finalizar este workshop podrás:
 - Entender conceptos básicos de testing en React
 
 ## 🛠️ Prerrequisitos
+
 - Node.js instalado (versión 16 o superior)
 - Editor de código (VS Code recomendado)
 - Conocimientos básicos de JavaScript
@@ -35,6 +36,7 @@ npm install
 ```
 
 **¿Qué acabamos de hacer?**
+
 - `npm create vite@latest` crea un nuevo proyecto con Vite
 - `--template react` especifica que queremos un template de React
 - `npm install` instala todas las dependencias necesarias
@@ -55,6 +57,7 @@ npm install -D vitest jsdom
 ```
 
 📘 **¿Para qué sirve cada librería?**
+
 - `axios`: Para hacer peticiones HTTP de forma sencilla (aunque en este workshop usaremos `fetch` que es nativo)
 - `@testing-library/react`: Para testear componentes React simulando cómo los usuarios interactúan con ellos
 - `@testing-library/jest-dom`: Agrega funciones especiales para verificar elementos del DOM (como `toBeInTheDocument()`)
@@ -87,6 +90,7 @@ export default defineConfig({
 ```
 
 📘 **¿Qué hace cada configuración?**
+
 - `plugins: [react()]`: Habilita el soporte para React en Vite
 - `test.globals: true`: Permite usar funciones como `describe`, `it`, `expect` sin importarlas
 - `test.environment: 'jsdom'`: Simula un navegador para que los tests puedan "ver" elementos HTML
@@ -105,6 +109,7 @@ import '@testing-library/jest-dom'
 
 📘 **¿Qué hace este archivo?**
 Este archivo se ejecuta automáticamente antes de cada test y importa funciones especiales para verificar elementos del DOM, como:
+
 - `toBeInTheDocument()`: Verifica que un elemento existe en la página
 - `toHaveAttribute()`: Verifica que un elemento tiene cierto atributo
 - `toHaveClass()`: Verifica que un elemento tiene cierta clase CSS
@@ -166,6 +171,7 @@ export default App;
 ```
 
 📘 **¿Qué hace este componente?**
+
 - `import ProductList`: Trae el componente ProductList desde la carpeta components
 - `function App()`: Define un componente funcional (la forma moderna de crear componentes)
 - `return (...)`: Devuelve el JSX que se va a mostrar en pantalla
@@ -216,6 +222,7 @@ export default ProductCard;
 ```
 
 📘 **¿Qué hace este componente?**
+
 - `{ product }`: Recibe un objeto `product` como prop (propiedad) desde el componente padre
 - `product.thumbnail`: Accede a la propiedad `thumbnail` del objeto product
 - `{product.title}`: Las llaves `{}` permiten escribir JavaScript dentro de JSX
@@ -304,16 +311,19 @@ export default ProductList;
 ```
 
 📘 **¿Qué hace `useState`?**
+
 - `useState([])`: Crea una variable de estado `products` que empieza como array vacío
 - `setProducts`: Función para cambiar el valor de `products`
 - Cuando cambia el estado, React vuelve a renderizar el componente automáticamente
 
 📘 **¿Qué hace `useEffect`?**
+
 - Se ejecuta después de que el componente se renderiza por primera vez
 - El array vacío `[]` significa "ejecutar solo una vez cuando el componente se monta"
 - Es perfecto para hacer peticiones HTTP al cargar la página
 
 📘 **¿Qué hace `fetch`?**
+
 - `fetch()`: Función nativa de JavaScript para hacer peticiones HTTP
 - `response.ok`: Verifica si la respuesta fue exitosa (status 200-299)
 - `response.json()`: Convierte la respuesta a un objeto JavaScript
@@ -325,12 +335,14 @@ export default ProductList;
 Es un parámetro de la API que limita a 10 productos. Sin esto, traería todos los productos de la base de datos.
 
 📘 **¿Qué hace `.map()`?**
+
 - Recorre cada producto del array
 - Por cada producto, crea un componente `<ProductCard>`
 - `key={product.id}`: React necesita una key única para cada elemento de una lista
 - Devuelve un nuevo array con todos los componentes ProductCard
 
 ✅ **¿Por qué tres estados diferentes?**
+
 - `loading`: Para mostrar un spinner mientras carga
 - `error`: Para mostrar mensajes de error si algo falla
 - `products`: Para almacenar los datos cuando llegan exitosamente
@@ -354,6 +366,7 @@ Deberías ver tu aplicación funcionando en `http://localhost:5173`
 ### 3.1 ¿Por qué Testing?
 
 Los tests nos ayudan a:
+
 - Verificar que nuestros componentes funcionan correctamente
 - Prevenir errores cuando hacemos cambios
 - Documentar cómo deben comportarse nuestros componentes
@@ -402,27 +415,32 @@ describe('ProductCard', () => {
 ```
 
 📘 **¿Qué hace `describe`?**
+
 - Agrupa tests relacionados bajo un nombre descriptivo
 - Es como crear una "suite" o familia de tests para un componente
 - Ayuda a organizar y leer los resultados de los tests
 
 📘 **¿Qué hace `it` (o `test`)?**
+
 - Define un test individual con una descripción específica
 - `it('debería hacer algo')` se lee como "debería hacer algo"
 - Cada `it` prueba un comportamiento específico del componente
 
 📘 **¿Qué hace `render`?**
+
 - Renderiza el componente React en un DOM virtual para testing
 - Es como "montar" el componente en una página invisible
 - Después podemos buscar elementos y verificar que estén ahí
 
 📘 **¿Qué hace `screen.getByText`?**
+
 - Busca un elemento que contenga el texto especificado
 - `getByText('Producto de prueba')`: Busca exactamente ese texto
 - `getByText(/150/)`: Busca texto que contenga "150" (usando regex)
 - Si no encuentra el elemento, el test falla automáticamente
 
 📘 **¿Qué hace `expect`?**
+
 - Define lo que esperamos que sea verdad
 - `toBeInTheDocument()`: Verifica que el elemento existe en el DOM
 - `toHaveAttribute('src', url)`: Verifica que un elemento tiene cierto atributo con cierto valor
@@ -533,27 +551,32 @@ describe('ProductList', () => {
 ```
 
 📘 **¿Qué es un Mock?**
+
 - Un "mock" es una imitación de algo real (como la función `fetch`)
 - `vi.fn()`: Crea una función falsa que podemos controlar en los tests
 - `vi.stubGlobal('fetch', mockFetch)`: Reemplaza la función `fetch` real con nuestra versión falsa
 - Esto nos permite simular diferentes respuestas de la API sin hacer peticiones reales
 
 📘 **¿Qué hace `mockResolvedValue`?**
+
 - Hace que nuestra función falsa `fetch` devuelva una promesa que se resuelve con el valor que especificamos
 - Es como decir: "cuando llamen a fetch, responde con esto"
 - `mockImplementation`: Permite definir exactamente qué hace la función falsa
 
 📘 **¿Qué hace `waitFor`?**
+
 - Espera a que algo aparezca en el DOM de forma asíncrona
 - Como `fetch` es asíncrono, los productos no aparecen inmediatamente
 - `waitFor` revisa repetidamente hasta que la condición se cumple o se agota el tiempo
 
 📘 **¿Qué hace `beforeEach`?**
+
 - Se ejecuta antes de cada test individual
 - `mockClear()`: Borra el historial de llamadas de la función mock
 - Esto asegura que cada test empiece "limpio" sin afectar a otros tests
 
 📘 **¿Diferencia entre `getByText` y `queryByText`?**
+
 - `getByText`: Falla el test si no encuentra el elemento (bueno para verificar que algo está)
 - `queryByText`: Devuelve `null` si no encuentra el elemento (bueno para verificar que algo NO está)
 - `.not.toBeInTheDocument()`: Verifica que el elemento no existe
@@ -562,11 +585,13 @@ describe('ProductList', () => {
 Es importante probar que nuestra aplicación maneja correctamente los casos de error, no solo los casos exitosos.
 
 ✅ **¿Por qué estos tests son importantes?**
+
 - Verifican que el componente maneja correctamente los estados de carga, éxito y error
 - Aseguran que las peticiones HTTP se hacen correctamente
 - Garantizan que la interfaz se actualiza apropiadamente según la respuesta de la API
 
 **¿Qué estamos probando?**
+
 - El estado de carga inicial
 - La carga exitosa de productos
 - El manejo de errores
@@ -586,6 +611,7 @@ npm run test:coverage
 ```
 
 📘 **¿Qué hace cada comando?**
+
 - `npm test`: Ejecuta todos los tests en modo "watch" (se re-ejecutan automáticamente cuando cambias código)
 - `npm run test:ui`: Abre una interfaz web donde puedes ver los tests de forma visual y interactiva
 - `npm run test:coverage`: Muestra qué porcentaje de tu código está cubierto por tests
@@ -594,12 +620,14 @@ npm run test:coverage
 La cobertura te dice qué líneas de código han sido ejecutadas por los tests. Un 100% significa que todos los tests pasan por todas las líneas de código.
 
 ✅ **Consejos para interpretar los resultados:**
+
 - ✅ Verde: Test pasó correctamente
 - ❌ Rojo: Test falló, necesita corrección
 - ⚠️ Amarillo: Test se saltó o hay advertencias
 
 📘 **¿Cómo leer los mensajes de error?**
 Cuando un test falla, Vitest te muestra:
+
 - Qué esperabas que pasara (`Expected`)
 - Qué realmente pasó (`Received`)
 - En qué línea del test ocurrió el error
@@ -617,6 +645,7 @@ npm run preview      # Preview del build de producción
 ```
 
 📘 **¿Qué hace cada comando de desarrollo?**
+
 - `npm run dev`: Inicia un servidor local en `http://localhost:5173` con hot reload (se actualiza automáticamente cuando cambias código)
 - `npm run build`: Crea una versión optimizada de tu aplicación para producción (archivos minificados y optimizados)
 - `npm run preview`: Te permite ver cómo se vería tu aplicación en producción sin subirla a un servidor
@@ -653,22 +682,27 @@ npm run dev -- --port 3000  # Cambiar el puerto del servidor de desarrollo
 ## 🎯 Conceptos Clave Aprendidos
 
 ### React
+
 📘 **Componentes funcionales**
+
 - Son funciones que devuelven JSX (HTML dentro de JavaScript)
 - `function MiComponente() { return <div>Hola</div>; }`
 - Son la forma moderna y recomendada de crear componentes
 
 📘 **Props (propiedades)**
+
 - Forma de pasar datos de un componente padre a un hijo
 - `<ProductCard product={miProducto} />` pasa `miProducto` como prop
 - Se reciben como parámetros: `function ProductCard({ product })`
 
 📘 **useState (estado local)**
+
 - Hook para manejar datos que pueden cambiar en el componente
 - `const [productos, setProductos] = useState([])` crea estado
 - Cuando cambias el estado con `setProductos()`, React re-renderiza automáticamente
 
 📘 **useEffect (efectos secundarios)**
+
 - Hook para ejecutar código cuando el componente se monta o actualiza
 - `useEffect(() => { /* código */ }, [])` se ejecuta una sola vez al montar
 - Perfecto para peticiones HTTP, suscripciones, timers, etc.
@@ -677,56 +711,68 @@ npm run dev -- --port 3000  # Cambiar el puerto del servidor de desarrollo
 Los hooks permiten usar estado y efectos en componentes funcionales, que antes solo estaban disponibles en componentes de clase.
 
 ### Testing
+
 📘 **describe/it (estructura de tests)**
+
 - `describe`: Agrupa tests relacionados bajo un nombre
 - `it` o `test`: Define un test individual con descripción específica
 - Ayuda a organizar y entender qué está siendo probado
 
 📘 **render (renderizar para testing)**
+
 - `render(<MiComponente />)` monta el componente en un DOM virtual
 - Permite interactuar con el componente como si estuviera en el navegador
 - Es el primer paso de casi todos los tests de React
 
 📘 **screen (buscar elementos)**
+
 - `screen.getByText()`: Busca elementos por su texto visible
 - `screen.getByRole()`: Busca por rol de accesibilidad (img, button, etc.)
 - `screen.queryByText()`: Como getByText pero no falla si no encuentra
 
 📘 **waitFor (operaciones asíncronas)**
+
 - Espera a que algo aparezca o cambie en el DOM
 - Esencial para probar componentes que hacen peticiones HTTP
 - `await waitFor(() => expect(algo).toBeInTheDocument())`
 
 📘 **Mocking (simulación)**
+
 - Crear versiones falsas de funciones o APIs para testing
 - `vi.fn()` crea una función mock
 - Permite controlar exactamente qué respuestas devuelve una función
 
 📘 **expect (verificaciones)**
+
 - Define qué esperamos que sea verdad
 - `expect(elemento).toBeInTheDocument()`: verifica que existe
 - `expect(funcion).toHaveBeenCalledWith(parametros)`: verifica llamadas
 
 💡 **¿Por qué testear?**
+
 - Previene errores cuando cambias código
 - Documenta cómo debe comportarse tu aplicación
 - Te da confianza para hacer cambios grandes
 - Facilita el trabajo en equipo
 
 ### Herramientas
+
 📘 **Vite (herramienta de build)**
+
 - Herramienta moderna para crear aplicaciones web
 - Mucho más rápida que Create React App
 - Hot reload súper rápido durante desarrollo
 - Optimizaciones automáticas para producción
 
 📘 **Vitest (framework de testing)**
+
 - Framework de testing moderno y rápido
 - Integrado perfectamente con Vite
 - Compatible con Jest pero más rápido
 - Incluye interfaz gráfica para ver tests
 
 📘 **Testing Library (librería de testing)**
+
 - Enfoque centrado en el usuario (prueba cómo el usuario interactúa)
 - Busca elementos como los vería un usuario real
 - Mejores prácticas para testing de React
@@ -742,12 +788,14 @@ Son el stack moderno recomendado para React: rápidas, bien mantenidas y con gra
 ### 4.1 ¿Qué son los Hooks Personalizados?
 
 📘 **¿Qué es un hook personalizado?**
+
 - Un hook personalizado es una función que usa otros hooks de React
 - Permite reutilizar lógica entre diferentes componentes
 - Siempre debe empezar con la palabra "use" (como `useProducts`, `useAuth`, etc.)
 - Es una forma de extraer lógica compleja y reutilizarla
 
 💡 **¿Por qué crear hooks personalizados?**
+
 - **Reutilización**: La misma lógica puede usarse en múltiples componentes
 - **Organización**: Separa la lógica de negocio de la presentación
 - **Testing**: Es más fácil testear la lógica por separado
@@ -833,12 +881,14 @@ export async function getProductById(id) {
 ```
 
 📘 **¿Qué hace cada función?**
+
 - `getProducts()`: Obtiene una lista de productos con paginación
 - `searchProducts()`: Busca productos por un término específico
 - `getProductById()`: Obtiene un producto específico por su ID
 - Todas manejan errores y usan `async/await` para código más limpio
 
 💡 **¿Por qué separar la API?**
+
 - **Centralización**: Todas las llamadas a la API están en un lugar
 - **Reutilización**: Diferentes componentes pueden usar las mismas funciones
 - **Mantenimiento**: Cambiar la URL base o lógica de error se hace una sola vez
@@ -918,6 +968,7 @@ export function useProducts(searchTerm = '', limit = 10) {
 ```
 
 📘 **¿Qué hace este hook?**
+
 - **Encapsula lógica**: Toda la lógica de cargar productos está en un lugar
 - **Maneja estados**: loading, error, y productos de forma automática
 - **Búsqueda automática**: Cuando cambia `searchTerm`, busca automáticamente
@@ -1046,12 +1097,14 @@ export default ProductList;
 ```
 
 📘 **¿Qué cambió en ProductList?**
+
 - **Hook personalizado**: Usa `useProducts` en lugar de `useEffect` + `fetch`
 - **Búsqueda en tiempo real**: El input actualiza `searchTerm` y automáticamente busca
 - **Mejor UX**: Botón para limpiar búsqueda y mensajes más descriptivos
 - **Código más limpio**: La lógica compleja está en el hook, el componente solo se enfoca en UI
 
 💡 **¿Por qué es mejor esta aproximación?**
+
 - **Separación de responsabilidades**: El hook maneja datos, el componente maneja UI
 - **Reutilización**: El hook se puede usar en otros componentes
 - **Testing**: Puedes testear el hook y el componente por separado
@@ -1149,11 +1202,13 @@ describe('useProducts', () => {
 ```
 
 📘 **¿Qué hace `renderHook`?**
+
 - Es una función especial de Testing Library para testear hooks
 - `renderHook(() => useProducts())` "ejecuta" el hook en un entorno de testing
 - `result.current` contiene el valor actual que devuelve el hook
 
 💡 **¿Por qué testear hooks por separado?**
+
 - **Aislamiento**: Pruebas más específicas y fáciles de debuggear
 - **Reutilización**: Si el hook se usa en múltiples componentes, solo necesitas testearlo una vez
 - **Lógica compleja**: Puedes probar todos los casos edge sin preocuparte por UI
@@ -1260,11 +1315,13 @@ describe('ProductList con búsqueda', () => {
 ```
 
 📘 **¿Qué hace `fireEvent`?**
+
 - Simula eventos del usuario como clicks, cambios en inputs, etc.
 - `fireEvent.change(input, { target: { value: 'texto' } })` simula escribir en un input
 - `fireEvent.click(button)` simula hacer click en un botón
 
 ✅ **¿Qué estamos testeando ahora?**
+
 - Que la búsqueda funcione correctamente
 - Que el botón de limpiar aparezca y funcione
 - Que los indicadores de búsqueda se muestren apropiadamente
@@ -1298,6 +1355,7 @@ npm run preview
 ```
 
 📘 **¿Qué hace cada comando?**
+
 - `npm test`: Ejecuta todos los tests para verificar que no hay errores
 - `npm run build`: Crea una versión optimizada para producción
 - `npm run preview`: Te permite ver cómo se verá en producción
@@ -1320,6 +1378,7 @@ export const config = {
 ```
 
 📘 **¿Qué son las variables de entorno?**
+
 - Valores que pueden cambiar según donde esté ejecutándose la app (desarrollo, testing, producción)
 - En Vite, las variables deben empezar con `VITE_`
 - Se definen en archivos `.env`, `.env.local`, `.env.production`
@@ -1348,6 +1407,7 @@ git commit -m "feat: aplicación React completa con routing y carrito"
 ```
 
 📘 **¿Qué es Git?**
+
 - Sistema de control de versiones que guarda el historial de cambios de tu código
 - Te permite colaborar con otros desarrolladores
 - GitHub es una plataforma que aloja repositorios Git en la nube
@@ -1375,12 +1435,14 @@ git push -u origin main
 ```
 
 📘 **¿Qué hace cada comando?**
+
 - `git remote add origin`: Conecta tu proyecto local con el repositorio en GitHub
 - `git branch -M main`: Cambia el nombre de la rama principal a "main"
 - `git push -u origin main`: Sube tu código a GitHub por primera vez
 
 💡 **¿Problemas con autenticación?**
 GitHub requiere autenticación. Opciones:
+
 - **HTTPS con token**: Genera un Personal Access Token en GitHub Settings
 - **SSH**: Configura llaves SSH (más seguro)
 - **GitHub CLI**: `gh auth login` para autenticación fácil
@@ -1388,6 +1450,7 @@ GitHub requiere autenticación. Opciones:
 ### Paso 4: Verificar que se Subió Correctamente
 
 Ve a tu repositorio en GitHub y verifica que todos los archivos estén ahí:
+
 - `src/` con todos tus componentes
 - `package.json` con las dependencias
 - `vite.config.js` con la configuración
@@ -1405,6 +1468,7 @@ Ve a tu repositorio en GitHub y verifica que todos los archivos estén ahí:
 4. Autoriza a Netlify para acceder a tus repositorios
 
 📘 **¿Por qué usar Netlify?**
+
 - **Gratuito**: Plan free generoso para proyectos personales
 - **Fácil**: Deploy automático desde GitHub
 - **Rápido**: CDN global para cargar tu app rápidamente
@@ -1436,11 +1500,13 @@ main
 ⚠️ **IMPORTANTE**: Aunque configures esto manualmente, es MUY recomendable crear también el archivo `netlify.toml` (explicado más abajo) para evitar errores comunes.
 
 📘 **¿Por qué estas configuraciones?**
+
 - `npm run build`: Le dice a Netlify cómo crear la versión de producción
 - `dist`: Vite genera el build en la carpeta `dist` (no `build` como Create React App)
 - `main`: La rama principal que se desplegará automáticamente
 
 💡 **Para otros frameworks:**
+
 - **Create React App**: Build command `npm run build`, publish directory `build`
 - **Next.js**: Build command `npm run build`, publish directory `out` (con export)
 - **Nuxt.js**: Build command `npm run generate`, publish directory `dist`
@@ -1463,6 +1529,7 @@ main
 4. Sigue las instrucciones para configurar DNS
 
 📘 **¿Cómo conseguir un dominio?**
+
 - **Gratuitos**: `.tk`, `.ml`, `.ga` en Freenom
 - **Baratos**: Namecheap, GoDaddy, Google Domains
 - **Para estudiantes**: GitHub Student Pack incluye dominios gratis
@@ -1483,6 +1550,7 @@ main
    ```
 
 📘 **¿Por qué variables de entorno en producción?**
+
 - **Seguridad**: No exponer datos sensibles en el código
 - **Flexibilidad**: Diferentes configuraciones para desarrollo/producción
 - **APIs**: URLs diferentes para development y production
@@ -1503,6 +1571,7 @@ Crea `netlify.toml` en la raíz de tu proyecto (no en `public/`):
 ```
 
 📘 **¿Por qué usar netlify.toml en lugar de _redirects?**
+
 - **Más confiable**: Netlify lo detecta automáticamente
 - **Configuración centralizada**: Build settings y redirects en un archivo
 - **Menos errores**: Evita problemas de configuración manual en el dashboard
@@ -1529,6 +1598,7 @@ git push
 ```
 
 📘 **¿Qué hace cada configuración?**
+
 - `command = "npm run build"`: Le dice a Netlify cómo construir tu app
 - `publish = "dist"`: Especifica que los archivos finales están en la carpeta `dist`
 - `redirects`: Todas las rutas van a `index.html` para que React Router funcione
@@ -1555,6 +1625,7 @@ Crea `public/_headers`:
 ```
 
 📘 **¿Qué hacen estos headers?**
+
 - **Cache-Control**: Define cuánto tiempo el navegador guarda archivos en caché
 - **max-age=31536000**: 1 año en segundos
 - **immutable**: El archivo nunca cambia (perfecto para assets con hash)
@@ -1615,6 +1686,7 @@ jobs:
 ```
 
 📘 **¿Qué hace GitHub Actions?**
+
 - **CI/CD**: Integración y deploy continuo
 - **Automático**: Se ejecuta en cada push a la rama main
 - **Tests**: Ejecuta tests antes de hacer deploy
@@ -1657,6 +1729,7 @@ if (import.meta.env.PROD && import.meta.env.VITE_GA_ID) {
    - Geolocalización
 
 📘 **¿Qué métricas son importantes?**
+
 - **Page views**: Qué páginas visitan más
 - **Bounce rate**: % que sale inmediatamente
 - **Load time**: Qué tan rápido carga tu app
@@ -1683,6 +1756,7 @@ npm run deploy
 ```
 
 📘 **GitHub Pages vs Netlify:**
+
 - **GitHub Pages**: Gratuito, pero solo sitios estáticos
 - **Netlify**: Más funciones (redirects, forms, functions)
 - **Ambos**: Perfectos para React apps
@@ -1701,6 +1775,7 @@ vercel --prod
 ```
 
 📘 **¿Cuándo usar Vercel?**
+
 - Creado por el equipo de Next.js
 - Excelente para React/Next.js
 - Funciones serverless fáciles
@@ -1755,6 +1830,7 @@ railway deploy
 ```
 
 2. **Verifica la estructura de tu repositorio**:
+
 ```
 /mi-tienda-react
 ├── dist/              ⬅️ carpeta generada por Vite
@@ -1766,6 +1842,7 @@ railway deploy
 ```
 
 3. **Commit y push para que Netlify lo detecte**:
+
 ```bash
 git add netlify.toml
 git commit -m "fix: add Netlify config to serve dist correctly"
@@ -1773,12 +1850,14 @@ git push
 ```
 
 4. **Verifica en Netlify Dashboard**:
+   
    - Ve a tu sitio → "Site settings" → "Build & deploy"
    - Confirma que aparezca:
      - **Build command**: `npm run build`
      - **Publish directory**: `dist`
 
 📘 **¿Por qué esta solución es mejor?**
+
 - **Más confiable**: Netlify lee automáticamente `netlify.toml`
 - **Versionado**: El archivo se guarda en Git con tu código
 - **Menos errores**: No depende de configuración manual del dashboard
@@ -1789,6 +1868,7 @@ git push
 **Problema**: `import.meta.env.VITE_API_URL` es `undefined`.
 
 **Soluciones**:
+
 1. Variables deben empezar con `VITE_`
 2. Definir en Netlify environment variables
 3. Verificar que estén en `.env.production`
@@ -1818,11 +1898,13 @@ export default defineConfig({
 ### App Carga Lento
 
 **Problemas comunes**:
+
 - Imágenes muy grandes
 - Muchas dependencias
 - Sin lazy loading
 
 **Soluciones**:
+
 ```javascript
 // 1. Lazy loading de páginas
 const ProductDetail = lazy(() => import('./pages/ProductDetail'));
@@ -1863,6 +1945,7 @@ git push origin main
 ### Monitoreo de Errores
 
 Considera usar servicios como:
+
 - **Sentry**: Para tracking de errores en producción
 - **LogRocket**: Para reproducir sesiones de usuario
 - **Hotjar**: Para heatmaps y análisis de UX
@@ -1943,11 +2026,13 @@ function OptimizedImage({ src, alt, ...props }) {
 ### ✅ Lo que hemos logrado:
 
 **Preparación:**
+
 - ✅ Verificar que todo funciona localmente
 - ✅ Configurar variables de entorno
 - ✅ Optimizar para producción
 
 **GitHub:**
+
 - ✅ Subir código a repositorio
 - ✅ Configurar Git correctamente
 - ✅ Mantener historial de cambios

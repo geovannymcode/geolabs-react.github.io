@@ -1,10 +1,13 @@
 # Repositorio y Recursos de la Clase
 
 ## 📚 Contenido de la Clase
+
 **Consumimos una API pública, Test y Despliegue**
 
 ## 🚀 Demo en Vivo
+
 Puedes ver la aplicación desplegada y funcionando en:
+
 - **Demo desplegada**: https://gilded-praline-e439e2.netlify.app/
 
 ## 📁 Repositorios de Ejemplo
