@@ -1,7 +1,9 @@
 # Workshop: Creando una Tienda de Productos con React y Testing
 
 ## 📋 Objetivos del Workshop
+
 Al finalizar este workshop podrás:
+
 - Crear una aplicación React desde cero usando Vite
 - Consumir APIs externas para mostrar datos
 - Escribir tests unitarios para tus componentes
