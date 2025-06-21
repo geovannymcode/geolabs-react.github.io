@@ -1,6 +1,7 @@
 # 🎣 Introducción a Hooks: useEffect y useContext
 
 ## 📋 Índice
+
 1. [¿Qué son los Hooks?](#que-son-hooks)
 2. [useEffect: Efectos secundarios](#useeffect)
 3. [useContext: Compartir datos globalmente](#usecontext)
@@ -79,6 +80,7 @@ function utilidad() {
 ### ¿Qué son los efectos secundarios?
 
 **Efectos secundarios** = Cualquier cosa que afecte algo fuera del componente:
+
 - 🌐 Llamadas a APIs
 - ⏰ Timers (setTimeout, setInterval)
 - 📝 Modificar el DOM directamente
@@ -566,11 +568,13 @@ function RutaProtegida({ children }) {
 ### Cuándo usar Context
 
 ✅ **USA Context cuando:**
+
 - Datos necesarios en muchos componentes (tema, idioma, usuario)
 - Evitar prop drilling excesivo
 - Estado global de la aplicación
 
 ❌ **NO uses Context cuando:**
+
 - Solo 2-3 componentes necesitan los datos
 - Los datos cambian muy frecuentemente
 - Es un estado muy local

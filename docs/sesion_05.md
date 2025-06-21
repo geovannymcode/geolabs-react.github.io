@@ -1,6 +1,7 @@
 # 🎯 Props en React
 
 ## 📋 Índice
+
 1. [¿Qué son las Props y por qué las necesitamos?](#qué-son-las-props)
 2. [Anatomía de las Props](#anatomía-props)
 3. [Flujo de datos unidireccional](#flujo-datos)
@@ -76,6 +77,7 @@ function App() {
 **Props** = **Prop**ertie**s** (Propiedades)
 
 Las props son:
+
 - 📨 **Mensajes** del componente padre al hijo
 - 🎁 **Paquetes de datos** que viajan hacia abajo
 - 🔒 **Inmutables** - El hijo no puede modificarlas
@@ -254,6 +256,7 @@ function ComponenteEjemplo() {
 ### Ejemplos prácticos por tipo
 
 #### 1. **Props de texto**
+
 ```jsx
 function Tarjeta({ titulo, descripcion }) {
   return (
@@ -272,6 +275,7 @@ function Tarjeta({ titulo, descripcion }) {
 ```
 
 #### 2. **Props numéricas**
+
 ```jsx
 function Producto({ nombre, precio, descuento }) {
   const precioFinal = precio - (precio * descuento / 100)
@@ -291,6 +295,7 @@ function Producto({ nombre, precio, descuento }) {
 ```
 
 #### 3. **Props booleanas**
+
 ```jsx
 function Alerta({ mensaje, tipo, visible, puedeOcultar }) {
   if (!visible) return null
@@ -313,6 +318,7 @@ function Alerta({ mensaje, tipo, visible, puedeOcultar }) {
 ```
 
 #### 4. **Props con arrays**
+
 ```jsx
 function ListaCompras({ items, titulo }) {
   return (
@@ -335,6 +341,7 @@ function ListaCompras({ items, titulo }) {
 ```
 
 #### 5. **Props con objetos**
+
 ```jsx
 function PerfilUsuario({ usuario }) {
   return (
@@ -362,6 +369,7 @@ const datosUsuario = {
 ```
 
 #### 6. **Props con funciones**
+
 ```jsx
 function Boton({ texto, onClick, tipo = "primary" }) {
   return (
@@ -431,6 +439,7 @@ function Producto({ nombre, precio, descripcion }) {
 ### Técnicas avanzadas de desestructuración
 
 #### 1. **Valores por defecto en desestructuración**
+
 ```jsx
 function Saludo({ nombre = "Invitado", saludo = "Hola" }) {
   return <h1>{saludo}, {nombre}!</h1>
@@ -443,6 +452,7 @@ function Saludo({ nombre = "Invitado", saludo = "Hola" }) {
 ```
 
 #### 2. **Rest operator (...)**
+
 ```jsx
 function Boton({ texto, tipo, ...otrasProps }) {
   return (
@@ -466,6 +476,7 @@ function Boton({ texto, tipo, ...otrasProps }) {
 ```
 
 #### 3. **Renombrar props**
+
 ```jsx
 function Usuario({ nombre: nombreCompleto, email: correo }) {
   return (
@@ -478,6 +489,7 @@ function Usuario({ nombre: nombreCompleto, email: correo }) {
 ```
 
 #### 4. **Props anidadas**
+
 ```jsx
 function Direccion({ usuario: { nombre, direccion: { ciudad, pais } } }) {
   return (
@@ -964,6 +976,7 @@ function Componente({ nombreProp }) {
 ### Herramientas de debugging
 
 #### 1. **Console.log de props**
+
 ```jsx
 function MiComponente(props) {
   console.log("Props recibidas:", props)
@@ -972,6 +985,7 @@ function MiComponente(props) {
 ```
 
 #### 2. **React Developer Tools**
+
 - Instalar extensión del navegador
 - Inspeccionar componentes
 - Ver props en tiempo real
@@ -1237,6 +1251,7 @@ function App() {
 ### Checklist de Props
 
 ✅ **DO's - Hacer**:
+
 1. Usar nombres descriptivos para props
 2. Desestructurar props para código más limpio
 3. Proporcionar valores por defecto para props opcionales
@@ -1245,6 +1260,7 @@ function App() {
 6. Mantener props inmutables
 
 ❌ **DON'Ts - No hacer**:
+
 1. Modificar props directamente
 2. Pasar demasiadas props (más de 7-8)
 3. Usar nombres genéricos (data, info, config)
