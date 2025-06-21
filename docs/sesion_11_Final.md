@@ -1966,5 +1966,6 @@ function OptimizedImage({ src, alt, ...props }) {
 ### 🚀 Tu aplicación ahora está en línea!
 
 **URLs de ejemplo:**
+
 - **Staging**: `https://gilded-praline-e439e2.netlify.app/`
 - **Custom domain**: `https://mitienda.com` (si configuraste)

@@ -700,11 +700,11 @@ function App() {
 
 ### Checklist de comprensión
 
-✅ ¿Entiendes cuándo se ejecuta useEffect?
-✅ ¿Sabes cuándo necesitas cleanup?
-✅ ¿Entiendes la diferencia entre los 3 tipos de useEffect?
-✅ ¿Sabes cuándo usar Context vs props?
-✅ ¿Puedes crear un Provider personalizado?
+- ✅ ¿Entiendes cuándo se ejecuta useEffect?
+- ✅ ¿Sabes cuándo necesitas cleanup?
+- ✅ ¿Entiendes la diferencia entre los 3 tipos de useEffect?
+- ✅ ¿Sabes cuándo usar Context vs props?
+- ✅ ¿Puedes crear un Provider personalizado?
 
 ### Próximos pasos
 
