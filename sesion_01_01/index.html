@@ -1,0 +1,1810 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="GeoLabs Workshop-React Docs">
+      
+      
+        <meta name="author" content="Geovanny Mendoza">
+      
+      
+        <link rel="canonical" href="https://geovannymcode.github.io/geolabs-react.github.io/sesion_01_01/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>🚀 Inicio de Proyectos React: Vite vs Create React App - GeoLabs Workshop-React</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#inicio-de-proyectos-react-vite-vs-create-react-app" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="GeoLabs Workshop-React" class="md-header__button md-logo" aria-label="GeoLabs Workshop-React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoLabs Workshop-React
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🚀 Inicio de Proyectos React: Vite vs Create React App
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://geovannymcode.github.io/geolabs-react.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    /geovannymcode/geolabs-react.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GeoLabs Workshop-React" class="md-nav__button md-logo" aria-label="GeoLabs Workshop-React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GeoLabs Workshop-React
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://geovannymcode.github.io/geolabs-react.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    /geovannymcode/geolabs-react.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a JavaScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo Lista Tarea 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Apuntes de React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo Lista Tarea 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manejo de Estado con useState
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo Lista Tarea 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Renderizado condicional
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo_04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo Lista Tarea 04
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Props en React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo_05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo Lista Tarea 05
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Props en React con PropTypes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo_06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo Lista Tarea 06
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a Hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo_07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo 07
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formularios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo_08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo 08
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Router DOM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_11_Final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creando una Tienda
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extra
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../repositorio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Repositorio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Referencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Índice
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-necesitamos-herramientas-especiales" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤔 ¿Por qué necesitamos herramientas especiales?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🤔 ¿Por qué necesitamos herramientas especiales?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-problema-con-el-metodo-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      El problema con el método manual
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-solucion-herramientas-de-construccion-build-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      La solución: Herramientas de construcción (Build Tools)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ ¿Qué es Vite?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ ¿Qué es Vite?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definicion-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición simple
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-es-tan-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Por qué es tan rápido?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Por qué es tan rápido?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-servidor-de-desarrollo-nativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Servidor de desarrollo nativo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-esbuild-bajo-el-capo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. ESBuild bajo el capó
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hot-module-replacement-hmr-optimizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Hot Module Replacement (HMR) optimizado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizacion-del-proceso-de-vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualización del proceso de Vite
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-create-react-app-cra" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 ¿Qué es Create React App (CRA)?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 ¿Qué es Create React App (CRA)?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definicion-simple_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición simple
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-incluye-cra" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué incluye CRA?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filosofia-de-cra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filosofía de CRA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-del-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Configuración del Entorno
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Configuración del Entorno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisitos-necesarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisitos necesarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisitos necesarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-nodejs-instalado" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Node.js instalado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-terminalconsola" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Terminal/Consola
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-editor-de-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Editor de código
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparar-el-espacio-de-trabajo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparar el espacio de trabajo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-proyecto-con-vite-paso-a-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Crear Proyecto con Vite - Paso a Paso
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ Crear Proyecto con Vite - Paso a Paso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ejecutar-el-comando-de-creacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Ejecutar el comando de creación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-proceso-interactivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Proceso interactivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-estructura-generada-por-vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Estructura generada por Vite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-instalar-dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Instalar dependencias
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-iniciar-el-servidor-de-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Iniciar el servidor de desarrollo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-ver-tu-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Ver tu aplicación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-proyecto-con-cra-paso-a-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Crear Proyecto con CRA - Paso a Paso
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Crear Proyecto con CRA - Paso a Paso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ejecutar-el-comando-de-creacion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Ejecutar el comando de creación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-proceso-de-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Proceso de instalación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-estructura-generada-por-cra" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Estructura generada por CRA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-scripts-disponibles-en-cra" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Scripts disponibles en CRA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-iniciar-el-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Iniciar el servidor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparacion-detallada" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Comparación Detallada
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Comparación Detallada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#velocidad-de-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Velocidad de instalación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tamano-inicial-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tamaño inicial del proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tiempo-de-inicio-del-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tiempo de inicio del servidor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-incluidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características incluidas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura de archivos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cual-elegir" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤔 ¿Cuál Elegir?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🤔 ¿Cuál Elegir?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usa-vite-si" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usa Vite si:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usa-cra-si" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usa CRA si:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recomendacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏆 Recomendación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Próximos Pasos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Próximos Pasos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#con-tu-proyecto-vite-creado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Con tu proyecto Vite creado:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-esenciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos esenciales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-y-trucos" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Tips y Trucos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 Tips y Trucos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-atajos-de-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Atajos de terminal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-estructura-de-carpetas-recomendada" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Estructura de carpetas recomendada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-extensiones-vs-code-esenciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Extensiones VS Code esenciales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-debugging-en-el-navegador" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Debugging en el navegador
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Resumen
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="inicio-de-proyectos-react-vite-vs-create-react-app">🚀 Inicio de Proyectos React: Vite vs Create React App</h1>
+<h2 id="indice">📋 Índice</h2>
+<ol>
+<li><a href="#por-qué-necesitamos-herramientas">¿Por qué necesitamos herramientas especiales?</a></li>
+<li><a href="#qué-es-vite">¿Qué es Vite?</a></li>
+<li><a href="#qué-es-create-react-app">¿Qué es Create React App?</a></li>
+<li><a href="#configuración-del-entorno">Configuración del entorno de trabajo</a></li>
+<li><a href="#crear-proyecto-con-vite">Crear proyecto con Vite - Paso a paso</a></li>
+<li><a href="#crear-proyecto-con-cra">Crear proyecto con CRA - Paso a paso</a></li>
+<li><a href="#comparación-detallada">Comparación detallada</a></li>
+<li><a href="#cuál-elegir">¿Cuál elegir?</a></li>
+</ol>
+<hr />
+<h2 id="por-que-necesitamos-herramientas-especiales">🤔 ¿Por qué necesitamos herramientas especiales?</h2>
+<h3 id="el-problema-con-el-metodo-manual">El problema con el método manual</h3>
+<p>En la sección anterior, creamos React manualmente con CDN:
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/react@18/umd/react.development.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/react-dom@18/umd/react-dom.development.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div></p>
+<p><strong>Problemas de este enfoque:</strong>
+- ❌ <strong>Lento</strong>: Babel traduce JSX en el navegador (malo para producción)
+- ❌ <strong>Sin módulos</strong>: No puedes dividir tu código en archivos
+- ❌ <strong>Sin optimización</strong>: No hay minificación ni tree-shaking
+- ❌ <strong>Sin hot reload</strong>: Debes recargar manualmente
+- ❌ <strong>Sin herramientas</strong>: No hay linting, testing, etc.</p>
+<h3 id="la-solucion-herramientas-de-construccion-build-tools">La solución: Herramientas de construcción (Build Tools)</h3>
+<p>Las herramientas como <strong>Vite</strong> y <strong>Create React App</strong> resuelven estos problemas:
+- ✅ <strong>Compilación previa</strong>: JSX se traduce antes de llegar al navegador
+- ✅ <strong>Sistema de módulos</strong>: Importa/exporta entre archivos
+- ✅ <strong>Optimización automática</strong>: Código minificado y optimizado
+- ✅ <strong>Hot Module Replacement</strong>: Cambios instantáneos sin recargar
+- ✅ <strong>Ecosistema completo</strong>: Testing, linting, etc.</p>
+<hr />
+<h2 id="que-es-vite">⚡ ¿Qué es Vite?</h2>
+<h3 id="definicion-simple">Definición simple</h3>
+<p><strong>Vite</strong> (pronunciado "vit", significa "rápido" en francés) es una herramienta moderna de construcción que hace el desarrollo con React <strong>extremadamente rápido</strong>.</p>
+<h3 id="por-que-es-tan-rapido">¿Por qué es tan rápido?</h3>
+<h4 id="1-servidor-de-desarrollo-nativo">1. <strong>Servidor de desarrollo nativo</strong></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Tradicional (Webpack):         Vite:
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Bundlea TODO → Sirve          Sirve archivos → Bundlea solo lo necesario
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>(Lento al inicio)             (Instantáneo)
+</span></code></pre></div>
+<h4 id="2-esbuild-bajo-el-capo">2. <strong>ESBuild bajo el capó</strong></h4>
+<ul>
+<li>Escrito en Go (no JavaScript)</li>
+<li>10-100x más rápido que alternativas</li>
+<li>Compila TypeScript/JSX al instante</li>
+</ul>
+<h4 id="3-hot-module-replacement-hmr-optimizado">3. <strong>Hot Module Replacement (HMR) optimizado</strong></h4>
+<ul>
+<li>Solo actualiza el módulo que cambió</li>
+<li>Mantiene el estado de la aplicación</li>
+</ul>
+<h3 id="visualizacion-del-proceso-de-vite">Visualización del proceso de Vite</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Tu código JSX → ESBuild → JavaScript → Navegador
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    ↑                                      ↓
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    └──── HMR actualiza solo cambios ←────┘
+</span></code></pre></div>
+<hr />
+<h2 id="que-es-create-react-app-cra">📦 ¿Qué es Create React App (CRA)?</h2>
+<h3 id="definicion-simple_1">Definición simple</h3>
+<p><strong>Create React App</strong> es la herramienta <strong>oficial de Facebook/Meta</strong> para crear aplicaciones React. Es como una "caja con todo incluido".</p>
+<h3 id="que-incluye-cra">¿Qué incluye CRA?</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>create-react-app/
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── 📦 Webpack (bundler)
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├── 🎨 CSS/SASS support
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>├── 🧪 Jest (testing)
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>├── 📝 ESLint (linting)
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>├── 🔧 Babel (transpiler)
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>├── 🚀 Build scripts
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>└── ⚙️ Configuración lista
+</span></code></pre></div>
+<h3 id="filosofia-de-cra">Filosofía de CRA</h3>
+<ul>
+<li><strong>"Zero Configuration"</strong>: Todo preconfigurado</li>
+<li><strong>"Ejectable"</strong>: Puedes exponer la configuración si necesitas</li>
+<li><strong>Opinado</strong>: Toma decisiones por ti</li>
+</ul>
+<hr />
+<h2 id="configuracion-del-entorno">🛠️ Configuración del Entorno</h2>
+<h3 id="prerequisitos-necesarios">Prerequisitos necesarios</h3>
+<h4 id="1-nodejs-instalado">1. <strong>Node.js instalado</strong></h4>
+<p>Verifica con:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>node<span class="w"> </span>--version<span class="w">  </span><span class="c1"># Debe mostrar v14 o superior</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>npm<span class="w"> </span>--version<span class="w">   </span><span class="c1"># Viene con Node.js</span>
+</span></code></pre></div></p>
+<h4 id="2-terminalconsola">2. <strong>Terminal/Consola</strong></h4>
+<ul>
+<li><strong>Windows</strong>: PowerShell, CMD o Windows Terminal</li>
+<li><strong>Mac</strong>: Terminal o iTerm2</li>
+<li><strong>Linux</strong>: Terminal de tu distribución</li>
+</ul>
+<h4 id="3-editor-de-codigo">3. <strong>Editor de código</strong></h4>
+<ul>
+<li><strong>VS Code</strong> (recomendado)</li>
+<li>Extensiones útiles:</li>
+<li>ES7+ React/Redux/React-Native</li>
+<li>Prettier</li>
+<li>ESLint</li>
+</ul>
+<h3 id="preparar-el-espacio-de-trabajo">Preparar el espacio de trabajo</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 1. Crear carpeta para proyectos React</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>mkdir<span class="w"> </span>proyectos-react
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">cd</span><span class="w"> </span>proyectos-react
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># 2. Verificar que estás en el lugar correcto</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nb">pwd</span><span class="w">  </span><span class="c1"># Mac/Linux</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nb">cd</span><span class="w">   </span><span class="c1"># Windows (sin argumentos muestra la ruta actual)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="crear-proyecto-con-vite-paso-a-paso">⚡ Crear Proyecto con Vite - Paso a Paso</h2>
+<h3 id="1-ejecutar-el-comando-de-creacion">1. Ejecutar el comando de creación</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>npm<span class="w"> </span>create<span class="w"> </span>vite@latest
+</span></code></pre></div>
+<h3 id="2-proceso-interactivo">2. Proceso interactivo</h3>
+<p>Te aparecerán preguntas. Aquí las respuestas con explicación:</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>? Project name: › counter-app-vite
+</span></code></pre></div>
+<strong>Explicación</strong>: Nombre de tu proyecto (sin espacios, usa guiones)</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>? Select a framework: › - Use arrow-keys. Return to submit.
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    Vanilla
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>❯   Vue
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    React       ← Selecciona esto
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    Preact
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    Lit
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    Svelte
+</span></code></pre></div>
+<strong>Explicación</strong>: Vite soporta varios frameworks, elegimos React</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>? Select a variant: › - Use arrow-keys. Return to submit.
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>❯   JavaScript
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    TypeScript
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    JavaScript + SWC
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    TypeScript + SWC
+</span></code></pre></div>
+<strong>Explicación</strong>: 
+- <strong>JavaScript</strong>: Para principiantes (recomendado)
+- <strong>TypeScript</strong>: JavaScript con tipos
+- <strong>SWC</strong>: Compilador más rápido que Babel</p>
+<h3 id="3-estructura-generada-por-vite">3. Estructura generada por Vite</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>counter-app-vite/
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>├── 📁 node_modules/     # Dependencias (no tocar)
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>├── 📁 public/           # Archivos estáticos
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>│   └── vite.svg        # Logo de Vite
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>├── 📁 src/              # Tu código va aquí
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>│   ├── App.css         # Estilos del App component
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>│   ├── App.jsx         # Componente principal
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>│   ├── assets/         # Imágenes, fuentes, etc.
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>│   ├── index.css       # Estilos globales
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>│   └── main.jsx        # Punto de entrada
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>├── .gitignore          # Archivos ignorados por Git
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>├── index.html          # HTML principal
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>├── package.json        # Configuración del proyecto
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>├── README.md           # Documentación
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>└── vite.config.js      # Configuración de Vite
+</span></code></pre></div>
+<h3 id="4-instalar-dependencias">4. Instalar dependencias</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Entrar a la carpeta</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">cd</span><span class="w"> </span>counter-app-vite
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Instalar con npm</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>npm<span class="w"> </span>install
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1"># O con yarn (más rápido)</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>yarn<span class="w"> </span>install
+</span></code></pre></div>
+<p><strong>¿Qué hace esto?</strong>
+- Lee <code>package.json</code>
+- Descarga todas las librerías necesarias
+- Las guarda en <code>node_modules/</code></p>
+<h3 id="5-iniciar-el-servidor-de-desarrollo">5. Iniciar el servidor de desarrollo</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>npm<span class="w"> </span>run<span class="w"> </span>dev
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1"># o</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>yarn<span class="w"> </span>dev
+</span></code></pre></div>
+<p><strong>Resultado esperado:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>  VITE v4.4.0  ready in 243 ms
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  ➜  Local:   http://localhost:5173/
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>  ➜  Network: use --host to expose
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>  ➜  press h to show help
+</span></code></pre></div></p>
+<h3 id="6-ver-tu-aplicacion">6. Ver tu aplicación</h3>
+<p>Abre el navegador en <code>http://localhost:5173/</code> y verás:
+- Logo de Vite y React girando
+- Contador interactivo
+- Hot reload funcionando</p>
+<hr />
+<h2 id="crear-proyecto-con-cra-paso-a-paso">📦 Crear Proyecto con CRA - Paso a Paso</h2>
+<h3 id="1-ejecutar-el-comando-de-creacion_1">1. Ejecutar el comando de creación</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>npx<span class="w"> </span>create-react-app<span class="w"> </span>counter-app-cra
+</span></code></pre></div>
+<p><strong>Nota sobre <code>npx</code>:</strong>
+- <code>npm</code>: Instala paquetes
+- <code>npx</code>: Ejecuta paquetes sin instalar</p>
+<h3 id="2-proceso-de-instalacion">2. Proceso de instalación</h3>
+<p>CRA muestra el progreso:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Creating a new React app in /path/to/counter-app-cra.
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Installing packages. This might take a couple of minutes.
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>Installing react, react-dom, and react-scripts...
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>[========================================] 100%
+</span></code></pre></div></p>
+<p><strong>⏱️ Tiempo aproximado</strong>: 2-5 minutos (vs 30 segundos de Vite)</p>
+<h3 id="3-estructura-generada-por-cra">3. Estructura generada por CRA</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>counter-app-cra/
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>├── 📁 node_modules/     # MUCHAS más dependencias
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>├── 📁 public/           # Archivos estáticos
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>│   ├── favicon.ico     # Icono de la pestaña
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>│   ├── index.html      # HTML con más meta tags
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>│   ├── logo192.png     # Logos para PWA
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>│   ├── logo512.png
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>│   ├── manifest.json   # Configuración PWA
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>│   └── robots.txt      # Para motores de búsqueda
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>├── 📁 src/              # Tu código
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>│   ├── App.css         # Estilos con animación
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>│   ├── App.js          # Nota: .js no .jsx
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>│   ├── App.test.js     # Tests incluidos
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>│   ├── index.css       # Estilos globales
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>│   ├── index.js        # Punto de entrada
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>│   ├── logo.svg        # Logo animado de React
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>│   ├── reportWebVitals.js  # Métricas de rendimiento
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>│   └── setupTests.js   # Configuración de tests
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>├── .gitignore
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>├── package.json        # Más scripts disponibles
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>├── package-lock.json   # Versiones exactas
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>└── README.md           # Documentación extensa
+</span></code></pre></div>
+<h3 id="4-scripts-disponibles-en-cra">4. Scripts disponibles en CRA</h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">{</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;react-scripts start&quot;</span><span class="p">,</span><span class="w">      </span><span class="c1">// Desarrollo</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;react-scripts build&quot;</span><span class="p">,</span><span class="w">      </span><span class="c1">// Producción</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;react-scripts test&quot;</span><span class="p">,</span><span class="w">        </span><span class="c1">// Tests</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="nt">&quot;eject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;react-scripts eject&quot;</span><span class="w">       </span><span class="c1">// Exponer config</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="5-iniciar-el-servidor">5. Iniciar el servidor</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nb">cd</span><span class="w"> </span>counter-app-cra
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>npm<span class="w"> </span>start
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="c1"># o</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>yarn<span class="w"> </span>start
+</span></code></pre></div>
+<p><strong>Resultado:</strong>
+- Abre automáticamente el navegador
+- Puerto 3000 por defecto
+- Logo de React girando</p>
+<hr />
+<h2 id="comparacion-detallada">📊 Comparación Detallada</h2>
+<h3 id="velocidad-de-instalacion">Velocidad de instalación</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Vite:   [====] 30 segundos
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>CRA:    [====================] 3-5 minutos
+</span></code></pre></div>
+<h3 id="tamano-inicial-del-proyecto">Tamaño inicial del proyecto</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Vite:   ~50 MB en node_modules
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>CRA:    ~250 MB en node_modules
+</span></code></pre></div>
+<h3 id="tiempo-de-inicio-del-servidor">Tiempo de inicio del servidor</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Vite:   &lt; 300ms ⚡
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>CRA:    3-10 segundos 🐌
+</span></code></pre></div>
+<h3 id="caracteristicas-incluidas">Características incluidas</h3>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Vite</th>
+<th>CRA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hot Reload</td>
+<td>✅ Instantáneo</td>
+<td>✅ Más lento</td>
+</tr>
+<tr>
+<td>TypeScript</td>
+<td>✅ Opcional</td>
+<td>✅ Opcional</td>
+</tr>
+<tr>
+<td>CSS Modules</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td>❌ Agregar manual</td>
+<td>✅ Jest incluido</td>
+</tr>
+<tr>
+<td>ESLint</td>
+<td>❌ Agregar manual</td>
+<td>✅ Preconfigurado</td>
+</tr>
+<tr>
+<td>PWA Support</td>
+<td>❌ Manual</td>
+<td>✅ Incluido</td>
+</tr>
+<tr>
+<td>Web Vitals</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h3 id="estructura-de-archivos">Estructura de archivos</h3>
+<p><strong>Vite (minimalista):</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>src/
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>├── App.jsx      # JSX explícito
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>├── main.jsx     # Punto de entrada limpio
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>└── index.css    # Estilos simples
+</span></code></pre></div></p>
+<p><strong>CRA (completa):</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>src/
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>├── App.js           # .js por defecto
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>├── App.test.js      # Tests incluidos
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>├── index.js         # Más configuración
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>├── setupTests.js    # Config de testing
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>└── reportWebVitals.js  # Métricas
+</span></code></pre></div></p>
+<hr />
+<h2 id="cual-elegir">🤔 ¿Cuál Elegir?</h2>
+<h3 id="usa-vite-si">Usa Vite si:</h3>
+<p>✅ <strong>Eres principiante</strong> y quieres empezar rápido<br />
+✅ <strong>Valoras la velocidad</strong> de desarrollo<br />
+✅ <strong>Prefieres configuración mínima</strong> inicial<br />
+✅ <strong>Trabajas en proyectos pequeños/medianos</strong><br />
+✅ <strong>Quieres la tecnología más moderna</strong></p>
+<h3 id="usa-cra-si">Usa CRA si:</h3>
+<p>✅ <strong>Necesitas todo preconfigurado</strong> desde el inicio<br />
+✅ <strong>El testing es prioritario</strong> en tu proyecto<br />
+✅ <strong>Trabajas en empresa</strong> con requisitos específicos<br />
+✅ <strong>Prefieres lo "oficial"</strong> de Facebook<br />
+✅ <strong>No te importa la velocidad inicial</strong></p>
+<h3 id="recomendacion">🏆 Recomendación</h3>
+<p><strong>Empieza con Vite</strong> porque:
+1. Es más rápido y no te frustrará esperando
+2. La estructura es más simple de entender
+3. Puedes agregar herramientas cuando las necesites
+4. Es la tendencia actual en la industria</p>
+<hr />
+<h2 id="proximos-pasos">🚀 Próximos Pasos</h2>
+<h3 id="con-tu-proyecto-vite-creado">Con tu proyecto Vite creado:</h3>
+<ol>
+<li>
+<p><strong>Explora la estructura</strong>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">cd</span><span class="w"> </span>counter-app-vite
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>code<span class="w"> </span>.<span class="w">  </span><span class="c1"># Abre VS Code</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Modifica App.jsx</strong>
+   <div class="language-jsx highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="err">¡</span><span class="nx">Mi</span><span class="w"> </span><span class="nx">primera</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="nx">con</span><span class="w"> </span><span class="nx">Vite</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">  </span><span class="p">)</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Observa el hot reload</strong></p>
+</li>
+<li>Guarda el archivo</li>
+<li>Mira el navegador actualizarse instantly</li>
+</ol>
+<h3 id="comandos-esenciales">Comandos esenciales</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># Desarrollo</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>npm<span class="w"> </span>run<span class="w"> </span>dev
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="c1"># Construir para producción</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>npm<span class="w"> </span>run<span class="w"> </span>build
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="c1"># Previsualizar build</span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>npm<span class="w"> </span>run<span class="w"> </span>preview
+</span></code></pre></div>
+<hr />
+<h2 id="tips-y-trucos">💡 Tips y Trucos</h2>
+<h3 id="1-atajos-de-terminal">1. <strong>Atajos de terminal</strong></h3>
+<ul>
+<li><code>Ctrl+C</code>: Detener el servidor</li>
+<li><code>↑</code>: Comando anterior</li>
+<li><code>Tab</code>: Autocompletar</li>
+</ul>
+<h3 id="2-estructura-de-carpetas-recomendada">2. <strong>Estructura de carpetas recomendada</strong></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>src/
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>├── components/     # Componentes reutilizables
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>├── pages/         # Páginas/vistas
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>├── hooks/         # Custom hooks
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>├── utils/         # Funciones helper
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>└── assets/        # Imágenes, fuentes
+</span></code></pre></div>
+<h3 id="3-extensiones-vs-code-esenciales">3. <strong>Extensiones VS Code esenciales</strong></h3>
+<ul>
+<li><strong>ES7+ React snippets</strong>: <code>rafce</code> → componente completo</li>
+<li><strong>Prettier</strong>: Formateo automático</li>
+<li><strong>Auto Rename Tag</strong>: Renombra tags de apertura/cierre</li>
+</ul>
+<h3 id="4-debugging-en-el-navegador">4. <strong>Debugging en el navegador</strong></h3>
+<ul>
+<li><code>F12</code>: Abrir DevTools</li>
+<li><code>React DevTools</code>: Extensión para debugging React</li>
+</ul>
+<hr />
+<h2 id="resumen">🎯 Resumen</h2>
+<ul>
+<li><strong>Vite</strong> = Velocidad y simplicidad moderna</li>
+<li><strong>CRA</strong> = Todo incluido pero más pesado</li>
+<li>Ambas son herramientas profesionales válidas</li>
+<li>La tendencia actual favorece a Vite</li>
+<li>Puedes migrar de una a otra si es necesario</li>
+</ul>
+<p>¡Con cualquiera de las dos herramientas, ya estás listo para desarrollar aplicaciones React profesionales!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Geovanny Mendoza
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/geovannymcode" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/geovannycode" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/geovannycode/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>
