@@ -1951,12 +1951,14 @@ function OptimizedImage({ src, alt, ...props }) {
 - ✅ Mantener historial de cambios
 
 **Netlify Deploy:**
+
 - ✅ Deploy automático desde GitHub
 - ✅ Configuración de build correcto
 - ✅ URL pública funcionando
 - ✅ HTTPS automático
 
 **Optimizaciones:**
+
 - ✅ Redirects para React Router
 - ✅ Headers de performance
 - ✅ Variables de entorno seguras
