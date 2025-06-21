@@ -5,6 +5,7 @@
 **"Antes de continuar con el nuevo tema, hagamos un repaso rápido de lo que vimos la clase pasada:"**
 
 ## JavaScript Moderno
+
 Refrescamos conceptos clave como las arrow functions para escribir funciones de forma más concisa, métodos de arrays para transformar datos, manipulación de objetos y destructuring para extraer datos de forma más limpia.
 
 ```javascript
@@ -28,6 +29,7 @@ const [primero, segundo] = colores; // primero = 'rojo', segundo = 'verde'
 ```
 
 ## Fundamentos de React
+
 Vimos qué es React, una librería de JavaScript para construir interfaces de usuario de forma declarativa, por qué es útil (reutilización de componentes, manejo eficiente del DOM), y cómo nos permite crear aplicaciones más organizadas y mantenibles.
 
 ```jsx
@@ -36,6 +38,7 @@ Vimos qué es React, una librería de JavaScript para construir interfaces de us
 ```
 
 ## Componentes y JSX
+
 Aprendimos que los componentes son funciones que retornan elementos de interfaz, son los bloques de construcción de React, y JSX nos permite escribir HTML dentro de JavaScript de manera natural y expresiva.
 
 ```jsx
@@ -52,6 +55,7 @@ function Bienvenida() {
 ```
 
 ## Estado con useState
+
 Exploramos cómo manejar datos que cambian en el tiempo usando el hook `useState`, permitiendo que nuestros componentes sean dinámicos e interactivos.
 
 ```jsx
@@ -60,6 +64,7 @@ const [nombre, setNombre] = useState('');
 ```
 
 **Explicación detallada:**
+
 - Usamos `const` porque aunque el valor del estado cambia, las variables `contador` y `setContador` nunca se reasignan
 - `contador` es la variable que contiene el valor actual del estado
 - `setContador` es la función que usamos para actualizar el estado
@@ -67,6 +72,7 @@ const [nombre, setNombre] = useState('');
 - Destructuring: `useState` retorna un array con dos elementos, los extraemos con `[contador, setContador]`
 
 ## Props
+
 Vimos cómo los componentes pueden comunicarse entre sí pasando datos de padres a hijos através de props, creando un flujo de información claro.
 
 ```jsx
@@ -80,6 +86,7 @@ function Saludo({ nombre, edad }) {
 ```
 
 ## Listas y Eventos
+
 Practicamos cómo renderizar listas de elementos dinámicamente y cómo responder a interacciones del usuario con event handlers.
 
 ```jsx
@@ -98,6 +105,7 @@ Practicamos cómo renderizar listas de elementos dinámicamente y cómo responde
 ---
 
 ## 🎯 Lo que vamos a aprender hoy
+
 1. **useEffect** - Para hacer cosas cuando el componente cambia
 2. **useContext** - Para compartir información entre páginas
 3. **Formularios** - Para que los usuarios escriban datos
@@ -112,7 +120,9 @@ Practicamos cómo renderizar listas de elementos dinámicamente y cómo responde
 Es como decirle a React: **"Cuando pase X cosa, haz Y"**
 
 ### ¿Por qué necesitamos useEffect?
+
 Imagina que quieres:
+
 - Cambiar el título de la página cuando el usuario haga algo
 - Cargar datos cuando se abra una página
 - Limpiar un timer cuando se cierre un componente
@@ -122,12 +132,15 @@ Imagina que quieres:
 **La solución:** useEffect le dice a React exactamente cuándo hacerlas.
 
 ### ¿Cómo funciona?
+
 React tiene un "ciclo de vida":
+
 1. **Monta** el componente (lo muestra por primera vez)
 2. **Actualiza** el componente (cuando cambia algo)
 3. **Desmonta** el componente (cuando ya no se necesita)
 
 useEffect nos permite "engancharnos" a estos momentos y decir:
+
 - "Haz esto cuando se monte"
 - "Haz esto cuando se actualice"
 - "Haz esto antes de desmontarlo"
@@ -186,9 +199,11 @@ useEffect(() => {
 # 2. useContext - "Compartir datos fácil"
 
 ## ¿Qué es Context?
+
 Context es como tener un **almacén global** en tu aplicación donde puedes guardar información que necesitas en muchos lugares.
 
 ## El problema sin Context:
+
 Imagina que tienes el nombre del usuario en la página principal, pero lo necesitas en 5 componentes diferentes. Tendrías que pasarlo de padre a hijo, a nieto, etc.
 
 Esto se llama "prop drilling" y se ve así:
@@ -198,11 +213,13 @@ App → Header → Navigation → UserMenu → UserName
 ```
 
 **Problemas del prop drilling:**
+
 - Muchos componentes intermedios reciben props que no usan
 - Si cambias algo, tienes que actualizar muchos archivos
 - Se vuelve confuso y difícil de mantener
 
 ## La solución con Context:
+
 Es como tener una **caja común** donde todos pueden tomar lo que necesiten directamente.
 
 ```jsx
@@ -211,13 +228,16 @@ App (tiene los datos) ← Context → UserName (usa los datos)
 ```
 
 ### ¿Cuándo usar Context?
+
 **Úsalo para:**
+
 - Información del usuario (nombre, foto, permisos)
 - Tema de la aplicación (modo oscuro/claro)
 - Idioma de la aplicación
 - Configuraciones globales
 
 **NO lo uses para:**
+
 - Estados que solo necesita un componente
 - Datos que cambian muy frecuentemente
 - Estados locales de formularios
@@ -268,7 +288,9 @@ function Perfil() {
 # 3. Formularios - "Capturar lo que escribe el usuario"
 
 ## ¿Por qué son importantes los formularios?
+
 Los formularios son la forma principal en que los usuarios interactúan con tu aplicación:
+
 - Registro de usuarios
 - Login
 - Búsquedas
@@ -293,6 +315,7 @@ const [valor, setValor] = useState("");
 ```
 
 **¿Por qué controlados?**
+
 - React siempre sabe el valor actual
 - Puedes validar en tiempo real
 - Puedes formatear la entrada
@@ -300,6 +323,7 @@ const [valor, setValor] = useState("");
 - Es más predecible
 
 ## Estados Derivados
+
 Son valores que se calculan automáticamente basados en otros estados:
 
 ```jsx
@@ -313,9 +337,11 @@ const puedeEnviar = formularioCompleto && email.includes("@");
 ```
 
 **Ventajas:**
+
 - No necesitas useState adicionales
 - Se actualizan automáticamente
 - Menos posibilidad de errores
+
 ```jsx
 function MiFormulario() {
   const [nombre, setNombre] = useState("");
@@ -420,11 +446,13 @@ React por defecto crea aplicaciones de "una sola página" (SPA - Single Page App
 ### SPA vs Páginas Tradicionales
 
 **Páginas tradicionales:**
+
 - Cada URL es un archivo HTML diferente
 - Al hacer click, el navegador carga una página nueva completa
 - La página "parpadea" al cargar
 
 **SPA con React Router:**
+
 - Todo es el mismo archivo HTML
 - JavaScript cambia el contenido según la URL
 - No hay "parpadeo", es más rápido y fluido
@@ -440,6 +468,7 @@ React por defecto crea aplicaciones de "una sola página" (SPA - Single Page App
 **Link:** Como un `<a>` pero para SPAs - no recarga la página.
 
 ### ¿Por qué usar React Router?
+
 - **URLs amigables:** `/productos/123` en lugar de `/#productos`
 - **Botón atrás funciona:** El usuario puede navegar con el navegador
 - **Compartir enlaces:** Las URLs se pueden guardar y compartir
@@ -492,6 +521,7 @@ function App() {
 ```
 
 ### Ejemplo súper simple:
+
 ```jsx
 import { useParams } from 'react-router-dom';
 
@@ -513,10 +543,13 @@ function PerfilUsuario() {
 # 5. Fetch - "Traer datos de internet"
 
 ## ¿Qué es Fetch?
+
 Fetch es la forma moderna de hacer peticiones HTTP en JavaScript. Es como "pedirle" datos a un servidor.
 
 ### ¿Por qué necesitamos Fetch?
+
 Las aplicaciones modernas no tienen todos los datos guardados localmente. Necesitan:
+
 - Mostrar información de usuarios
 - Cargar productos de una tienda
 - Enviar formularios al servidor
@@ -538,6 +571,7 @@ Toda petición pasa por estos estados:
 3. **Error:** Algo salió mal (no hay internet, servidor caído, etc.)
 
 **¿Por qué manejar estos estados?**
+
 - **UX mejor:** El usuario sabe qué está pasando
 - **No errores visuales:** No mostrar datos que no existen
 - **Manejo de problemas:** Qué hacer si falla la conexión
@@ -558,11 +592,13 @@ useEffect(() => {
 ```
 
 ### APIs públicas para practicar
+
 - **JSONPlaceholder:** https://jsonplaceholder.typicode.com/
   - Usuarios, posts, comentarios falsos
 - **OpenWeatherMap:** Datos del clima
 - **Rick and Morty API:** Personajes de la serie
 - **PokeAPI:** Información de Pokémon
+
 ```jsx
 function ListaUsuarios() {
   const [usuarios, setUsuarios] = useState([]);
@@ -604,6 +640,7 @@ function ListaUsuarios() {
 ```
 
 ## El concepto básico:
+
 ```jsx
 // Hook que puedes usar en cualquier componente
 function useDatos(url) {
@@ -644,6 +681,7 @@ function MiComponente() {
 ---
 
 ### Hook personalizado (para reutilizar):
+
 ## Lista de Tareas que todos entienden
 
 ```jsx
@@ -759,24 +797,27 @@ export default App;
 # 📝 Resumen para recordar
 
 ## useEffect
+
 - **"Cuando pase algo, haz esto"**
 - `[]` = solo una vez
 - `[variable]` = cuando cambie esa variable
 
 ## useContext  
+
 - **"Caja común para compartir datos"**
 - Crear context → Provider → useContext
 
 ## Formularios
+
 - **"Capturar lo que escribe el usuario"**
 - `value` + `onChange` = input controlado
 
 ## Router
+
 - **"Varias páginas en tu app"**
 - BrowserRouter → Routes → Route
 
 ## Fetch
+
 - **"Traer datos de internet"**
 - useEffect + fetch + useState para loading
-
----

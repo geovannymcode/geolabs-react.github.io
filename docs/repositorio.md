@@ -10,14 +10,19 @@ Puedes ver la aplicación desplegada y funcionando en:
 ## 📁 Repositorios de Ejemplo
 
 ### Tienda React
+
 Ejemplo completo de una tienda desarrollada con React:
+
 - **Repositorio**: https://github.com/geovannymcode/tienda-react
 
 ### Curso React
+
 Material adicional y ejemplos del curso:
+
 - **Repositorio**: https://github.com/geovannymcode/course-react
 
 ## 🛠️ Tecnologías Utilizadas
+
 - React
 - API pública
 - Testing
