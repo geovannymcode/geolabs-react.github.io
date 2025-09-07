@@ -145,16 +145,16 @@ agregarProducto(20000, 2);  // Agregar 2 productos de $20.000
 ### Limitaciones
 
 1. **`const` no garantiza inmutabilidad completa**
-   - Solo impide reasignación, pero no la mutación de objetos o arrays
-   - Para inmutabilidad real, usa Object.freeze() (aunque solo en primer nivel)
+      - Solo impide reasignación, pero no la mutación de objetos o arrays
+      - Para inmutabilidad real, usa Object.freeze() (aunque solo en primer nivel)
 
 2. **Polyfills y soporte en navegadores antiguos**
-   - IE11 y anteriores no soportan `let`/`const` nativamente
-   - Requiere transpiladores como Babel para compatibilidad
+      - IE11 y anteriores no soportan `let`/`const` nativamente
+      - Requiere transpiladores como Babel para compatibilidad
 
 3. **Bucles `for-of` y `const`**
-   - En bucles con colecciones, `const` funciona bien para cada elemento
-   - Pero para contadores incrementales, debes usar `let`
+      - En bucles con colecciones, `const` funciona bien para cada elemento
+      - Pero para contadores incrementales, debes usar `let`
 
 ### Mejores prácticas
 
@@ -168,7 +168,8 @@ agregarProducto(20000, 2);  // Agregar 2 productos de $20.000
 
 ## 2. Arrow Functions (Funciones Flecha)
 
-### Definición técnica detallada
+### Definición
+
 Las Arrow Functions (funciones flecha) son una sintaxis concisa para declarar funciones en JavaScript, introducida en ES6. Sus características técnicas fundamentales son:
 
 - **Sintaxis reducida**: Eliminan la palabra clave `function`, y si solo hay un parámetro, los paréntesis son opcionales. Si el cuerpo es una expresión simple, las llaves y `return` son opcionales.
@@ -348,19 +349,19 @@ console.log("Productos con descuento:", preciosConDescuento);
 ### Limitaciones
 
 1. **No son adecuadas para todas las situaciones**
-   - No sirven para métodos de objetos (cuando necesitan `this` del objeto)
-   - No sirven para constructores de clases
-   - No sirven para funciones generadoras
+      - No sirven para métodos de objetos (cuando necesitan `this` del objeto)
+      - No sirven para constructores de clases
+      - No sirven para funciones generadoras
 
 2. **No controlan el valor de `this`**
-   - No se pueden usar con `.call()`, `.apply()` o `.bind()` para cambiar `this`
-   - Siempre mantienen el `this` del contexto donde fueron creadas
+      - No se pueden usar con `.call()`, `.apply()` o `.bind()` para cambiar `this`
+      - Siempre mantienen el `this` del contexto donde fueron creadas
 
 3. **No tienen el objeto `arguments`**
-   - Deben usar el operador rest (`...args`) en su lugar
+      - Deben usar el operador rest (`...args`) en su lugar
 
 4. **Readability en funciones complejas**
-   - Muy útiles para funciones cortas, pero pueden reducir la legibilidad en funciones grandes
+      - Muy útiles para funciones cortas, pero pueden reducir la legibilidad en funciones grandes
 
 ### Mejores prácticas
 
@@ -373,7 +374,8 @@ console.log("Productos con descuento:", preciosConDescuento);
 
 ## 3. Destructuring (Desestructuración)
 
-### Definición técnica detallada
+### Definición
+
 La desestructuración es una expresión de JavaScript que permite extraer valores de arrays o propiedades de objetos y asignarlos a variables individuales de forma declarativa. Introducida en ES6, esta característica:
 
 - **Crea enlaces (bindings)** entre propiedades de origen y variables destino
@@ -551,16 +553,16 @@ console.log(`País: ${pais}`);  // "Colombia" (aunque no existe en el objeto)
 ### Limitaciones
 
 1. **Complejidad con estructuras muy anidadas**
-   - La desestructuración de estructuras profundamente anidadas puede volverse difícil de leer
-   - Recomendable limitar la profundidad a 2-3 niveles máximo
+      - La desestructuración de estructuras profundamente anidadas puede volverse difícil de leer
+      - Recomendable limitar la profundidad a 2-3 niveles máximo
 
 2. **Problemas con propiedades dinámicas**
-   - No permite extraer propiedades con nombres calculados en tiempo de ejecución
-   - Para propiedades dinámicas, primero debes calcular el nombre y luego usar notación de corchetes
+      - No permite extraer propiedades con nombres calculados en tiempo de ejecución
+      - Para propiedades dinámicas, primero debes calcular el nombre y luego usar notación de corchetes
 
 3. **Desestructuración de propiedades con caracteres especiales**
-   - Requiere usar notación especial para propiedades con nombres no estándar
-   - Ejemplo: `const { 'special-name': specialName } = obj;`
+      - Requiere usar notación especial para propiedades con nombres no estándar
+      - Ejemplo: `const { 'special-name': specialName } = obj;`
 
 4. **Compatibilidad con navegadores antiguos**
    - Requiere transpilación para navegadores que no soportan ES6
@@ -577,7 +579,8 @@ console.log(`País: ${pais}`);  // "Colombia" (aunque no existe en el objeto)
 
 ## 4. Spread y Rest Operators (...)
 
-### Definición técnica detallada
+### Definición
+
 El operador `...` (tres puntos) fue introducido en ES6 y tiene dos usos principales que, aunque similares en sintaxis, cumplen funciones opuestas:
 
 - **Operador Spread (expandir)**: Permite expandir un iterable (array, string) o un objeto en sus elementos o propiedades individuales. Se usa principalmente para:
@@ -798,20 +801,20 @@ console.log(usuarioActualizado);
 ### Limitaciones
 
 1. **Copia superficial (shallow copy)**
-   - Los operadores spread solo crean copias superficiales
-   - Los objetos anidados siguen siendo referencias al original
+      - Los operadores spread solo crean copias superficiales
+      - Los objetos anidados siguen siendo referencias al original
 
 2. **Rendimiento con objetos grandes**
-   - Spread en objetos grandes puede tener impacto en rendimiento
-   - Para operaciones críticas en rendimiento, considerar métodos alternativos
+      - Spread en objetos grandes puede tener impacto en rendimiento
+      - Para operaciones críticas en rendimiento, considerar métodos alternativos
 
 3. **No funciona con objetos que no sean iterables**
-   - Spread solo funciona con objetos iterables (arrays, strings, Maps, Sets)
-   - No funciona con objetos normales a menos que sea en contexto de objeto literal
+      - Spread solo funciona con objetos iterables (arrays, strings, Maps, Sets)
+      - No funciona con objetos normales a menos que sea en contexto de objeto literal
 
 4. **Rest agrupa todo en un array**
-   - Los parámetros rest siempre crean un array, incluso si no se pasan argumentos (array vacío)
-   - Esto puede causar inconsistencias si esperas otro tipo de dato
+      - Los parámetros rest siempre crean un array, incluso si no se pasan argumentos (array vacío)
+      - Esto puede causar inconsistencias si esperas otro tipo de dato
 
 ### Mejores prácticas
 
@@ -825,7 +828,8 @@ console.log(usuarioActualizado);
 
 ## 5. Template Literals
 
-### Definición técnica detallada
+### Definición
+
 Los template literals (literales de plantilla) son una nueva forma de trabajar con strings en JavaScript introducida en ES6 que permite expresiones incrustadas y strings multilínea. Se definen usando backticks (`` ` ``) en lugar de comillas simples o dobles. Sus características principales son:
 
 - **Interpolación de expresiones**: Permite incrustar expresiones JavaScript directamente en el string usando la sintaxis `${expresión}`. La expresión se evalúa y su resultado se convierte a string.
@@ -837,6 +841,7 @@ Los template literals (literales de plantilla) son una nueva forma de trabajar c
 - **Raw Strings**: Acceso a la representación "cruda" del string sin procesar escapes usando `String.raw`.
 
 A nivel del motor de JavaScript, los template literals son convertidos a strings regulares después de evaluar las expresiones incrustadas. El proceso implica:
+
 1. Identificar todas las expresiones dentro de `${ }`
 2. Evaluar cada expresión en el contexto actual
 3. Convertir los resultados a string (usando toString() implícitamente)
@@ -999,19 +1004,19 @@ console.log(plantillaProducto);
 ### Limitaciones
 
 1. **No existe interpolación "cruda"**
-   - No hay sintaxis nativa para insertar texto sin procesar/escapar
-   - Las expresiones siempre se convierten a string
+    - No hay sintaxis nativa para insertar texto sin procesar/escapar
+    - Las expresiones siempre se convierten a string
 
 2. **Tagged templates no estándar entre frameworks**
-   - Cada biblioteca implementa sus propios "tags" de manera diferente
-   - No hay un estándar para pasar metadatos o configuraciones
+    - Cada biblioteca implementa sus propios "tags" de manera diferente
+    - No hay un estándar para pasar metadatos o configuraciones
 
 3. **Rendimiento con muchas interpolaciones**
-   - Un exceso de expresiones `${}` puede afectar rendimiento
-   - El uso excesivo puede generar garbage collection
+    - Un exceso de expresiones `${}` puede afectar rendimiento
+    - El uso excesivo puede generar garbage collection
 
 4. **Posibles problemas de seguridad**
-   - Interpolación directa de datos de usuario puede provocar XSS si se usa en HTML
+    - Interpolación directa de datos de usuario puede provocar XSS si se usa en HTML
 
 ### Mejores prácticas
 
@@ -1025,7 +1030,8 @@ console.log(plantillaProducto);
 
 ## 6. Métodos Modernos de Arrays
 
-### Definición técnica detallada
+### Definición
+
 Los métodos modernos de arrays son un conjunto de métodos de alto nivel que permiten manipular arrays de manera más declarativa, con código más conciso y funcional. Estos métodos son funciones integradas que operan en cada elemento del array, devolviendo un nuevo resultado basado en una función callback proporcionada.
 
 Características fundamentales:
@@ -1038,6 +1044,7 @@ Características fundamentales:
 - **Evitan loops explícitos**: Menos propensos a errores de índices y condiciones de salida
 
 El callback recibe típicamente tres argumentos:
+
 1. `elemento`: El elemento actual que se está procesando
 2. `índice` (opcional): La posición del elemento en el array
 3. `array` (opcional): El array completo sobre el que se llamó al método
@@ -1343,18 +1350,18 @@ const totalInventarioOferta = productosEnOferta.reduce(
 ### Limitaciones
 
 1. **Rendimiento con arrays grandes**
-   - Para operaciones complejas con arrays muy grandes, los métodos funcionales pueden ser más lentos que los bucles tradicionales
-   - `reduce` puede ser especialmente problemático si se usa incorrectamente
+      - Para operaciones complejas con arrays muy grandes, los métodos funcionales pueden ser más lentos que los bucles tradicionales
+      - `reduce` puede ser especialmente problemático si se usa incorrectamente
 
 2. **Debugging más complejo**
-   - Las cadenas de métodos pueden ser difíciles de depurar
-   - Difícil identificar en qué paso ocurrió un error
+      - Las cadenas de métodos pueden ser difíciles de depurar
+      - Difícil identificar en qué paso ocurrió un error
 
 3. **No modifican el array original**
-   - Aunque generalmente es una ventaja, puede requerir asignaciones adicionales cuando se necesita modificación in-place
+      - Aunque generalmente es una ventaja, puede requerir asignaciones adicionales cuando se necesita modificación in-place
 
 4. **Interrupción temprana limitada**
-   - A diferencia de los bucles `for` con `break`, la mayoría de métodos (excepto `some`, `find`, etc.) siempre procesan todo el array
+      - A diferencia de los bucles `for` con `break`, la mayoría de métodos (excepto `some`, `find`, etc.) siempre procesan todo el array
 
 ### Mejores prácticas
 
@@ -1406,31 +1413,31 @@ const inventario = [
 ## 🚀 Consejos finales para JavaScript moderno
 
 1. **Preferir declaraciones const/let sobre var**
-   - Usar const por defecto, let solo cuando sea necesario, evitar var
+      - Usar const por defecto, let solo cuando sea necesario, evitar var
 
 2. **Adoptar un estilo más funcional y declarativo**
-   - Preferir métodos de array como map/filter/reduce sobre loops imperativos
+      - Preferir métodos de array como map/filter/reduce sobre loops imperativos
 
 3. **Usar destructuring para extraer datos**
-   - Especialmente útil en parámetros de función y resultados de APIs
+      - Especialmente útil en parámetros de función y resultados de APIs
 
 4. **Aprovechar arrow functions para callbacks y funciones pequeñas**
-   - Mejoran la legibilidad y solucionan problemas con this
+      - Mejoran la legibilidad y solucionan problemas con this
 
 5. **Mantener la inmutabilidad cuando sea posible**
-   - Usar spread para crear copias en lugar de modificar objetos o arrays
+      - Usar spread para crear copias en lugar de modificar objetos o arrays
 
 6. **Utilizar template literals para strings dinámicos**
-   - Especialmente útiles para generar HTML o mensajes con variables
+      - Especialmente útiles para generar HTML o mensajes con variables
 
 7. **Organizar el código en módulos ES6**
-   - Usar import/export para mejor organización y mantenibilidad
+      - Usar import/export para mejor organización y mantenibilidad
 
 8. **Aprovechar valores por defecto en parámetros**
-   - Mejora la robustez sin necesidad de verificaciones adicionales
+      - Mejora la robustez sin necesidad de verificaciones adicionales
 
 9. **Considerar async/await para código asíncrono**
-   - Más fácil de leer y mantener que cadenas de promesas
+      - Más fácil de leer y mantener que cadenas de promesas
 
 10. **Pensar en términos de transformaciones de datos**
     - El flujo de datos moderno se basa en transformar, no en modificar
