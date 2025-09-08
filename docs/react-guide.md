@@ -77,9 +77,9 @@ Cuando actualizas un componente en React:
 ### 🚫 Limitaciones de React
 
 1. **Biblioteca, no framework**: React solo maneja la vista (UI). Necesitarás otras bibliotecas para:
-   - Manejo de estado global (Redux, Context API, Zustand)
-   - Enrutamiento (React Router)
-   - Llamadas a API (Axios, fetch)
+      - Manejo de estado global (Redux, Context API, Zustand)
+      - Enrutamiento (React Router)
+      - Llamadas a API (Axios, fetch)
 
 2. **JSX requiere transpilación**: El código no funciona directamente en navegadores sin compilación previa.
 
@@ -134,9 +134,9 @@ root.render(<h1>Hola Mundo</h1>);
 ### 🔬 Análisis técnico detallado
 
 1. **ReactDOM.createRoot vs ReactDOM.render**
-   - React 18 introdujo `createRoot` que reemplaza al antiguo `render`
-   - Permite el modo concurrente (Concurrent Mode)
-   - Mejora el rendimiento y habilita nuevas funcionalidades como Suspense
+      - React 18 introdujo `createRoot` que reemplaza al antiguo `render`
+      - Permite el modo concurrente (Concurrent Mode)
+      - Mejora el rendimiento y habilita nuevas funcionalidades como Suspense
 
 2. **Qué ocurre realmente durante el renderizado**:
    ```
@@ -205,16 +205,16 @@ root.render(<h1>Hola Mundo</h1>);
 ### ⚠️ Limitaciones de este enfoque
 
 1. **Solo para experimentación**: Este método de cargar React directamente en HTML:
-   - No utiliza módulos ES6 (import/export)
-   - Transpila JSX en tiempo de ejecución (lento)
-   - No tiene hot-reloading ni optimizaciones
+      - No utiliza módulos ES6 (import/export)
+      - Transpila JSX en tiempo de ejecución (lento)
+      - No tiene hot-reloading ni optimizaciones
 
 2. **Rendimiento**: Babel en el navegador es significativamente más lento que la transpilación previa.
 
 3. **Producción**: Para producción necesitarías:
-   - Archivos de producción minificados (react.production.min.js)
-   - Eliminar Babel del navegador
-   - Pre-compilar tu código
+      - Archivos de producción minificados (react.production.min.js)
+      - Eliminar Babel del navegador
+      - Pre-compilar tu código
 
 ### 🔄 Alternativas de renderizado
 
@@ -236,6 +236,7 @@ ReactDOM.hydrateRoot(container, <App />);
 ### 🌐 Modo estricto (StrictMode) explicado
 
 React StrictMode:
+
 - Identifica componentes con métodos de ciclo de vida inseguros
 - Advierte sobre legacy API usage
 - Detecta efectos secundarios inesperados ejecutando el ciclo de vida dos veces
@@ -392,18 +393,18 @@ JSX elimina espacios en blanco al inicio y final de línea, y colapsa espacios c
 ### ⚠️ Limitaciones de JSX
 
 1. **No es HTML válido**:
-   - No todos los atributos HTML funcionan igual (`class` → `className`)
-   - Requiere que todos los elementos se cierren (`<img />`, no `<img>`)
-   - No permite múltiples elementos raíz sin un contenedor
+      - No todos los atributos HTML funcionan igual (`class` → `className`)
+      - Requiere que todos los elementos se cierren (`<img />`, no `<img>`)
+      - No permite múltiples elementos raíz sin un contenedor
 
 2. **Requiere transpilación**:
-   - No se ejecuta directamente en navegadores
-   - Necesita herramientas como Babel o TypeScript
+      - No se ejecuta directamente en navegadores
+      - Necesita herramientas como Babel o TypeScript
 
 3. **Errores comunes**:
-   - Devolver múltiples elementos sin envolverlos
-   - Olvidar que `{}` en JSX evalúa expresiones, no sentencias
-   - Problemas con el scope de `this` en funciones
+      - Devolver múltiples elementos sin envolverlos
+      - Olvidar que `{}` en JSX evalúa expresiones, no sentencias
+      - Problemas con el scope de `this` en funciones
 
 4. **Diferencias de estilo en línea**:
    ```jsx
@@ -497,21 +498,21 @@ my-react-app/
 El proceso de construcción de una app React implica varias transformaciones:
 
 1. **Transpilación de JSX y ES6+**: 
-   - JSX → `React.createElement()`
-   - ES6+ → JavaScript compatible con navegadores
+      - JSX → `React.createElement()`
+      - ES6+ → JavaScript compatible con navegadores
 
 2. **Resolución de módulos**:
-   - `import` y `export` → Código compatible con navegadores
-   - Dependencias NPM → Incluidas en el bundle
+      - `import` y `export` → Código compatible con navegadores
+      - Dependencias NPM → Incluidas en el bundle
 
 3. **Optimización y minificación**:
-   - Eliminación de código no utilizado (tree-shaking)
-   - Minificación de JavaScript y CSS
-   - Optimización de imágenes y otros recursos
+      - Eliminación de código no utilizado (tree-shaking)
+      - Minificación de JavaScript y CSS
+      - Optimización de imágenes y otros recursos
 
 4. **División de código (code splitting)**:
-   - Separar código en chunks para carga bajo demanda
-   - Utiliza `import()` dinámico o React.lazy()
+      - Separar código en chunks para carga bajo demanda
+      - Utiliza `import()` dinámico o React.lazy()
 
 ### ⚠️ Problemas comunes y soluciones
 
@@ -1645,21 +1646,21 @@ function FlexLayout() {
 ### ⚠️ Limitaciones y consideraciones
 
 1. **Debugging más difícil**
-   - Los Fragments no aparecen en el DOM
-   - Dificulta la inspección de elementos
-   - Las herramientas de React DevTools sí los muestran
+      - Los Fragments no aparecen en el DOM
+      - Dificulta la inspección de elementos
+      - Las herramientas de React DevTools sí los muestran
 
 2. **No acepta atributos (excepto key)**
-   - No puedes añadir clases, eventos o atributos
-   - La única prop que acepta es `key` (y solo con sintaxis explícita)
+      - No puedes añadir clases, eventos o atributos
+      - La única prop que acepta es `key` (y solo con sintaxis explícita)
 
 3. **Problemas potenciales con CSS**
-   - No puedes seleccionar los Fragments con CSS
-   - Imposible aplicar estilos, márgenes o padding a grupos
+      - No puedes seleccionar los Fragments con CSS
+      - Imposible aplicar estilos, márgenes o padding a grupos
 
 4. **Compatibilidad con bibliotecas externas**
-   - Algunas bibliotecas externas pueden tener problemas con Fragments
-   - Especialmente las que manipulan el DOM directamente
+      - Algunas bibliotecas externas pueden tener problemas con Fragments
+      - Especialmente las que manipulan el DOM directamente
 
 ---
 
@@ -1998,22 +1999,22 @@ function Button({ children, variant = 'primary', size = 'md' }) {
 ### 🎯 Recomendaciones específicas
 
 1. **Para proyectos pequeños o aprendizaje**:
-   - CSS Modules o CSS Global
+      - CSS Modules o CSS Global
 
 2. **Para proyectos medianos a grandes**:
-   - CSS Modules + componentes de diseño
-   - CSS-in-JS (styled-components/emotion)
-   - Utility CSS (Tailwind) si el equipo está familiarizado
+      - CSS Modules + componentes de diseño
+      - CSS-in-JS (styled-components/emotion)
+      - Utility CSS (Tailwind) si el equipo está familiarizado
 
 3. **Para aplicaciones empresariales**:
-   - Sistema de diseño con componentes estilizados reutilizables
-   - Enfoque consistente en todo el equipo
-   - Documentación de componentes (Storybook)
+      - Sistema de diseño con componentes estilizados reutilizables
+      - Enfoque consistente en todo el equipo
+      - Documentación de componentes (Storybook)
 
 4. **Para rendimiento óptimo**:
-   - CSS Modules
-   - Evitar exceso de estilos en línea
-   - Minimizar cambios de estilo dinámicos
+      - CSS Modules
+      - Evitar exceso de estilos en línea
+      - Minimizar cambios de estilo dinámicos
 
 ---
 
