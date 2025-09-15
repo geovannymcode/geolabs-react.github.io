@@ -33,16 +33,16 @@ Una aplicación que muestre posts de un blog, consumiendo datos de una API real.
 ### **Software necesario:**
 
 1. **Node.js** (versión 16 o superior)
-   - Descargar de: https://nodejs.org/
-   - Verificar instalación: `node --version`
+      - Descargar de: https://nodejs.org/
+      - Verificar instalación: `node --version`
 
 2. **Editor de código**
-   - VS Code (recomendado): https://code.visualstudio.com/
-   - O cualquier editor que prefieras
+      - VS Code (recomendado): https://code.visualstudio.com/
+      - O cualquier editor que prefieras
 
 3. **Git**
-   - Descargar de: https://git-scm.com/
-   - Verificar instalación: `git --version`
+      - Descargar de: https://git-scm.com/
+      - Verificar instalación: `git --version`
 
 ### **Cuentas necesarias:**
 
@@ -222,7 +222,7 @@ src/
 4. Click derecho en `components` → "New File" → `PostCard.js`
 5. Repite para los demás archivos
 
-### **Paso 3.2: Crear el servicio para la API (10 min)**
+### **Paso 3.2: Crear el servicio para la API**
 
 **📁 Archivo: `src/services/postService.js`**
 
@@ -262,7 +262,7 @@ export const getAllPosts = async () => {
 **💡 Prueba la API:**
 Abre en tu navegador: https://jsonplaceholder.typicode.com/posts
 
-### **Paso 3.3: Crear el componente PostCard (10 min)**
+### **Paso 3.3: Crear el componente PostCard**
 
 **📁 Archivo: `src/components/PostCard.js`**
 
@@ -299,7 +299,7 @@ export default PostCard;
 - `className` - en React usamos className en lugar de class
 - `export default` - exportamos el componente para usarlo en otros archivos
 
-### **Paso 3.4: Crear el componente PostsList (15 min)**
+### **Paso 3.4: Crear el componente PostsList**
 
 **📁 Archivo: `src/components/PostsList.js`**
 
@@ -418,7 +418,7 @@ export default PostsList;
 
 ---
 
-## 🎨 **PARTE 4: Actualizando la App Principal (10 min)**
+## 🎨 **PARTE 4: Actualizando la App Principal**
 
 ### **Paso 4.1: Actualizar App.js**
 
@@ -678,7 +678,7 @@ body {
 
 ---
 
-## 🎉 **PARTE 5: Probar Nuestra App (5 min)**
+## 🎉 **PARTE 5: Probar Nuestra App**
 
 ### **Paso 5.1: Verificar que todo funciona**
 
@@ -704,7 +704,7 @@ npm start
 
 ---
 
-## 📦 **PARTE 6: Git y GitHub (15 min)**
+## 📦 **PARTE 6: Git y GitHub**
 
 ### **Paso 6.1: Configurar Git (solo primera vez)**
 
@@ -770,7 +770,7 @@ git push -u origin main
 
 ---
 
-## 🚀 **PARTE 7: Desplegar en Vercel (15 min)**
+## 🚀 **PARTE 7: Desplegar en Vercel**
 
 ### **Paso 7.1: Preparar el proyecto**
 
