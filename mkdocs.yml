@@ -17,6 +17,7 @@ nav:
   - Ejemplo Lista Tarea 01: ejemplo_01.md
   - Introducción a React: react-guide.md
   - Ejecricios React: ejercicios.md
+  - Ejecricios React Vite: ejercicios_react_vite.md
   #- Introducción a React: sesion_01.md
   #- Apuntes de React: sesion_02.md
   #- Ejemplo Lista Tarea 02: ejemplo_02.md
@@ -33,7 +34,7 @@ nav:
   #- Formularios: sesion_08.md
   #- Ejemplo 08: ejemplo_08.md
   #- Router DOM: sesion_09.md
-  #- Creando una Tienda: sesion_11_Final.md
+  - Creando una Tienda: sesion_11_Final.md
   - Repositorio: repositorio.md 
   - Referencias: referencias.md
 
