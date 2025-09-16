@@ -1,0 +1,2435 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="GeoLabs Workshop-React Docs">
+      
+      
+        <meta name="author" content="Geovanny Mendoza">
+      
+      
+        <link rel="canonical" href="https://geovannymcode.github.io/geolabs-react.github.io/ejercicios/">
+      
+      
+        <link rel="prev" href="../react-guide/">
+      
+      
+        <link rel="next" href="../ejercicios_react_vite/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Ejecricios React - GeoLabs Workshop-React</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#taller-de-react-mi-primera-app-con-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="GeoLabs Workshop-React" class="md-header__button md-logo" aria-label="GeoLabs Workshop-React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoLabs Workshop-React
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ejecricios React
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://geovannymcode.github.io/geolabs-react.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    /geovannymcode/geolabs-react.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GeoLabs Workshop-React" class="md-nav__button md-logo" aria-label="GeoLabs Workshop-React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GeoLabs Workshop-React
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://geovannymcode.github.io/geolabs-react.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    /geovannymcode/geolabs-react.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a JavaScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo Lista Tarea 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../react-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Ejecricios React
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejecricios React
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 ¿Qué es React?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 ¿Qué es React?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-react-es-popular" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Por qué React es popular?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-vamos-a-construir-hoy" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué vamos a construir hoy?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Requisitos Previos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Requisitos Previos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#software-necesario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software necesario:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuentas-necesarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuentas necesarias:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-1-setup-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ PARTE 1: Setup del Proyecto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ PARTE 1: Setup del Proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-11-crear-el-proyecto-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1.1: Crear el proyecto React
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-12-ejecutar-el-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1.2: Ejecutar el proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-13-explorar-la-estructura-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1.3: Explorar la estructura del proyecto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-conceptos-fundamentales-de-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 PARTE 2: Conceptos Fundamentales de React
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 PARTE 2: Conceptos Fundamentales de React">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-que-es-un-componente" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1: ¿Qué es un Componente?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-que-es-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2: ¿Qué es JSX?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-hook-usestate" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3: Hook useState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-hook-useeffect" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4: Hook useEffect
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-3-construyendo-nuestra-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ PARTE 3: Construyendo Nuestra App
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ PARTE 3: Construyendo Nuestra App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-31-crear-la-estructura-de-carpetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3.1: Crear la estructura de carpetas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-32-crear-el-servicio-para-la-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3.2: Crear el servicio para la API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-33-crear-el-componente-postcard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3.3: Crear el componente PostCard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-34-crear-el-componente-postslist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3.4: Crear el componente PostsList
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-4-actualizando-la-app-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 PARTE 4: Actualizando la App Principal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎨 PARTE 4: Actualizando la App Principal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-41-actualizar-appjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 4.1: Actualizar App.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-42-actualizar-los-estilos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 4.2: Actualizar los estilos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-5-probar-nuestra-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎉 PARTE 5: Probar Nuestra App
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎉 PARTE 5: Probar Nuestra App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-51-verificar-que-todo-funciona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 5.1: Verificar que todo funciona
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-6-git-y-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 PARTE 6: Git y GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 PARTE 6: Git y GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-61-configurar-git-solo-primera-vez" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 6.1: Configurar Git (solo primera vez)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-62-inicializar-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 6.2: Inicializar repositorio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-63-hacer-el-primer-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 6.3: Hacer el primer commit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-64-subir-a-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 6.4: Subir a GitHub
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-7-desplegar-en-vercel" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 PARTE 7: Desplegar en Vercel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 PARTE 7: Desplegar en Vercel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-71-preparar-el-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 7.1: Preparar el proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-72-desplegar-con-vercel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 7.2: Desplegar con Vercel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-73-verificar-el-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 7.3: Verificar el despliegue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-aprendimos-hoy" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 ¿Qué Aprendimos Hoy?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 ¿Qué Aprendimos Hoy?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptos-de-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptos de React:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceptos-de-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptos de desarrollo:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resultado final:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-pasos-para-casa" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Próximos Pasos (Para Casa)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Próximos Pasos (Para Casa)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mejoras-que-puedes-hacer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mejoras que puedes hacer:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursos-para-seguir-aprendiendo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recursos para seguir aprendiendo:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolucion-de-problemas-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Resolución de Problemas Comunes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Resolución de Problemas Comunes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#npm-no-es-reconocido" class="md-nav__link">
+    <span class="md-ellipsis">
+      "npm no es reconocido"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      "Module not found"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-de-cors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error de CORS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-al-hacer-push-a-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error al hacer push a GitHub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-en-vercel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error en Vercel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#felicitaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎉 ¡Felicitaciones!
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios_react_vite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejecricios React Vite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_11_Final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creando una Tienda
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../repositorio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Repositorio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Referencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 ¿Qué es React?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 ¿Qué es React?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-react-es-popular" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Por qué React es popular?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-vamos-a-construir-hoy" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué vamos a construir hoy?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Requisitos Previos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Requisitos Previos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#software-necesario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software necesario:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuentas-necesarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cuentas necesarias:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-1-setup-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ PARTE 1: Setup del Proyecto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ PARTE 1: Setup del Proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-11-crear-el-proyecto-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1.1: Crear el proyecto React
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-12-ejecutar-el-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1.2: Ejecutar el proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-13-explorar-la-estructura-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1.3: Explorar la estructura del proyecto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-conceptos-fundamentales-de-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 PARTE 2: Conceptos Fundamentales de React
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 PARTE 2: Conceptos Fundamentales de React">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-que-es-un-componente" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1: ¿Qué es un Componente?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-que-es-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2: ¿Qué es JSX?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-hook-usestate" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3: Hook useState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-hook-useeffect" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4: Hook useEffect
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-3-construyendo-nuestra-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ PARTE 3: Construyendo Nuestra App
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ PARTE 3: Construyendo Nuestra App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-31-crear-la-estructura-de-carpetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3.1: Crear la estructura de carpetas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-32-crear-el-servicio-para-la-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3.2: Crear el servicio para la API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-33-crear-el-componente-postcard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3.3: Crear el componente PostCard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-34-crear-el-componente-postslist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3.4: Crear el componente PostsList
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-4-actualizando-la-app-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 PARTE 4: Actualizando la App Principal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎨 PARTE 4: Actualizando la App Principal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-41-actualizar-appjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 4.1: Actualizar App.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-42-actualizar-los-estilos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 4.2: Actualizar los estilos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-5-probar-nuestra-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎉 PARTE 5: Probar Nuestra App
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎉 PARTE 5: Probar Nuestra App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-51-verificar-que-todo-funciona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 5.1: Verificar que todo funciona
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-6-git-y-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 PARTE 6: Git y GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 PARTE 6: Git y GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-61-configurar-git-solo-primera-vez" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 6.1: Configurar Git (solo primera vez)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-62-inicializar-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 6.2: Inicializar repositorio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-63-hacer-el-primer-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 6.3: Hacer el primer commit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-64-subir-a-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 6.4: Subir a GitHub
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-7-desplegar-en-vercel" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 PARTE 7: Desplegar en Vercel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 PARTE 7: Desplegar en Vercel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-71-preparar-el-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 7.1: Preparar el proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-72-desplegar-con-vercel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 7.2: Desplegar con Vercel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-73-verificar-el-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 7.3: Verificar el despliegue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-aprendimos-hoy" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 ¿Qué Aprendimos Hoy?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 ¿Qué Aprendimos Hoy?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptos-de-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptos de React:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceptos-de-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptos de desarrollo:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resultado final:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-pasos-para-casa" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Próximos Pasos (Para Casa)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Próximos Pasos (Para Casa)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mejoras-que-puedes-hacer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mejoras que puedes hacer:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursos-para-seguir-aprendiendo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recursos para seguir aprendiendo:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolucion-de-problemas-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Resolución de Problemas Comunes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Resolución de Problemas Comunes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#npm-no-es-reconocido" class="md-nav__link">
+    <span class="md-ellipsis">
+      "npm no es reconocido"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      "Module not found"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-de-cors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error de CORS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-al-hacer-push-a-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error al hacer push a GitHub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-en-vercel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error en Vercel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#felicitaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎉 ¡Felicitaciones!
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="taller-de-react-mi-primera-app-con-api">🚀 Taller de React: Mi Primera App con API</h1>
+<p><strong>Duración:</strong> &lt; 2 horas<br />
+<strong>Nivel:</strong> Principiantes absolutos<br />
+<strong>Resultado:</strong> Una aplicación React funcional desplegada en internet</p>
+<hr />
+<h2 id="que-es-react">📚 <strong>¿Qué es React?</strong></h2>
+<p>React es una <strong>librería de JavaScript</strong> creada por Facebook para construir interfaces de usuario (UI). Piensa en React como una caja de herramientas que te ayuda a crear páginas web <strong>interactivas</strong> y <strong>dinámicas</strong>.</p>
+<h3 id="por-que-react-es-popular"><strong>¿Por qué React es popular?</strong></h3>
+<ul>
+<li>✅ <strong>Componentes reutilizables</strong>: Como bloques de LEGO que puedes usar una y otra vez</li>
+<li>✅ <strong>Fácil de aprender</strong>: Si sabes JavaScript básico, puedes aprender React</li>
+<li>✅ <strong>Muy demandado</strong>: Las empresas más grandes del mundo lo usan</li>
+<li>✅ <strong>Comunidad gigante</strong>: Millones de desarrolladores lo usan</li>
+</ul>
+<h3 id="que-vamos-a-construir-hoy"><strong>¿Qué vamos a construir hoy?</strong></h3>
+<p>Una aplicación que muestre posts de un blog, consumiendo datos de una API real. Al final tendrás:</p>
+<ul>
+<li>📱 Una app React funcionando</li>
+<li>🌐 Publicada en internet (gratis)</li>
+<li>📂 Código en GitHub</li>
+<li>🧠 Conocimiento de React hooks</li>
+</ul>
+<hr />
+<h2 id="requisitos-previos">🛠️ <strong>Requisitos Previos</strong></h2>
+<h3 id="software-necesario"><strong>Software necesario:</strong></h3>
+<ol>
+<li>
+<p><strong>Node.js</strong> (versión 16 o superior)</p>
+<ul>
+<li>Descargar de: https://nodejs.org/</li>
+<li>Verificar instalación: <code>node --version</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Editor de código</strong></p>
+<ul>
+<li>VS Code (recomendado): https://code.visualstudio.com/</li>
+<li>O cualquier editor que prefieras</li>
+</ul>
+</li>
+<li>
+<p><strong>Git</strong></p>
+<ul>
+<li>Descargar de: https://git-scm.com/</li>
+<li>Verificar instalación: <code>git --version</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="cuentas-necesarias"><strong>Cuentas necesarias:</strong></h3>
+<ul>
+<li><strong>GitHub</strong>: https://github.com/ (para guardar código)</li>
+<li><strong>Vercel</strong>: https://vercel.com/ (para publicar la app)</li>
+</ul>
+<hr />
+<h2 id="parte-1-setup-del-proyecto">🏗️ <strong>PARTE 1: Setup del Proyecto</strong></h2>
+<h3 id="paso-11-crear-el-proyecto-react"><strong>Paso 1.1: Crear el proyecto React</strong></h3>
+<p>Abre tu terminal o consola de comandos y ejecuta:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Crear un nuevo proyecto React</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>npx<span class="w"> </span>create-react-app<span class="w"> </span>posts-app
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Entrar a la carpeta del proyecto</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">cd</span><span class="w"> </span>posts-app
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Abrir VS Code (opcional)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>code<span class="w"> </span>.
+</span></code></pre></div>
+<p><strong>🤔 ¿Qué acabamos de hacer?</strong></p>
+<ul>
+<li><code>npx create-react-app</code> es un comando que crea un proyecto React completo</li>
+<li><code>posts-app</code> es el nombre de nuestra aplicación</li>
+<li>Se crearon automáticamente todos los archivos necesarios</li>
+</ul>
+<h3 id="paso-12-ejecutar-el-proyecto"><strong>Paso 1.2: Ejecutar el proyecto</strong></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Iniciar el servidor de desarrollo</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>npm<span class="w"> </span>start
+</span></code></pre></div>
+<p><strong>🎉 ¡Deberías ver una página con el logo de React girando!</strong></p>
+<ul>
+<li>La página se abre automáticamente en: http://localhost:3000</li>
+<li>Cada vez que guardes cambios, la página se actualiza automáticamente</li>
+</ul>
+<h3 id="paso-13-explorar-la-estructura-del-proyecto"><strong>Paso 1.3: Explorar la estructura del proyecto</strong></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>posts-app/
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── public/
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│   └── index.html          # Página principal
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>├── src/
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│   ├── App.js             # Componente principal
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│   ├── App.css            # Estilos de la app
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│   ├── index.js           # Punto de entrada
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│   └── ...otros archivos
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>├── package.json           # Configuración del proyecto
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>└── README.md             # Documentación
+</span></code></pre></div>
+<p><strong>🎯 Archivos importantes que modificaremos:</strong></p>
+<ul>
+<li><code>src/App.js</code> - Componente principal</li>
+<li><code>src/App.css</code> - Estilos</li>
+</ul>
+<hr />
+<h2 id="parte-2-conceptos-fundamentales-de-react">🧠 <strong>PARTE 2: Conceptos Fundamentales de React</strong></h2>
+<h3 id="21-que-es-un-componente"><strong>2.1: ¿Qué es un Componente?</strong></h3>
+<p>Un <strong>componente</strong> es como una función que retorna HTML. Es un pedazo de interfaz reutilizable.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Ejemplo simple de componente</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">function</span><span class="w"> </span><span class="nx">Saludo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="err">¡</span><span class="nx">Hola</span><span class="p">,</span><span class="w"> </span><span class="nx">mundo</span><span class="o">!&lt;</span><span class="err">/h1&gt;;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>🎯 Características importantes:</strong></p>
+<ul>
+<li>Los componentes <strong>siempre empiezan con mayúscula</strong></li>
+<li>Retornan <strong>JSX</strong> (HTML dentro de JavaScript)</li>
+<li>Son <strong>reutilizables</strong></li>
+</ul>
+<h3 id="22-que-es-jsx"><strong>2.2: ¿Qué es JSX?</strong></h3>
+<p>JSX es una sintaxis que nos permite escribir HTML dentro de JavaScript:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// En lugar de escribir HTML puro:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">// &lt;h1&gt;Hola&lt;/h1&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">// En React escribimos JSX:</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">elemento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="err">¡</span><span class="nx">Hola</span><span class="w"> </span><span class="nx">desde</span><span class="w"> </span><span class="nx">React</span><span class="o">!&lt;</span><span class="err">/h1&gt;;</span>
+</span></code></pre></div>
+<h3 id="23-hook-usestate"><strong>2.3: Hook useState</strong></h3>
+<p><code>useState</code> nos permite <strong>guardar y cambiar datos</strong> en nuestro componente.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">Contador</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="c1">// [valor actual, función para cambiar el valor]</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">numero</span><span class="p">,</span><span class="w"> </span><span class="nx">setNumero</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Contador</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">numero</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setNumero</span><span class="p">(</span><span class="nx">numero</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">)}</span><span class="o">&gt;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="nx">Aumentar</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">      </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="p">);</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>🎯 Puntos clave:</strong></p>
+<ul>
+<li><code>useState(0)</code> - el valor inicial es 0</li>
+<li><code>numero</code> - variable que contiene el valor actual</li>
+<li><code>setNumero</code> - función para cambiar el valor</li>
+<li>Cuando el estado cambia, React <strong>re-renderiza</strong> el componente</li>
+</ul>
+<h3 id="24-hook-useeffect"><strong>2.4: Hook useEffect</strong></h3>
+<p><code>useEffect</code> nos permite ejecutar código cuando <strong>algo específico sucede</strong>.</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">MiComponente</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">datos</span><span class="p">,</span><span class="w"> </span><span class="nx">setDatos</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">([]);</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="c1">// Se ejecuta cuando el componente se monta</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;¡El componente se montó!&#39;</span><span class="p">);</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="c1">// Aquí podemos hacer llamadas a APIs</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span><span class="w"> </span><span class="c1">// Array vacío = solo una vez</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Mi</span><span class="w"> </span><span class="nx">componente</span><span class="o">&lt;</span><span class="err">/div&gt;;</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>🎯 Casos de uso comunes:</strong></p>
+<ul>
+<li>Llamadas a APIs</li>
+<li>Configurar timers</li>
+<li>Suscribirse a eventos</li>
+</ul>
+<hr />
+<h2 id="parte-3-construyendo-nuestra-app">🏗️ <strong>PARTE 3: Construyendo Nuestra App</strong></h2>
+<h3 id="paso-31-crear-la-estructura-de-carpetas"><strong>Paso 3.1: Crear la estructura de carpetas</strong></h3>
+<p>Dentro de <code>src/</code>, crea estas carpetas y archivos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>src/
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>├── components/
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>│   ├── PostCard.js
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>│   └── PostsList.js
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>├── services/
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>│   └── postService.js
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>├── App.js
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>├── App.css
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>└── index.js
+</span></code></pre></div>
+<p><strong>En VS Code:</strong></p>
+<ol>
+<li>Click derecho en <code>src</code></li>
+<li>"New Folder" → <code>components</code></li>
+<li>"New Folder" → <code>services</code></li>
+<li>Click derecho en <code>components</code> → "New File" → <code>PostCard.js</code></li>
+<li>Repite para los demás archivos</li>
+</ol>
+<h3 id="paso-32-crear-el-servicio-para-la-api"><strong>Paso 3.2: Crear el servicio para la API</strong></h3>
+<p><strong>📁 Archivo: <code>src/services/postService.js</code></strong></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">// src/services/postService.js</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">API_BASE_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://jsonplaceholder.typicode.com&#39;</span><span class="p">;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1">// 🔥 Función para obtener todos los posts</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">getAllPosts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="c1">// Hacemos la petición HTTP</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">API_BASE_URL</span><span class="si">}</span><span class="sb">/posts`</span><span class="p">);</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="c1">// Verificamos si la respuesta es exitosa</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`HTTP error! status: </span><span class="si">${</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">    </span><span class="c1">// Convertimos la respuesta a JSON</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">posts</span><span class="p">;</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error fetching posts:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="nx">error</span><span class="p">;</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="p">};</span>
+</span></code></pre></div>
+<p><strong>🤔 ¿Qué está pasando aquí?</strong></p>
+<ul>
+<li><code>fetch()</code> hace una petición HTTP a la API</li>
+<li><code>async/await</code> maneja código asíncrono de forma más limpia</li>
+<li><code>try/catch</code> maneja errores si algo sale mal</li>
+<li><code>export</code> nos permite usar esta función en otros archivos</li>
+</ul>
+<p><strong>💡 Prueba la API:</strong>
+Abre en tu navegador: https://jsonplaceholder.typicode.com/posts</p>
+<h3 id="paso-33-crear-el-componente-postcard"><strong>Paso 3.3: Crear el componente PostCard</strong></h3>
+<p><strong>📁 Archivo: <code>src/components/PostCard.js</code></strong></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">// src/components/PostCard.js</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1">// 🎯 Componente que recibe un post y lo muestra</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">PostCard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">post</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;post-card&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">      </span><span class="p">{</span><span class="cm">/* Encabezado con ID y usuario */</span><span class="p">}</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;post-header&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">span</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;post-id&quot;</span><span class="o">&gt;</span><span class="err">#</span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">span</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;post-user&quot;</span><span class="o">&gt;</span><span class="nx">Usuario</span><span class="w"> </span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">userId</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">      </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">      </span><span class="p">{</span><span class="cm">/* Título del post */</span><span class="p">}</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">h3</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;post-title&quot;</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h3&gt;</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">      </span><span class="p">{</span><span class="cm">/* Cuerpo del post */</span><span class="p">}</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;post-body&quot;</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">body</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">  </span><span class="p">);</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="p">};</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">PostCard</span><span class="p">;</span>
+</span></code></pre></div>
+<p><strong>🤔 ¿Qué está pasando aquí?</strong></p>
+<ul>
+<li><code>{ post }</code> - destructuring de props, recibimos un objeto post</li>
+<li><code>{post.title}</code> - mostramos dinámicamente el título del post</li>
+<li><code>className</code> - en React usamos className en lugar de class</li>
+<li><code>export default</code> - exportamos el componente para usarlo en otros archivos</li>
+</ul>
+<h3 id="paso-34-crear-el-componente-postslist"><strong>Paso 3.4: Crear el componente PostsList</strong></h3>
+<p><strong>📁 Archivo: <code>src/components/PostsList.js</code></strong></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">// src/components/PostsList.js</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">import</span><span class="w"> </span><span class="nx">PostCard</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./PostCard&#39;</span><span class="p">;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">getAllPosts</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../services/postService&#39;</span><span class="p">;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">PostsList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span><span class="c1">// 🎯 Estados para manejar diferentes situaciones</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">posts</span><span class="p">,</span><span class="w"> </span><span class="nx">setPosts</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">([]);</span><span class="w">           </span><span class="c1">// Array de posts</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">loading</span><span class="p">,</span><span class="w"> </span><span class="nx">setLoading</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">     </span><span class="c1">// ¿Está cargando?</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">setError</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span><span class="w">         </span><span class="c1">// ¿Hay algún error?</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">  </span><span class="c1">// 🔥 useEffect - Se ejecuta cuando el componente se monta</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">    </span><span class="c1">// Función para obtener los posts</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">fetchPosts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">      </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">        </span><span class="nx">setLoading</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">           </span><span class="c1">// Empezamos a cargar</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">        </span><span class="nx">setError</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span><span class="w">             </span><span class="c1">// Limpiamos errores previos</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">        </span><span class="c1">// Llamamos a nuestra API</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">postsData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getAllPosts</span><span class="p">();</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">        </span><span class="c1">// Guardamos los posts en el estado</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">        </span><span class="nx">setPosts</span><span class="p">(</span><span class="nx">postsData</span><span class="p">);</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">        </span><span class="c1">// Si hay error, lo guardamos</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="w">        </span><span class="nx">setError</span><span class="p">(</span><span class="s1">&#39;Error al cargar los posts. Inténtalo de nuevo.&#39;</span><span class="p">);</span>
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">);</span>
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="w">        </span><span class="c1">// Siempre quitamos el loading</span>
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="w">        </span><span class="nx">setLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>
+</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a><span class="w">    </span><span class="c1">// Ejecutamos la función</span>
+</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a><span class="w">    </span><span class="nx">fetchPosts</span><span class="p">();</span>
+</span><span id="__span-10-39"><a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>
+</span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a><span class="w">    </span><span class="c1">// [] = solo se ejecuta una vez al montar el componente</span>
+</span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a><span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
+</span><span id="__span-10-42"><a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a>
+</span><span id="__span-10-43"><a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a><span class="w">  </span><span class="c1">// 🎯 Función para recargar los posts</span>
+</span><span id="__span-10-44"><a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleRefresh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-45"><a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a><span class="w">    </span><span class="nx">setLoading</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</span><span id="__span-10-46"><a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a><span class="w">    </span><span class="nx">setError</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</span><span id="__span-10-47"><a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a>
+</span><span id="__span-10-48"><a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a><span class="w">    </span><span class="nx">getAllPosts</span><span class="p">()</span>
+</span><span id="__span-10-49"><a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a><span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">postsData</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setPosts</span><span class="p">(</span><span class="nx">postsData</span><span class="p">))</span>
+</span><span id="__span-10-50"><a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a><span class="w">      </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setError</span><span class="p">(</span><span class="s1">&#39;Error al recargar los posts&#39;</span><span class="p">))</span>
+</span><span id="__span-10-51"><a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a><span class="w">      </span><span class="p">.</span><span class="k">finally</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+</span><span id="__span-10-52"><a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a><span class="w">  </span><span class="p">};</span>
+</span><span id="__span-10-53"><a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a>
+</span><span id="__span-10-54"><a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a><span class="w">  </span><span class="c1">// 🎨 Si está cargando, mostramos un spinner</span>
+</span><span id="__span-10-55"><a id="__codelineno-10-55" name="__codelineno-10-55" href="#__codelineno-10-55"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">loading</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-56"><a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-10-57"><a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;loading-container&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-10-58"><a id="__codelineno-10-58" name="__codelineno-10-58" href="#__codelineno-10-58"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;loading-spinner&quot;</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-10-59"><a id="__codelineno-10-59" name="__codelineno-10-59" href="#__codelineno-10-59"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Cargando</span><span class="w"> </span><span class="nx">posts</span><span class="p">...</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span id="__span-10-60"><a id="__codelineno-10-60" name="__codelineno-10-60" href="#__codelineno-10-60"></a><span class="w">      </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-10-61"><a id="__codelineno-10-61" name="__codelineno-10-61" href="#__codelineno-10-61"></a><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-10-62"><a id="__codelineno-10-62" name="__codelineno-10-62" href="#__codelineno-10-62"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-10-63"><a id="__codelineno-10-63" name="__codelineno-10-63" href="#__codelineno-10-63"></a>
+</span><span id="__span-10-64"><a id="__codelineno-10-64" name="__codelineno-10-64" href="#__codelineno-10-64"></a><span class="w">  </span><span class="c1">// 🎨 Si hay error, mostramos mensaje de error</span>
+</span><span id="__span-10-65"><a id="__codelineno-10-65" name="__codelineno-10-65" href="#__codelineno-10-65"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-66"><a id="__codelineno-10-66" name="__codelineno-10-66" href="#__codelineno-10-66"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-10-67"><a id="__codelineno-10-67" name="__codelineno-10-67" href="#__codelineno-10-67"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;error-container&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-10-68"><a id="__codelineno-10-68" name="__codelineno-10-68" href="#__codelineno-10-68"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="err">¡</span><span class="nx">Oops</span><span class="o">!</span><span class="w"> </span><span class="nx">Algo</span><span class="w"> </span><span class="nx">salió</span><span class="w"> </span><span class="nx">mal</span><span class="o">&lt;</span><span class="err">/h3&gt;</span>
+</span><span id="__span-10-69"><a id="__codelineno-10-69" name="__codelineno-10-69" href="#__codelineno-10-69"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">error</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span id="__span-10-70"><a id="__codelineno-10-70" name="__codelineno-10-70" href="#__codelineno-10-70"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleRefresh</span><span class="p">}</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;retry-button&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-10-71"><a id="__codelineno-10-71" name="__codelineno-10-71" href="#__codelineno-10-71"></a><span class="w">          </span><span class="nx">Intentar</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">nuevo</span>
+</span><span id="__span-10-72"><a id="__codelineno-10-72" name="__codelineno-10-72" href="#__codelineno-10-72"></a><span class="w">        </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span><span id="__span-10-73"><a id="__codelineno-10-73" name="__codelineno-10-73" href="#__codelineno-10-73"></a><span class="w">      </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-10-74"><a id="__codelineno-10-74" name="__codelineno-10-74" href="#__codelineno-10-74"></a><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-10-75"><a id="__codelineno-10-75" name="__codelineno-10-75" href="#__codelineno-10-75"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-10-76"><a id="__codelineno-10-76" name="__codelineno-10-76" href="#__codelineno-10-76"></a>
+</span><span id="__span-10-77"><a id="__codelineno-10-77" name="__codelineno-10-77" href="#__codelineno-10-77"></a><span class="w">  </span><span class="c1">// 🎨 Si todo está bien, mostramos los posts</span>
+</span><span id="__span-10-78"><a id="__codelineno-10-78" name="__codelineno-10-78" href="#__codelineno-10-78"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-10-79"><a id="__codelineno-10-79" name="__codelineno-10-79" href="#__codelineno-10-79"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;posts-container&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-10-80"><a id="__codelineno-10-80" name="__codelineno-10-80" href="#__codelineno-10-80"></a><span class="w">      </span><span class="p">{</span><span class="cm">/* Header con información */</span><span class="p">}</span>
+</span><span id="__span-10-81"><a id="__codelineno-10-81" name="__codelineno-10-81" href="#__codelineno-10-81"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;posts-header&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-10-82"><a id="__codelineno-10-82" name="__codelineno-10-82" href="#__codelineno-10-82"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="err">📝</span><span class="w"> </span><span class="nx">Posts</span><span class="w"> </span><span class="nx">del</span><span class="w"> </span><span class="nx">Blog</span><span class="o">&lt;</span><span class="err">/h2&gt;</span>
+</span><span id="__span-10-83"><a id="__codelineno-10-83" name="__codelineno-10-83" href="#__codelineno-10-83"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Total</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">posts</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">posts</span><span class="p">.</span><span class="nx">length</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span id="__span-10-84"><a id="__codelineno-10-84" name="__codelineno-10-84" href="#__codelineno-10-84"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleRefresh</span><span class="p">}</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;refresh-button&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-10-85"><a id="__codelineno-10-85" name="__codelineno-10-85" href="#__codelineno-10-85"></a><span class="w">          </span><span class="err">🔄</span><span class="w"> </span><span class="nx">Actualizar</span>
+</span><span id="__span-10-86"><a id="__codelineno-10-86" name="__codelineno-10-86" href="#__codelineno-10-86"></a><span class="w">        </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+</span><span id="__span-10-87"><a id="__codelineno-10-87" name="__codelineno-10-87" href="#__codelineno-10-87"></a><span class="w">      </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-10-88"><a id="__codelineno-10-88" name="__codelineno-10-88" href="#__codelineno-10-88"></a>
+</span><span id="__span-10-89"><a id="__codelineno-10-89" name="__codelineno-10-89" href="#__codelineno-10-89"></a><span class="w">      </span><span class="p">{</span><span class="cm">/* Grid con todos los posts */</span><span class="p">}</span>
+</span><span id="__span-10-90"><a id="__codelineno-10-90" name="__codelineno-10-90" href="#__codelineno-10-90"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;posts-grid&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-10-91"><a id="__codelineno-10-91" name="__codelineno-10-91" href="#__codelineno-10-91"></a><span class="w">        </span><span class="p">{</span><span class="nx">posts</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">post</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-10-92"><a id="__codelineno-10-92" name="__codelineno-10-92" href="#__codelineno-10-92"></a><span class="w">          </span><span class="o">&lt;</span><span class="nx">PostCard</span><span class="w"> </span>
+</span><span id="__span-10-93"><a id="__codelineno-10-93" name="__codelineno-10-93" href="#__codelineno-10-93"></a><span class="w">            </span><span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">post</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="w">    </span><span class="c1">// Key único para cada elemento</span>
+</span><span id="__span-10-94"><a id="__codelineno-10-94" name="__codelineno-10-94" href="#__codelineno-10-94"></a><span class="w">            </span><span class="nx">post</span><span class="o">=</span><span class="p">{</span><span class="nx">post</span><span class="p">}</span><span class="w">      </span><span class="c1">// Pasamos el post como prop</span>
+</span><span id="__span-10-95"><a id="__codelineno-10-95" name="__codelineno-10-95" href="#__codelineno-10-95"></a><span class="w">          </span><span class="o">/&gt;</span>
+</span><span id="__span-10-96"><a id="__codelineno-10-96" name="__codelineno-10-96" href="#__codelineno-10-96"></a><span class="w">        </span><span class="p">))}</span>
+</span><span id="__span-10-97"><a id="__codelineno-10-97" name="__codelineno-10-97" href="#__codelineno-10-97"></a><span class="w">      </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-10-98"><a id="__codelineno-10-98" name="__codelineno-10-98" href="#__codelineno-10-98"></a><span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-10-99"><a id="__codelineno-10-99" name="__codelineno-10-99" href="#__codelineno-10-99"></a><span class="w">  </span><span class="p">);</span>
+</span><span id="__span-10-100"><a id="__codelineno-10-100" name="__codelineno-10-100" href="#__codelineno-10-100"></a><span class="p">};</span>
+</span><span id="__span-10-101"><a id="__codelineno-10-101" name="__codelineno-10-101" href="#__codelineno-10-101"></a>
+</span><span id="__span-10-102"><a id="__codelineno-10-102" name="__codelineno-10-102" href="#__codelineno-10-102"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">PostsList</span><span class="p">;</span>
+</span></code></pre></div>
+<p><strong>🤔 ¿Qué acabamos de aprender?</strong></p>
+<ul>
+<li><strong>Múltiples estados</strong>: loading, error, datos</li>
+<li><strong>useEffect con array vacío</strong>: se ejecuta solo una vez</li>
+<li><strong>Render condicional</strong>: mostramos diferentes cosas según el estado</li>
+<li><strong>map()</strong>: convertimos un array de datos en componentes JSX</li>
+<li><strong>Props</strong>: pasamos datos del padre al hijo</li>
+</ul>
+<hr />
+<h2 id="parte-4-actualizando-la-app-principal">🎨 <strong>PARTE 4: Actualizando la App Principal</strong></h2>
+<h3 id="paso-41-actualizar-appjs"><strong>Paso 4.1: Actualizar App.js</strong></h3>
+<p><strong>📁 Archivo: <code>src/App.js</code></strong></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">// src/App.js</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">import</span><span class="w"> </span><span class="nx">PostsList</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./components/PostsList&#39;</span><span class="p">;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">import</span><span class="w"> </span><span class="s1">&#39;./App.css&#39;</span><span class="p">;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;App&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">      </span><span class="p">{</span><span class="cm">/* Header de la aplicación */</span><span class="p">}</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">header</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;app-header&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="err">🚀</span><span class="w"> </span><span class="nx">Mi</span><span class="w"> </span><span class="nx">Primera</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="nx">React</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Consumiendo</span><span class="w"> </span><span class="nx">API</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">JSONPlaceholder</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">      </span><span class="o">&lt;</span><span class="err">/header&gt;</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">      </span><span class="p">{</span><span class="cm">/* Contenido principal */</span><span class="p">}</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">main</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;app-main&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">PostsList</span><span class="w"> </span><span class="o">/&gt;</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">      </span><span class="o">&lt;</span><span class="err">/main&gt;</span>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">      </span><span class="p">{</span><span class="cm">/* Footer */</span><span class="p">}</span>
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">      </span><span class="o">&lt;</span><span class="nx">footer</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">&quot;app-footer&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">        </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">          </span><span class="nx">Hecho</span><span class="w"> </span><span class="nx">con</span><span class="w"> </span><span class="err">❤️</span><span class="w"> </span><span class="nx">en</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="o">|</span><span class="w"> </span>
+</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="w">          </span><span class="nx">API</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">a</span><span class="w"> </span>
+</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="w">            </span><span class="nx">href</span><span class="o">=</span><span class="s2">&quot;https://jsonplaceholder.typicode.com&quot;</span><span class="w"> </span>
+</span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="w">            </span><span class="nx">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span><span class="w"> </span>
+</span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="w">            </span><span class="nx">rel</span><span class="o">=</span><span class="s2">&quot;noopener noreferrer&quot;</span>
+</span><span id="__span-11-28"><a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="w">          </span><span class="o">&gt;</span>
+</span><span id="__span-11-29"><a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a><span class="w">            </span><span class="nx">JSONPlaceholder</span>
+</span><span id="__span-11-30"><a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a><span class="w">          </span><span class="o">&lt;</span><span class="err">/a&gt;</span>
+</span><span id="__span-11-31"><a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a><span class="w">        </span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span id="__span-11-32"><a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a><span class="w">      </span><span class="o">&lt;</span><span class="err">/footer&gt;</span>
+</span><span id="__span-11-33"><a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a><span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</span><span id="__span-11-34"><a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a><span class="w">  </span><span class="p">);</span>
+</span><span id="__span-11-35"><a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a><span class="p">}</span>
+</span><span id="__span-11-36"><a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>
+</span><span id="__span-11-37"><a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="paso-42-actualizar-los-estilos"><strong>Paso 4.2: Actualizar los estilos</strong></h3>
+<p><strong>📁 Archivo: <code>src/App.css</code></strong></p>
+<div class="language-css highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c">/* src/App.css */</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c">/* 🎨 Reset básico */</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span><span class="k">box-sizing</span><span class="p">:</span><span class="w"> </span><span class="kc">border-box</span><span class="p">;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p">}</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">  </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="n">apple-system</span><span class="p">,</span><span class="w"> </span><span class="n">BlinkMacSystemFont</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Segoe UI&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Roboto&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#f5f5f5</span><span class="p">;</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#333</span><span class="p">;</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">  </span><span class="k">line-height</span><span class="p">:</span><span class="w"> </span><span class="mf">1.6</span><span class="p">;</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="p">}</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="c">/* 🎨 Layout principal */</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="p">.</span><span class="nc">App</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">  </span><span class="k">min-height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">vh</span><span class="p">;</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">  </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="p">}</span>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="c">/* 🎨 Header */</span>
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="p">.</span><span class="nc">app-header</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="mi">135</span><span class="kt">deg</span><span class="p">,</span><span class="w"> </span><span class="mh">#667eea</span><span class="w"> </span><span class="mi">0</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="mh">#764ba2</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">);</span>
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="w">  </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="w">  </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">);</span>
+</span><span id="__span-12-31"><a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a><span class="p">}</span>
+</span><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>
+</span><span id="__span-12-33"><a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a><span class="p">.</span><span class="nc">app-header</span><span class="w"> </span><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-34"><a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a><span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">2.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-35"><a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a><span class="w">  </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-36"><a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a><span class="w">  </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">700</span><span class="p">;</span>
+</span><span id="__span-12-37"><a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a><span class="p">}</span>
+</span><span id="__span-12-38"><a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a>
+</span><span id="__span-12-39"><a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a><span class="c">/* 🎨 Main content */</span>
+</span><span id="__span-12-40"><a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a><span class="p">.</span><span class="nc">app-main</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-41"><a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a><span class="w">  </span><span class="k">flex</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-12-42"><a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-43"><a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a><span class="w">  </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-12-44"><a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a><span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+</span><span id="__span-12-45"><a id="__codelineno-12-45" name="__codelineno-12-45" href="#__codelineno-12-45"></a><span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span><span id="__span-12-46"><a id="__codelineno-12-46" name="__codelineno-12-46" href="#__codelineno-12-46"></a><span class="p">}</span>
+</span><span id="__span-12-47"><a id="__codelineno-12-47" name="__codelineno-12-47" href="#__codelineno-12-47"></a>
+</span><span id="__span-12-48"><a id="__codelineno-12-48" name="__codelineno-12-48" href="#__codelineno-12-48"></a><span class="c">/* 🎨 Posts header */</span>
+</span><span id="__span-12-49"><a id="__codelineno-12-49" name="__codelineno-12-49" href="#__codelineno-12-49"></a><span class="p">.</span><span class="nc">posts-header</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-50"><a id="__codelineno-12-50" name="__codelineno-12-50" href="#__codelineno-12-50"></a><span class="w">  </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+</span><span id="__span-12-51"><a id="__codelineno-12-51" name="__codelineno-12-51" href="#__codelineno-12-51"></a><span class="w">  </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-52"><a id="__codelineno-12-52" name="__codelineno-12-52" href="#__codelineno-12-52"></a><span class="p">}</span>
+</span><span id="__span-12-53"><a id="__codelineno-12-53" name="__codelineno-12-53" href="#__codelineno-12-53"></a>
+</span><span id="__span-12-54"><a id="__codelineno-12-54" name="__codelineno-12-54" href="#__codelineno-12-54"></a><span class="p">.</span><span class="nc">posts-header</span><span class="w"> </span><span class="nt">h2</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-55"><a id="__codelineno-12-55" name="__codelineno-12-55" href="#__codelineno-12-55"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#333</span><span class="p">;</span>
+</span><span id="__span-12-56"><a id="__codelineno-12-56" name="__codelineno-12-56" href="#__codelineno-12-56"></a><span class="w">  </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-57"><a id="__codelineno-12-57" name="__codelineno-12-57" href="#__codelineno-12-57"></a><span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-58"><a id="__codelineno-12-58" name="__codelineno-12-58" href="#__codelineno-12-58"></a><span class="p">}</span>
+</span><span id="__span-12-59"><a id="__codelineno-12-59" name="__codelineno-12-59" href="#__codelineno-12-59"></a>
+</span><span id="__span-12-60"><a id="__codelineno-12-60" name="__codelineno-12-60" href="#__codelineno-12-60"></a><span class="c">/* 🎨 Botones */</span>
+</span><span id="__span-12-61"><a id="__codelineno-12-61" name="__codelineno-12-61" href="#__codelineno-12-61"></a><span class="p">.</span><span class="nc">refresh-button</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">retry-button</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-62"><a id="__codelineno-12-62" name="__codelineno-12-62" href="#__codelineno-12-62"></a><span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#667eea</span><span class="p">;</span>
+</span><span id="__span-12-63"><a id="__codelineno-12-63" name="__codelineno-12-63" href="#__codelineno-12-63"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+</span><span id="__span-12-64"><a id="__codelineno-12-64" name="__codelineno-12-64" href="#__codelineno-12-64"></a><span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+</span><span id="__span-12-65"><a id="__codelineno-12-65" name="__codelineno-12-65" href="#__codelineno-12-65"></a><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="kt">rem</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-66"><a id="__codelineno-12-66" name="__codelineno-12-66" href="#__codelineno-12-66"></a><span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-12-67"><a id="__codelineno-12-67" name="__codelineno-12-67" href="#__codelineno-12-67"></a><span class="w">  </span><span class="k">cursor</span><span class="p">:</span><span class="w"> </span><span class="kc">pointer</span><span class="p">;</span>
+</span><span id="__span-12-68"><a id="__codelineno-12-68" name="__codelineno-12-68" href="#__codelineno-12-68"></a><span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-69"><a id="__codelineno-12-69" name="__codelineno-12-69" href="#__codelineno-12-69"></a><span class="w">  </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
+</span><span id="__span-12-70"><a id="__codelineno-12-70" name="__codelineno-12-70" href="#__codelineno-12-70"></a><span class="w">  </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="kc">all</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="w"> </span><span class="kc">ease</span><span class="p">;</span>
+</span><span id="__span-12-71"><a id="__codelineno-12-71" name="__codelineno-12-71" href="#__codelineno-12-71"></a><span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-72"><a id="__codelineno-12-72" name="__codelineno-12-72" href="#__codelineno-12-72"></a><span class="p">}</span>
+</span><span id="__span-12-73"><a id="__codelineno-12-73" name="__codelineno-12-73" href="#__codelineno-12-73"></a>
+</span><span id="__span-12-74"><a id="__codelineno-12-74" name="__codelineno-12-74" href="#__codelineno-12-74"></a><span class="p">.</span><span class="nc">refresh-button</span><span class="p">:</span><span class="nd">hover</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">retry-button</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-75"><a id="__codelineno-12-75" name="__codelineno-12-75" href="#__codelineno-12-75"></a><span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#5a67d8</span><span class="p">;</span>
+</span><span id="__span-12-76"><a id="__codelineno-12-76" name="__codelineno-12-76" href="#__codelineno-12-76"></a><span class="w">  </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateY</span><span class="p">(</span><span class="mi">-2</span><span class="kt">px</span><span class="p">);</span>
+</span><span id="__span-12-77"><a id="__codelineno-12-77" name="__codelineno-12-77" href="#__codelineno-12-77"></a><span class="p">}</span>
+</span><span id="__span-12-78"><a id="__codelineno-12-78" name="__codelineno-12-78" href="#__codelineno-12-78"></a>
+</span><span id="__span-12-79"><a id="__codelineno-12-79" name="__codelineno-12-79" href="#__codelineno-12-79"></a><span class="c">/* 🎨 Grid de posts */</span>
+</span><span id="__span-12-80"><a id="__codelineno-12-80" name="__codelineno-12-80" href="#__codelineno-12-80"></a><span class="p">.</span><span class="nc">posts-grid</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-81"><a id="__codelineno-12-81" name="__codelineno-12-81" href="#__codelineno-12-81"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="k">grid</span><span class="p">;</span>
+</span><span id="__span-12-82"><a id="__codelineno-12-82" name="__codelineno-12-82" href="#__codelineno-12-82"></a><span class="w">  </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="nf">repeat</span><span class="p">(</span><span class="kc">auto</span><span class="nv">-fill</span><span class="p">,</span><span class="w"> </span><span class="nf">minmax</span><span class="p">(</span><span class="mi">350</span><span class="kt">px</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="p">));</span>
+</span><span id="__span-12-83"><a id="__codelineno-12-83" name="__codelineno-12-83" href="#__codelineno-12-83"></a><span class="w">  </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-84"><a id="__codelineno-12-84" name="__codelineno-12-84" href="#__codelineno-12-84"></a><span class="w">  </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-85"><a id="__codelineno-12-85" name="__codelineno-12-85" href="#__codelineno-12-85"></a><span class="p">}</span>
+</span><span id="__span-12-86"><a id="__codelineno-12-86" name="__codelineno-12-86" href="#__codelineno-12-86"></a>
+</span><span id="__span-12-87"><a id="__codelineno-12-87" name="__codelineno-12-87" href="#__codelineno-12-87"></a><span class="c">/* 🎨 Tarjeta de post */</span>
+</span><span id="__span-12-88"><a id="__codelineno-12-88" name="__codelineno-12-88" href="#__codelineno-12-88"></a><span class="p">.</span><span class="nc">post-card</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-89"><a id="__codelineno-12-89" name="__codelineno-12-89" href="#__codelineno-12-89"></a><span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+</span><span id="__span-12-90"><a id="__codelineno-12-90" name="__codelineno-12-90" href="#__codelineno-12-90"></a><span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-12-91"><a id="__codelineno-12-91" name="__codelineno-12-91" href="#__codelineno-12-91"></a><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-92"><a id="__codelineno-12-92" name="__codelineno-12-92" href="#__codelineno-12-92"></a><span class="w">  </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+</span><span id="__span-12-93"><a id="__codelineno-12-93" name="__codelineno-12-93" href="#__codelineno-12-93"></a><span class="w">  </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="kc">all</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="w"> </span><span class="kc">ease</span><span class="p">;</span>
+</span><span id="__span-12-94"><a id="__codelineno-12-94" name="__codelineno-12-94" href="#__codelineno-12-94"></a><span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#e2e8f0</span><span class="p">;</span>
+</span><span id="__span-12-95"><a id="__codelineno-12-95" name="__codelineno-12-95" href="#__codelineno-12-95"></a><span class="p">}</span>
+</span><span id="__span-12-96"><a id="__codelineno-12-96" name="__codelineno-12-96" href="#__codelineno-12-96"></a>
+</span><span id="__span-12-97"><a id="__codelineno-12-97" name="__codelineno-12-97" href="#__codelineno-12-97"></a><span class="p">.</span><span class="nc">post-card</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-98"><a id="__codelineno-12-98" name="__codelineno-12-98" href="#__codelineno-12-98"></a><span class="w">  </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateY</span><span class="p">(</span><span class="mi">-5</span><span class="kt">px</span><span class="p">);</span>
+</span><span id="__span-12-99"><a id="__codelineno-12-99" name="__codelineno-12-99" href="#__codelineno-12-99"></a><span class="w">  </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="w"> </span><span class="mi">25</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.15</span><span class="p">);</span>
+</span><span id="__span-12-100"><a id="__codelineno-12-100" name="__codelineno-12-100" href="#__codelineno-12-100"></a><span class="p">}</span>
+</span><span id="__span-12-101"><a id="__codelineno-12-101" name="__codelineno-12-101" href="#__codelineno-12-101"></a>
+</span><span id="__span-12-102"><a id="__codelineno-12-102" name="__codelineno-12-102" href="#__codelineno-12-102"></a><span class="p">.</span><span class="nc">post-header</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-103"><a id="__codelineno-12-103" name="__codelineno-12-103" href="#__codelineno-12-103"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
+</span><span id="__span-12-104"><a id="__codelineno-12-104" name="__codelineno-12-104" href="#__codelineno-12-104"></a><span class="w">  </span><span class="k">justify-content</span><span class="p">:</span><span class="w"> </span><span class="kc">space-between</span><span class="p">;</span>
+</span><span id="__span-12-105"><a id="__codelineno-12-105" name="__codelineno-12-105" href="#__codelineno-12-105"></a><span class="w">  </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+</span><span id="__span-12-106"><a id="__codelineno-12-106" name="__codelineno-12-106" href="#__codelineno-12-106"></a><span class="w">  </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-107"><a id="__codelineno-12-107" name="__codelineno-12-107" href="#__codelineno-12-107"></a><span class="w">  </span><span class="k">padding-bottom</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-108"><a id="__codelineno-12-108" name="__codelineno-12-108" href="#__codelineno-12-108"></a><span class="w">  </span><span class="k">border-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#f7fafc</span><span class="p">;</span>
+</span><span id="__span-12-109"><a id="__codelineno-12-109" name="__codelineno-12-109" href="#__codelineno-12-109"></a><span class="p">}</span>
+</span><span id="__span-12-110"><a id="__codelineno-12-110" name="__codelineno-12-110" href="#__codelineno-12-110"></a>
+</span><span id="__span-12-111"><a id="__codelineno-12-111" name="__codelineno-12-111" href="#__codelineno-12-111"></a><span class="p">.</span><span class="nc">post-id</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-112"><a id="__codelineno-12-112" name="__codelineno-12-112" href="#__codelineno-12-112"></a><span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#667eea</span><span class="p">;</span>
+</span><span id="__span-12-113"><a id="__codelineno-12-113" name="__codelineno-12-113" href="#__codelineno-12-113"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+</span><span id="__span-12-114"><a id="__codelineno-12-114" name="__codelineno-12-114" href="#__codelineno-12-114"></a><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="kt">rem</span><span class="w"> </span><span class="mf">0.75</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-115"><a id="__codelineno-12-115" name="__codelineno-12-115" href="#__codelineno-12-115"></a><span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-12-116"><a id="__codelineno-12-116" name="__codelineno-12-116" href="#__codelineno-12-116"></a><span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.875</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-117"><a id="__codelineno-12-117" name="__codelineno-12-117" href="#__codelineno-12-117"></a><span class="w">  </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
+</span><span id="__span-12-118"><a id="__codelineno-12-118" name="__codelineno-12-118" href="#__codelineno-12-118"></a><span class="p">}</span>
+</span><span id="__span-12-119"><a id="__codelineno-12-119" name="__codelineno-12-119" href="#__codelineno-12-119"></a>
+</span><span id="__span-12-120"><a id="__codelineno-12-120" name="__codelineno-12-120" href="#__codelineno-12-120"></a><span class="p">.</span><span class="nc">post-user</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-121"><a id="__codelineno-12-121" name="__codelineno-12-121" href="#__codelineno-12-121"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#718096</span><span class="p">;</span>
+</span><span id="__span-12-122"><a id="__codelineno-12-122" name="__codelineno-12-122" href="#__codelineno-12-122"></a><span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.875</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-123"><a id="__codelineno-12-123" name="__codelineno-12-123" href="#__codelineno-12-123"></a><span class="w">  </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span>
+</span><span id="__span-12-124"><a id="__codelineno-12-124" name="__codelineno-12-124" href="#__codelineno-12-124"></a><span class="p">}</span>
+</span><span id="__span-12-125"><a id="__codelineno-12-125" name="__codelineno-12-125" href="#__codelineno-12-125"></a>
+</span><span id="__span-12-126"><a id="__codelineno-12-126" name="__codelineno-12-126" href="#__codelineno-12-126"></a><span class="p">.</span><span class="nc">post-title</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-127"><a id="__codelineno-12-127" name="__codelineno-12-127" href="#__codelineno-12-127"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#2d3748</span><span class="p">;</span>
+</span><span id="__span-12-128"><a id="__codelineno-12-128" name="__codelineno-12-128" href="#__codelineno-12-128"></a><span class="w">  </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-129"><a id="__codelineno-12-129" name="__codelineno-12-129" href="#__codelineno-12-129"></a><span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.25</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-130"><a id="__codelineno-12-130" name="__codelineno-12-130" href="#__codelineno-12-130"></a><span class="w">  </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
+</span><span id="__span-12-131"><a id="__codelineno-12-131" name="__codelineno-12-131" href="#__codelineno-12-131"></a><span class="w">  </span><span class="k">line-height</span><span class="p">:</span><span class="w"> </span><span class="mf">1.4</span><span class="p">;</span>
+</span><span id="__span-12-132"><a id="__codelineno-12-132" name="__codelineno-12-132" href="#__codelineno-12-132"></a><span class="w">  </span><span class="k">text-transform</span><span class="p">:</span><span class="w"> </span><span class="kc">capitalize</span><span class="p">;</span>
+</span><span id="__span-12-133"><a id="__codelineno-12-133" name="__codelineno-12-133" href="#__codelineno-12-133"></a><span class="p">}</span>
+</span><span id="__span-12-134"><a id="__codelineno-12-134" name="__codelineno-12-134" href="#__codelineno-12-134"></a>
+</span><span id="__span-12-135"><a id="__codelineno-12-135" name="__codelineno-12-135" href="#__codelineno-12-135"></a><span class="p">.</span><span class="nc">post-body</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-136"><a id="__codelineno-12-136" name="__codelineno-12-136" href="#__codelineno-12-136"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#4a5568</span><span class="p">;</span>
+</span><span id="__span-12-137"><a id="__codelineno-12-137" name="__codelineno-12-137" href="#__codelineno-12-137"></a><span class="w">  </span><span class="k">line-height</span><span class="p">:</span><span class="w"> </span><span class="mf">1.6</span><span class="p">;</span>
+</span><span id="__span-12-138"><a id="__codelineno-12-138" name="__codelineno-12-138" href="#__codelineno-12-138"></a><span class="p">}</span>
+</span><span id="__span-12-139"><a id="__codelineno-12-139" name="__codelineno-12-139" href="#__codelineno-12-139"></a>
+</span><span id="__span-12-140"><a id="__codelineno-12-140" name="__codelineno-12-140" href="#__codelineno-12-140"></a><span class="c">/* 🎨 Loading spinner */</span>
+</span><span id="__span-12-141"><a id="__codelineno-12-141" name="__codelineno-12-141" href="#__codelineno-12-141"></a><span class="p">.</span><span class="nc">loading-container</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-142"><a id="__codelineno-12-142" name="__codelineno-12-142" href="#__codelineno-12-142"></a><span class="w">  </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+</span><span id="__span-12-143"><a id="__codelineno-12-143" name="__codelineno-12-143" href="#__codelineno-12-143"></a><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-144"><a id="__codelineno-12-144" name="__codelineno-12-144" href="#__codelineno-12-144"></a><span class="p">}</span>
+</span><span id="__span-12-145"><a id="__codelineno-12-145" name="__codelineno-12-145" href="#__codelineno-12-145"></a>
+</span><span id="__span-12-146"><a id="__codelineno-12-146" name="__codelineno-12-146" href="#__codelineno-12-146"></a><span class="p">.</span><span class="nc">loading-spinner</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-147"><a id="__codelineno-12-147" name="__codelineno-12-147" href="#__codelineno-12-147"></a><span class="w">  </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-12-148"><a id="__codelineno-12-148" name="__codelineno-12-148" href="#__codelineno-12-148"></a><span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-12-149"><a id="__codelineno-12-149" name="__codelineno-12-149" href="#__codelineno-12-149"></a><span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#f3f3f3</span><span class="p">;</span>
+</span><span id="__span-12-150"><a id="__codelineno-12-150" name="__codelineno-12-150" href="#__codelineno-12-150"></a><span class="w">  </span><span class="k">border-top</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#667eea</span><span class="p">;</span>
+</span><span id="__span-12-151"><a id="__codelineno-12-151" name="__codelineno-12-151" href="#__codelineno-12-151"></a><span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+</span><span id="__span-12-152"><a id="__codelineno-12-152" name="__codelineno-12-152" href="#__codelineno-12-152"></a><span class="w">  </span><span class="k">animation</span><span class="p">:</span><span class="w"> </span><span class="n">spin</span><span class="w"> </span><span class="mi">1</span><span class="kt">s</span><span class="w"> </span><span class="kc">linear</span><span class="w"> </span><span class="kc">infinite</span><span class="p">;</span>
+</span><span id="__span-12-153"><a id="__codelineno-12-153" name="__codelineno-12-153" href="#__codelineno-12-153"></a><span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kc">auto</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-154"><a id="__codelineno-12-154" name="__codelineno-12-154" href="#__codelineno-12-154"></a><span class="p">}</span>
+</span><span id="__span-12-155"><a id="__codelineno-12-155" name="__codelineno-12-155" href="#__codelineno-12-155"></a>
+</span><span id="__span-12-156"><a id="__codelineno-12-156" name="__codelineno-12-156" href="#__codelineno-12-156"></a><span class="p">@</span><span class="k">keyframes</span><span class="w"> </span><span class="nt">spin</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-157"><a id="__codelineno-12-157" name="__codelineno-12-157" href="#__codelineno-12-157"></a><span class="w">  </span><span class="nt">0</span><span class="o">%</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">rotate</span><span class="p">(</span><span class="mi">0</span><span class="kt">deg</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-12-158"><a id="__codelineno-12-158" name="__codelineno-12-158" href="#__codelineno-12-158"></a><span class="w">  </span><span class="nt">100</span><span class="o">%</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">rotate</span><span class="p">(</span><span class="mi">360</span><span class="kt">deg</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-12-159"><a id="__codelineno-12-159" name="__codelineno-12-159" href="#__codelineno-12-159"></a><span class="p">}</span>
+</span><span id="__span-12-160"><a id="__codelineno-12-160" name="__codelineno-12-160" href="#__codelineno-12-160"></a>
+</span><span id="__span-12-161"><a id="__codelineno-12-161" name="__codelineno-12-161" href="#__codelineno-12-161"></a><span class="c">/* 🎨 Error container */</span>
+</span><span id="__span-12-162"><a id="__codelineno-12-162" name="__codelineno-12-162" href="#__codelineno-12-162"></a><span class="p">.</span><span class="nc">error-container</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-163"><a id="__codelineno-12-163" name="__codelineno-12-163" href="#__codelineno-12-163"></a><span class="w">  </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+</span><span id="__span-12-164"><a id="__codelineno-12-164" name="__codelineno-12-164" href="#__codelineno-12-164"></a><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-165"><a id="__codelineno-12-165" name="__codelineno-12-165" href="#__codelineno-12-165"></a><span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#fed7d7</span><span class="p">;</span>
+</span><span id="__span-12-166"><a id="__codelineno-12-166" name="__codelineno-12-166" href="#__codelineno-12-166"></a><span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#feb2b2</span><span class="p">;</span>
+</span><span id="__span-12-167"><a id="__codelineno-12-167" name="__codelineno-12-167" href="#__codelineno-12-167"></a><span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-12-168"><a id="__codelineno-12-168" name="__codelineno-12-168" href="#__codelineno-12-168"></a><span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+</span><span id="__span-12-169"><a id="__codelineno-12-169" name="__codelineno-12-169" href="#__codelineno-12-169"></a><span class="w">  </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="kt">px</span><span class="p">;</span>
+</span><span id="__span-12-170"><a id="__codelineno-12-170" name="__codelineno-12-170" href="#__codelineno-12-170"></a><span class="p">}</span>
+</span><span id="__span-12-171"><a id="__codelineno-12-171" name="__codelineno-12-171" href="#__codelineno-12-171"></a>
+</span><span id="__span-12-172"><a id="__codelineno-12-172" name="__codelineno-12-172" href="#__codelineno-12-172"></a><span class="p">.</span><span class="nc">error-container</span><span class="w"> </span><span class="nt">h3</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-173"><a id="__codelineno-12-173" name="__codelineno-12-173" href="#__codelineno-12-173"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#c53030</span><span class="p">;</span>
+</span><span id="__span-12-174"><a id="__codelineno-12-174" name="__codelineno-12-174" href="#__codelineno-12-174"></a><span class="w">  </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-175"><a id="__codelineno-12-175" name="__codelineno-12-175" href="#__codelineno-12-175"></a><span class="p">}</span>
+</span><span id="__span-12-176"><a id="__codelineno-12-176" name="__codelineno-12-176" href="#__codelineno-12-176"></a>
+</span><span id="__span-12-177"><a id="__codelineno-12-177" name="__codelineno-12-177" href="#__codelineno-12-177"></a><span class="c">/* 🎨 Footer */</span>
+</span><span id="__span-12-178"><a id="__codelineno-12-178" name="__codelineno-12-178" href="#__codelineno-12-178"></a><span class="p">.</span><span class="nc">app-footer</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-179"><a id="__codelineno-12-179" name="__codelineno-12-179" href="#__codelineno-12-179"></a><span class="w">  </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#2d3748</span><span class="p">;</span>
+</span><span id="__span-12-180"><a id="__codelineno-12-180" name="__codelineno-12-180" href="#__codelineno-12-180"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+</span><span id="__span-12-181"><a id="__codelineno-12-181" name="__codelineno-12-181" href="#__codelineno-12-181"></a><span class="w">  </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
+</span><span id="__span-12-182"><a id="__codelineno-12-182" name="__codelineno-12-182" href="#__codelineno-12-182"></a><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-183"><a id="__codelineno-12-183" name="__codelineno-12-183" href="#__codelineno-12-183"></a><span class="w">  </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+</span><span id="__span-12-184"><a id="__codelineno-12-184" name="__codelineno-12-184" href="#__codelineno-12-184"></a><span class="p">}</span>
+</span><span id="__span-12-185"><a id="__codelineno-12-185" name="__codelineno-12-185" href="#__codelineno-12-185"></a>
+</span><span id="__span-12-186"><a id="__codelineno-12-186" name="__codelineno-12-186" href="#__codelineno-12-186"></a><span class="p">.</span><span class="nc">app-footer</span><span class="w"> </span><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-187"><a id="__codelineno-12-187" name="__codelineno-12-187" href="#__codelineno-12-187"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#667eea</span><span class="p">;</span>
+</span><span id="__span-12-188"><a id="__codelineno-12-188" name="__codelineno-12-188" href="#__codelineno-12-188"></a><span class="w">  </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+</span><span id="__span-12-189"><a id="__codelineno-12-189" name="__codelineno-12-189" href="#__codelineno-12-189"></a><span class="p">}</span>
+</span><span id="__span-12-190"><a id="__codelineno-12-190" name="__codelineno-12-190" href="#__codelineno-12-190"></a>
+</span><span id="__span-12-191"><a id="__codelineno-12-191" name="__codelineno-12-191" href="#__codelineno-12-191"></a><span class="c">/* 🎨 Responsive */</span>
+</span><span id="__span-12-192"><a id="__codelineno-12-192" name="__codelineno-12-192" href="#__codelineno-12-192"></a><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">768px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-193"><a id="__codelineno-12-193" name="__codelineno-12-193" href="#__codelineno-12-193"></a><span class="w">  </span><span class="p">.</span><span class="nc">posts-grid</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-194"><a id="__codelineno-12-194" name="__codelineno-12-194" href="#__codelineno-12-194"></a><span class="w">    </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="p">;</span>
+</span><span id="__span-12-195"><a id="__codelineno-12-195" name="__codelineno-12-195" href="#__codelineno-12-195"></a><span class="w">    </span><span class="k">gap</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-196"><a id="__codelineno-12-196" name="__codelineno-12-196" href="#__codelineno-12-196"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-12-197"><a id="__codelineno-12-197" name="__codelineno-12-197" href="#__codelineno-12-197"></a>
+</span><span id="__span-12-198"><a id="__codelineno-12-198" name="__codelineno-12-198" href="#__codelineno-12-198"></a><span class="w">  </span><span class="p">.</span><span class="nc">app-main</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-199"><a id="__codelineno-12-199" name="__codelineno-12-199" href="#__codelineno-12-199"></a><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-200"><a id="__codelineno-12-200" name="__codelineno-12-200" href="#__codelineno-12-200"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-12-201"><a id="__codelineno-12-201" name="__codelineno-12-201" href="#__codelineno-12-201"></a>
+</span><span id="__span-12-202"><a id="__codelineno-12-202" name="__codelineno-12-202" href="#__codelineno-12-202"></a><span class="w">  </span><span class="p">.</span><span class="nc">app-header</span><span class="w"> </span><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-203"><a id="__codelineno-12-203" name="__codelineno-12-203" href="#__codelineno-12-203"></a><span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+</span><span id="__span-12-204"><a id="__codelineno-12-204" name="__codelineno-12-204" href="#__codelineno-12-204"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-12-205"><a id="__codelineno-12-205" name="__codelineno-12-205" href="#__codelineno-12-205"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h2 id="parte-5-probar-nuestra-app">🎉 <strong>PARTE 5: Probar Nuestra App</strong></h2>
+<h3 id="paso-51-verificar-que-todo-funciona"><strong>Paso 5.1: Verificar que todo funciona</strong></h3>
+<p>En la terminal, asegúrate de que el servidor sigue corriendo:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>npm<span class="w"> </span>start
+</span></code></pre></div>
+<p><strong>🎯 Deberías ver:</strong></p>
+<ul>
+<li>✅ Header con el título de la app</li>
+<li>✅ Loading spinner mientras cargan los posts</li>
+<li>✅ Grid con 100 posts de la API</li>
+<li>✅ Botón de actualizar funcionando</li>
+<li>✅ Diseño responsive</li>
+</ul>
+<p><strong>🐛 Si algo no funciona:</strong></p>
+<ul>
+<li>Verifica que todos los archivos estén guardados</li>
+<li>Revisa la consola del navegador (F12)</li>
+<li>Asegúrate de que no hay errores de sintaxis</li>
+</ul>
+<hr />
+<h2 id="parte-6-git-y-github">📦 <strong>PARTE 6: Git y GitHub</strong></h2>
+<h3 id="paso-61-configurar-git-solo-primera-vez"><strong>Paso 6.1: Configurar Git (solo primera vez)</strong></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Configurar tu identidad (cambiar por tus datos)</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Tu Nombre&quot;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;tu@email.com&quot;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1"># Verificar configuración</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>git<span class="w"> </span>config<span class="w"> </span>--list
+</span></code></pre></div>
+<h3 id="paso-62-inicializar-repositorio"><strong>Paso 6.2: Inicializar repositorio</strong></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Navegar a la carpeta del proyecto</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nb">cd</span><span class="w"> </span>posts-app
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1"># Inicializar Git (si no está inicializado)</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>git<span class="w"> </span>init
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1"># Ver el estado actual</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>git<span class="w"> </span>status
+</span></code></pre></div>
+<h3 id="paso-63-hacer-el-primer-commit"><strong>Paso 6.3: Hacer el primer commit</strong></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Agregar todos los archivos</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>git<span class="w"> </span>add<span class="w"> </span>.
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Crear el commit</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;🚀 Primera versión de la app React&quot;</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1"># Verificar el commit</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>git<span class="w"> </span>log<span class="w"> </span>--oneline
+</span></code></pre></div>
+<h3 id="paso-64-subir-a-github"><strong>Paso 6.4: Subir a GitHub</strong></h3>
+<ol>
+<li>
+<p><strong>Crear repositorio en GitHub:</strong></p>
+</li>
+<li>
+<p>Ve a https://github.com/</p>
+</li>
+<li>Click en "New repository"</li>
+<li>Nombre: <code>posts-app</code></li>
+<li>Descripción: <code>Mi primera aplicación React</code></li>
+<li>Público o privado (tu elección)</li>
+<li><strong>NO</strong> marcar "Initialize with README"</li>
+<li>
+<p>Click "Create repository"</p>
+</li>
+<li>
+<p><strong>Conectar y subir:</strong></p>
+</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Conectar con GitHub (cambiar por tu URL)</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/TU_USUARIO/posts-app.git
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Subir el código</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</span></code></pre></div>
+<p><strong>🎉 ¡Tu código ahora está en GitHub!</strong></p>
+<hr />
+<h2 id="parte-7-desplegar-en-vercel">🚀 <strong>PARTE 7: Desplegar en Vercel</strong></h2>
+<h3 id="paso-71-preparar-el-proyecto"><strong>Paso 7.1: Preparar el proyecto</strong></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Crear una versión optimizada para producción</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>npm<span class="w"> </span>run<span class="w"> </span>build
+</span></code></pre></div>
+<p>Este comando crea una carpeta <code>build/</code> con la versión optimizada.</p>
+<h3 id="paso-72-desplegar-con-vercel"><strong>Paso 7.2: Desplegar con Vercel</strong></h3>
+<p><strong>Opción A: Desde la web (Recomendado)</strong></p>
+<ol>
+<li>Ve a https://vercel.com/</li>
+<li>Click "Sign up" o "Login"</li>
+<li>Elegir "Continue with GitHub"</li>
+<li>Autorizar Vercel en GitHub</li>
+<li>Click "New Project"</li>
+<li>Buscar tu repositorio <code>posts-app</code></li>
+<li>Click "Import"</li>
+<li><strong>Configuración automática</strong> (React es detectado automáticamente)</li>
+<li>Click "Deploy"</li>
+<li><strong>¡Esperar 1-2 minutos!</strong></li>
+</ol>
+<p><strong>🎉 ¡Tu app está en vivo en internet!</strong></p>
+<h3 id="paso-73-verificar-el-despliegue"><strong>Paso 7.3: Verificar el despliegue</strong></h3>
+<p>Vercel te dará una URL como: <code>https://posts-app-xxx.vercel.app</code></p>
+<p><strong>🎯 Prueba que funciona:</strong></p>
+<ul>
+<li>✅ La app carga correctamente</li>
+<li>✅ Los posts se muestran</li>
+<li>✅ Los botones funcionan</li>
+<li>✅ Es responsive en móvil</li>
+</ul>
+<hr />
+<h2 id="que-aprendimos-hoy">🎯 <strong>¿Qué Aprendimos Hoy?</strong></h2>
+<h3 id="conceptos-de-react"><strong>Conceptos de React:</strong></h3>
+<ul>
+<li>✅ <strong>Componentes</strong>: Bloques reutilizables de UI</li>
+<li>✅ <strong>JSX</strong>: HTML dentro de JavaScript</li>
+<li>✅ <strong>useState</strong>: Para manejar estado que cambia</li>
+<li>✅ <strong>useEffect</strong>: Para efectos secundarios (APIs)</li>
+<li>✅ <strong>Props</strong>: Pasar datos entre componentes</li>
+</ul>
+<h3 id="conceptos-de-desarrollo"><strong>Conceptos de desarrollo:</strong></h3>
+<ul>
+<li>✅ <strong>API consumption</strong>: Hacer peticiones HTTP</li>
+<li>✅ <strong>async/await</strong>: Manejar código asíncrono</li>
+<li>✅ <strong>Error handling</strong>: Manejar errores gracefully</li>
+<li>✅ <strong>Git</strong>: Control de versiones</li>
+<li>✅ <strong>Deploy</strong>: Publicar en internet</li>
+</ul>
+<h3 id="resultado-final"><strong>Resultado final:</strong></h3>
+<ul>
+<li>🎉 <strong>Una app React funcional</strong></li>
+<li>🌐 <strong>Publicada en internet</strong></li>
+<li>📂 <strong>Código en GitHub</strong></li>
+<li>🧠 <strong>Fundamentos de React</strong></li>
+</ul>
+<hr />
+<h2 id="proximos-pasos-para-casa">🚀 <strong>Próximos Pasos (Para Casa)</strong></h2>
+<h3 id="mejoras-que-puedes-hacer"><strong>Mejoras que puedes hacer:</strong></h3>
+<ol>
+<li><strong>Agregar búsqueda:</strong></li>
+</ol>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">searchTerm</span><span class="p">,</span><span class="w"> </span><span class="nx">setSearchTerm</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">filteredPosts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">posts</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">post</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span><span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">includes</span><span class="p">(</span><span class="nx">searchTerm</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">())</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="p">);</span>
+</span></code></pre></div>
+<ol>
+<li>
+<p><strong>Agregar paginación:</strong></p>
+<ul>
+<li>Mostrar solo 10 posts por página</li>
+<li>Botones "Anterior" y "Siguiente"</li>
+</ul>
+</li>
+<li>
+<p><strong>Agregar filtros:</strong></p>
+<ul>
+<li>Filtrar por usuario</li>
+<li>Ordenar por título o ID</li>
+</ul>
+</li>
+<li>
+<p><strong>Mejorar el diseño:</strong></p>
+<ul>
+<li>Agregar modo oscuro</li>
+<li>Animaciones con CSS</li>
+<li>Mejores colores</li>
+</ul>
+</li>
+<li>
+<p><strong>Agregar más funcionalidades:</strong></p>
+<ul>
+<li>Ver detalles de un post</li>
+<li>Agregar comentarios</li>
+<li>Crear nuevos posts</li>
+</ul>
+</li>
+</ol>
+<h3 id="recursos-para-seguir-aprendiendo"><strong>Recursos para seguir aprendiendo:</strong></h3>
+<ul>
+<li>📚 <strong>Documentación oficial</strong>: https://reactjs.org/</li>
+<li>🎥 <strong>Videos</strong>: Buscar "React tutorials" en YouTube</li>
+<li>🏗️ <strong>Proyectos</strong>: Hacer más apps pequeñas</li>
+<li>👥 <strong>Comunidad</strong>: Unirse a grupos de React en Discord/Slack</li>
+</ul>
+<hr />
+<h2 id="resolucion-de-problemas-comunes">🔧 <strong>Resolución de Problemas Comunes</strong></h2>
+<h3 id="npm-no-es-reconocido"><strong>"npm no es reconocido"</strong></h3>
+<ul>
+<li>Instalar Node.js desde https://nodejs.org/</li>
+<li>Reiniciar la terminal</li>
+</ul>
+<h3 id="module-not-found"><strong>"Module not found"</strong></h3>
+<ul>
+<li>Verificar que estás en la carpeta correcta: <code>cd posts-app</code></li>
+<li>Reinstalar dependencias: <code>rm -rf node_modules &amp;&amp; npm install</code></li>
+</ul>
+<h3 id="error-de-cors"><strong>Error de CORS</strong></h3>
+<ul>
+<li>La API de JSONPlaceholder permite CORS, no debería haber problemas</li>
+<li>Si persiste, verificar la URL de la API</li>
+</ul>
+<h3 id="error-al-hacer-push-a-github"><strong>Error al hacer push a GitHub</strong></h3>
+<ul>
+<li>Verificar que el repositorio existe en GitHub</li>
+<li>Verificar credenciales: <code>git config --list</code></li>
+<li>Verificar la URL: <code>git remote -v</code></li>
+</ul>
+<h3 id="error-en-vercel"><strong>Error en Vercel</strong></h3>
+<ul>
+<li>Verificar que el proyecto compila localmente: <code>npm run build</code></li>
+<li>Revisar los logs en el dashboard de Vercel</li>
+<li>Asegurarse de que el repositorio está conectado</li>
+</ul>
+<hr />
+<h2 id="felicitaciones">🎉 <strong>¡Felicitaciones!</strong></h2>
+<p>Has creado tu primera aplicación React que:</p>
+<ul>
+<li>✅ Consume una API real</li>
+<li>✅ Maneja estados complejos</li>
+<li>✅ Tiene buen diseño</li>
+<li>✅ Está publicada en internet</li>
+<li>✅ Tiene el código en GitHub</li>
+</ul>
+<p><strong>¡Ahora eres oficialmente un desarrollador React!</strong> 🚀</p>
+<p>¿Listo para el siguiente desafío? ¡Sigue practicando y construyendo más proyectos!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Geovanny Mendoza
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/geovannymcode" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/geovannycode" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/geovannycode/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>

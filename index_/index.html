@@ -1,0 +1,1969 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="GeoLabs Workshop-React Docs">
+      
+      
+        <meta name="author" content="Geovanny Mendoza">
+      
+      
+        <link rel="canonical" href="https://geovannymcode.github.io/geolabs-react.github.io/index_/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Fundamentos de JavaScript Moderno (ES6+) - GeoLabs Workshop-React</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fundamentos-de-javascript-moderno-es6" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="GeoLabs Workshop-React" class="md-header__button md-logo" aria-label="GeoLabs Workshop-React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoLabs Workshop-React
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fundamentos de JavaScript Moderno (ES6+)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://geovannymcode.github.io/geolabs-react.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    /geovannymcode/geolabs-react.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GeoLabs Workshop-React" class="md-nav__button md-logo" aria-label="GeoLabs Workshop-React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GeoLabs Workshop-React
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://geovannymcode.github.io/geolabs-react.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    /geovannymcode/geolabs-react.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a JavaScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo Lista Tarea 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../react-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejecricios React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios_react_vite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejecricios React Vite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_11_Final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creando una Tienda
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../repositorio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Repositorio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Referencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo-de-esta-hora" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Objetivo de esta hora
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-clave-con-ejemplos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Conceptos clave con ejemplos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Conceptos clave con ejemplos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-const-y-let" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. const y let
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. const y let">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      📘 Descripción:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Ejemplo:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-adicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Ejemplos adicionales:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-usarlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Cuándo usarlo:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-arrow-functions-funciones-flecha" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Arrow Functions (Funciones flecha)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Arrow Functions (Funciones flecha)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descripcion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📘 Descripción:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Ejemplo:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otro-ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Otro ejemplo:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-detallados" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Ejemplos detallados:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-usarlo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Cuándo usarlo:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-destructuring-desestructuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Destructuring (Desestructuración)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Destructuring (Desestructuración)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descripcion_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      📘 Descripción:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-con-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Ejemplo con objetos:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-con-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Ejemplo con arrays:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-avanzados" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Ejemplos avanzados:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-usarlo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Cuándo usarlo:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-spread-y-rest-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Spread y Rest Operators (...)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Spread y Rest Operators (...)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descripcion_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      📘 Descripción:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-spread" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Ejemplo - Spread:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Ejemplo - Rest:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-detallados_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Ejemplos detallados:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-usarlo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Cuándo usarlo:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-template-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Template Literals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Template Literals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descripcion_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      📘 Descripción:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Ejemplo:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-adicionales-para-principiantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Ejemplos adicionales para principiantes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-usarlo_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Cuándo usarlo:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodos-de-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Métodos de Arrays
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Métodos de Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-los-metodos-de-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 ¿Qué son los métodos de arrays?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodos-de-transformacion-y-busqueda" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Métodos de Transformación y Búsqueda
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Métodos de Transformación y Búsqueda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-map-transformar-cada-elemento" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. map() - Transformar cada elemento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. map() - Transformar cada elemento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤔 ¿Qué es?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sintaxis-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Sintaxis básica:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-usarlo_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 ¿Cuándo usarlo?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-practicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Ejemplos prácticos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-filter-filtrar-elementos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. filter() - Filtrar elementos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. filter() - Filtrar elementos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤔 ¿Qué es?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sintaxis-basica_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Sintaxis básica:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-usarlo_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 ¿Cuándo usarlo?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-practicos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Ejemplos prácticos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-find-encontrar-un-elemento" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. find() - Encontrar UN elemento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. find() - Encontrar UN elemento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤔 ¿Qué es?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sintaxis-basica_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Sintaxis básica:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-usarlo_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 ¿Cuándo usarlo?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-practicos_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Ejemplos prácticos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-findindex-encontrar-la-posicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. findIndex() - Encontrar la POSICIÓN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. findIndex() - Encontrar la POSICIÓN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤔 ¿Qué es?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sintaxis-basica_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Sintaxis básica:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-usarlo_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 ¿Cuándo usarlo?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-practicos_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Ejemplos prácticos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodos-de-validacion-devuelven-truefalse" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Métodos de Validación (Devuelven true/false)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Métodos de Validación (Devuelven true/false)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-some-al-menos-uno-cumple" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. some() - ¿AL MENOS UNO cumple?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. some() - ¿AL MENOS UNO cumple?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤔 ¿Qué es?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sintaxis-basica_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Sintaxis básica:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-usarlo_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 ¿Cuándo usarlo?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-practicos_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Ejemplos prácticos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-every-todos-cumplen" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. every() - ¿TODOS cumplen?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. every() - ¿TODOS cumplen?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤔 ¿Qué es?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sintaxis-basica_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Sintaxis básica:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-usarlo_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 ¿Cuándo usarlo?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-practicos_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Ejemplos prácticos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparacion-visual" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Comparación Visual
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-combinados" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎮 Ejemplos Combinados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎮 Ejemplos Combinados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistema-de-tareas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sistema de Tareas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carrito-de-compras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carrito de Compras
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consejos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Consejos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Ejercicios de Práctica
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 Ejercicios de Práctica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1-lista-de-estudiantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 1: Lista de Estudiantes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-2-inventario-de-tienda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 2: Inventario de Tienda
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="fundamentos-de-javascript-moderno-es6">Fundamentos de JavaScript Moderno (ES6+)</h1>
+<h2 id="objetivo-de-esta-hora">🎯 Objetivo de esta hora</h2>
+<p>Comprender y aplicar las características principales de <strong>JavaScript moderno (ES6 en adelante)</strong>, las cuales son esenciales para desarrollar interfaces modernas con React. Esta base permitirá escribir código más limpio, legible y mantenible, además de facilitar la transición hacia el desarrollo con componentes funcionales y hooks.</p>
+<hr />
+<h2 id="conceptos-clave-con-ejemplos">🧠 Conceptos clave con ejemplos</h2>
+<hr />
+<h3 id="1-const-y-let">1. <code>const</code> y <code>let</code></h3>
+<h4 id="descripcion">📘 Descripción:</h4>
+<ul>
+<li><code>const</code>: se usa para declarar <strong>constantes</strong>. No se puede cambiar su valor (reasignar).</li>
+<li><code>let</code>: se usa para declarar <strong>variables</strong> que pueden cambiar a lo largo del tiempo.</li>
+<li>Ambas respetan el <strong>alcance de bloque</strong> (<code>{}</code>), a diferencia de <code>var</code> que tiene alcance de función.</li>
+</ul>
+<h4 id="ejemplo">🧪 Ejemplo:</h4>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Ana&quot;</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nx">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">31</span><span class="p">;</span><span class="w"> </span><span class="c1">// válido</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nx">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Pedro&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// ❌ Error: no se puede reasignar una constante</span>
+</span></code></pre></div>
+<h4 id="ejemplos-adicionales">🎯 Ejemplos adicionales:</h4>
+<p><strong>Ejemplo 1: const con objetos y arrays</strong>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// const NO hace el objeto inmutable, solo evita la reasignación</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">persona</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nx">persona</span><span class="p">.</span><span class="nx">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">26</span><span class="p">;</span><span class="w"> </span><span class="c1">// ✅ Válido - modifica propiedad</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nx">persona</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Luis&quot;</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// ❌ Error - intenta reasignar</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nx">numeros</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// ✅ Válido - modifica array</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nx">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">];</span><span class="w"> </span><span class="c1">// ❌ Error - intenta reasignar</span>
+</span></code></pre></div></p>
+<h4 id="cuando-usarlo">✅ Cuándo usarlo:</h4>
+<ul>
+<li>Usa <code>const</code> por defecto.</li>
+<li>Usa <code>let</code> si sabes que la variable cambiará su valor (como un contador, input, etc.).</li>
+</ul>
+<hr />
+<h3 id="2-arrow-functions-funciones-flecha">2. Arrow Functions (Funciones flecha)</h3>
+<h4 id="descripcion_1">📘 Descripción:</h4>
+<p>Las <strong>arrow functions</strong> son una forma más concisa de declarar funciones. No tienen su propio <code>this</code>, lo cual es útil en callbacks y funciones anidadas.</p>
+<h4 id="ejemplo_1">🧪 Ejemplo:</h4>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Función tradicional</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">function</span><span class="w"> </span><span class="nx">saludar</span><span class="p">(</span><span class="nx">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="sb">`Hola, </span><span class="si">${</span><span class="nx">nombre</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1">// Función flecha equivalente</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">saludar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">nombre</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`Hola, </span><span class="si">${</span><span class="nx">nombre</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</span></code></pre></div>
+<h4 id="otro-ejemplo">🧩 Otro ejemplo:</h4>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">alCuadrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numeros</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">num</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">num</span><span class="p">);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">alCuadrado</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1, 4, 9]</span>
+</span></code></pre></div>
+<h4 id="ejemplos-detallados">🎯 Ejemplos detallados:</h4>
+<p><strong>Ejemplo 1: Diferentes sintaxis</strong>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Sin parámetros</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">saludar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s2">&quot;¡Hola mundo!&quot;</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">// Un parámetro (paréntesis opcionales)</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">duplicar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">duplicar2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">num</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// también válido</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1">// Múltiples parámetros (paréntesis obligatorios)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sumar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1">// Con cuerpo de función (necesita return)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="kd">const</span><span class="w"> </span><span class="nx">calcularDescuento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">precio</span><span class="p">,</span><span class="w"> </span><span class="nx">descuento</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">montoDescuento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">precio</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="nx">descuento</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">precioFinal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">precio</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">montoDescuento</span><span class="p">;</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">precioFinal</span><span class="p">;</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="p">};</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 2: Diferencia con <code>this</code></strong>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// Problema con función tradicional</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">boton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nx">texto</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Click me&quot;</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nx">clicks</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nx">configurar</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="c1">// this aquí es &#39;boton&#39;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">clicks</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// ❌ Error: this no es &#39;boton&#39;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="p">});</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="p">};</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="c1">// Solución con arrow function</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="kd">const</span><span class="w"> </span><span class="nx">boton2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="nx">texto</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Click me&quot;</span><span class="p">,</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="nx">clicks</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="nx">configurar</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span><span class="c1">// this aquí es &#39;boton&#39;</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">clicks</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// ✅ Funciona: this sigue siendo &#39;boton&#39;</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">        </span><span class="p">});</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="p">};</span>
+</span></code></pre></div></p>
+<h4 id="cuando-usarlo_1">✅ Cuándo usarlo:</h4>
+<ul>
+<li>Para funciones pequeñas, especialmente dentro de <code>.map</code>, <code>.filter</code>, <code>.forEach</code>.</li>
+<li>Para mantener el contexto de <code>this</code> en componentes y objetos.</li>
+</ul>
+<hr />
+<h3 id="3-destructuring-desestructuracion">3. Destructuring (Desestructuración)</h3>
+<h4 id="descripcion_2">📘 Descripción:</h4>
+<p>Permite extraer valores de arrays u objetos en variables individuales, haciendo el código más limpio.</p>
+<h4 id="ejemplo-con-objetos">🧪 Ejemplo con objetos:</h4>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">persona</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Geovanny&quot;</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="mf">28</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nx">ciudad</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Barranquilla&quot;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">};</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">persona</span><span class="p">;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nombre</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Geovanny&quot;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">edad</span><span class="p">);</span><span class="w">   </span><span class="c1">// 28</span>
+</span></code></pre></div>
+<h4 id="ejemplo-con-arrays">🧪 Ejemplo con arrays:</h4>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">colores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;rojo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;verde&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;azul&quot;</span><span class="p">];</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">primero</span><span class="p">,</span><span class="w"> </span><span class="nx">segundo</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">colores</span><span class="p">;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">primero</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;rojo&quot;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">segundo</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;verde&quot;</span>
+</span></code></pre></div>
+<h4 id="ejemplos-avanzados">🎯 Ejemplos avanzados:</h4>
+<p><strong>Ejemplo 1: Renombrar variables</strong>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nx">nombreCompleto</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ana García&quot;</span><span class="p">,</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nx">correo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ana@email.com&quot;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">};</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1">// Renombrar al desestructurar</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombreCompleto</span><span class="o">:</span><span class="w"> </span><span class="nx">nombre</span><span class="p">,</span><span class="w"> </span><span class="nx">correo</span><span class="o">:</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">usuario</span><span class="p">;</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nombre</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Ana García&quot;</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span><span class="w">  </span><span class="c1">// &quot;ana@email.com&quot;</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 2: Valores por defecto</strong>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nx">tema</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;oscuro&quot;</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="c1">// idioma no está definido</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">};</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">tema</span><span class="p">,</span><span class="w"> </span><span class="nx">idioma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;español&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">config</span><span class="p">;</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tema</span><span class="p">);</span><span class="w">   </span><span class="c1">// &quot;oscuro&quot;</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">idioma</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;español&quot; (valor por defecto)</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 3: Desestructuración en parámetros</strong>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">// Sin desestructuración</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">function</span><span class="w"> </span><span class="nx">mostrarUsuario</span><span class="p">(</span><span class="nx">usuario</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">nombre</span><span class="si">}</span><span class="sb"> tiene </span><span class="si">${</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">edad</span><span class="si">}</span><span class="sb"> años`</span><span class="p">);</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">}</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1">// Con desestructuración</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="kd">function</span><span class="w"> </span><span class="nx">mostrarUsuario</span><span class="p">({</span><span class="w"> </span><span class="nx">nombre</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">nombre</span><span class="si">}</span><span class="sb"> tiene </span><span class="si">${</span><span class="nx">edad</span><span class="si">}</span><span class="sb"> años`</span><span class="p">);</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">}</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="nx">mostrarUsuario</span><span class="p">({</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Luis&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="p">});</span>
+</span></code></pre></div></p>
+<h4 id="cuando-usarlo_2">✅ Cuándo usarlo:</h4>
+<ul>
+<li>Para extraer propiedades dentro de funciones, loops o directamente en argumentos.</li>
+</ul>
+<hr />
+<h3 id="4-spread-y-rest-operators">4. Spread y Rest Operators (<code>...</code>)</h3>
+<h4 id="descripcion_3">📘 Descripción:</h4>
+<p>El operador <code>...</code> se usa para dos cosas:</p>
+<ul>
+<li><strong>Spread</strong>: Expande elementos de un array u objeto.</li>
+<li><strong>Rest</strong>: Agrupa múltiples elementos en un array u objeto.</li>
+</ul>
+<h4 id="ejemplo-spread">🧪 Ejemplo - Spread:</h4>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">nuevosNumeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">numeros</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">];</span><span class="w"> </span><span class="c1">// [1, 2, 3, 4]</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">usuarioActualizado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">usuario</span><span class="p">,</span><span class="w"> </span><span class="nx">ciudad</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Lima&quot;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="c1">// { nombre: &quot;Ana&quot;, edad: 25, ciudad: &quot;Lima&quot; }</span>
+</span></code></pre></div>
+<h4 id="ejemplo-rest">🧪 Ejemplo - Rest:</h4>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">sumar</span><span class="p">(...</span><span class="nx">numeros</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">numeros</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span><span class="w"> </span><span class="nx">n</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">acc</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">n</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">}</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sumar</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">));</span><span class="w"> </span><span class="c1">// 10</span>
+</span></code></pre></div>
+<h4 id="ejemplos-detallados_1">🎯 Ejemplos detallados:</h4>
+<p><strong>Ejemplo 1: Spread para copiar arrays</strong>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">// Problema: copiar por referencia</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">original</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">copia1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">original</span><span class="p">;</span><span class="w"> </span><span class="c1">// ❌ No es una copia, es la misma referencia</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nx">copia1</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">4</span><span class="p">);</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">original</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1, 2, 3, 4] - ¡Se modificó el original!</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1">// Solución: usar spread</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">original2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">copia2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">original2</span><span class="p">];</span><span class="w"> </span><span class="c1">// ✅ Copia real</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="nx">copia2</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">4</span><span class="p">);</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">original2</span><span class="p">);</span><span class="w"> </span><span class="c1">// [1, 2, 3] - Original intacto</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 2: Combinar arrays</strong>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">frutas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;manzana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pera&quot;</span><span class="p">];</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">verduras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;lechuga&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tomate&quot;</span><span class="p">];</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1">// Método antiguo</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">alimentos1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">frutas</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">verduras</span><span class="p">);</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="c1">// Con spread (más legible)</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">alimentos2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">frutas</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">verduras</span><span class="p">];</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="c1">// También puedes agregar elementos extra</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="kd">const</span><span class="w"> </span><span class="nx">alimentos3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">frutas</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;naranja&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">verduras</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;zanahoria&quot;</span><span class="p">];</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 3: Rest en desestructuración</strong>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">primero</span><span class="p">,</span><span class="w"> </span><span class="nx">segundo</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">resto</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">primero</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">segundo</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resto</span><span class="p">);</span><span class="w">   </span><span class="c1">// [3, 4, 5]</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">otrosDatos</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="nx">ciudad</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Madrid&quot;</span><span class="p">,</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="nx">trabajo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Desarrolladora&quot;</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="p">};</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nombre</span><span class="p">);</span><span class="w">      </span><span class="c1">// &quot;Ana&quot;</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">otrosDatos</span><span class="p">);</span><span class="w">  </span><span class="c1">// { edad: 25, ciudad: &quot;Madrid&quot;, trabajo: &quot;Desarrolladora&quot; }</span>
+</span></code></pre></div></p>
+<h4 id="cuando-usarlo_3">✅ Cuándo usarlo:</h4>
+<ul>
+<li>Spread: Para copiar/modificar objetos y arrays sin mutarlos.</li>
+<li>Rest: Para recibir múltiples argumentos en una función.</li>
+</ul>
+<hr />
+<h3 id="5-template-literals">5. Template Literals</h3>
+<h4 id="descripcion_4">📘 Descripción:</h4>
+<p>Permiten construir cadenas de texto con variables embebidas usando <strong>backticks</strong> ` y <code>${variable}</code>.</p>
+<h4 id="ejemplo_2">🧪 Ejemplo:</h4>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">producto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Laptop&quot;</span><span class="p">;</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">precio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1200</span><span class="p">;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`El producto </span><span class="si">${</span><span class="nx">producto</span><span class="si">}</span><span class="sb"> cuesta </span><span class="si">${</span><span class="nx">precio</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mensaje</span><span class="p">);</span><span class="w"> </span><span class="c1">// El producto Laptop cuesta $1200</span>
+</span></code></pre></div>
+<h4 id="ejemplos-adicionales-para-principiantes">🎯 Ejemplos adicionales para principiantes:</h4>
+<p><strong>Ejemplo 1: Multilínea</strong>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">// Método antiguo</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">textoAntiguo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Primera línea\n&quot;</span><span class="w"> </span><span class="o">+</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">                     </span><span class="s2">&quot;Segunda línea\n&quot;</span><span class="w"> </span><span class="o">+</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">                     </span><span class="s2">&quot;Tercera línea&quot;</span><span class="p">;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="c1">// Con template literals</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">textoNuevo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Primera línea</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="sb">Segunda línea</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="sb">Tercera línea`</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 2: Expresiones complejas</strong>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;manzana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pera&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;uva&quot;</span><span class="p">];</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Tienes </span><span class="si">${</span><span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> item</span><span class="si">${</span><span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;s&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="si">}</span><span class="sb"> en tu carrito`</span><span class="p">;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mensaje</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Tienes 3 items en tu carrito&quot;</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="c1">// Operaciones matemáticas</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ancho</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">alto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`El área es </span><span class="si">${</span><span class="nx">ancho</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">alto</span><span class="si">}</span><span class="sb"> metros cuadrados`</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;El área es 50 metros cuadrados&quot;</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 3: HTML dinámico</strong>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Geovanny&quot;</span><span class="p">,</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="mf">28</span><span class="p">,</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="nx">foto</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;geovanny.jpg&quot;</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="p">};</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">tarjetaHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="sb">    &lt;div class=&quot;tarjeta&quot;&gt;</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="sb">        &lt;img src=&quot;</span><span class="si">${</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">foto</span><span class="si">}</span><span class="sb">&quot; alt=&quot;</span><span class="si">${</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">nombre</span><span class="si">}</span><span class="sb">&quot;&gt;</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="sb">        &lt;h3&gt;</span><span class="si">${</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">nombre</span><span class="si">}</span><span class="sb">&lt;/h3&gt;</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="sb">        &lt;p&gt;Edad: </span><span class="si">${</span><span class="nx">usuario</span><span class="p">.</span><span class="nx">edad</span><span class="si">}</span><span class="sb"> años&lt;/p&gt;</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="sb">    &lt;/div&gt;</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="sb">`</span><span class="p">;</span>
+</span></code></pre></div></p>
+<h4 id="cuando-usarlo_4">✅ Cuándo usarlo:</h4>
+<ul>
+<li>Al construir mensajes, HTML dinámico, o logs de consola.</li>
+<li>Mejora la legibilidad frente a <code>"Hola " + nombre + ", bienvenido"</code>.</li>
+</ul>
+<hr />
+<h2 id="metodos-de-arrays">📚 Métodos de Arrays</h2>
+<h3 id="que-son-los-metodos-de-arrays">🎯 ¿Qué son los métodos de arrays?</h3>
+<p>Los métodos de arrays son <strong>funciones integradas</strong> en JavaScript que nos permiten trabajar con listas de elementos de forma más fácil y eficiente. En lugar de escribir bucles <code>for</code> complejos, podemos usar estos métodos que ya vienen preparados.</p>
+<hr />
+<h2 id="metodos-de-transformacion-y-busqueda">📚 Métodos de Transformación y Búsqueda</h2>
+<h3 id="1-map-transformar-cada-elemento">1. <code>map()</code> - Transformar cada elemento</h3>
+<h4 id="que-es">🤔 ¿Qué es?</h4>
+<p><code>map()</code> es como una <strong>máquina transformadora</strong>: toma cada elemento de tu array y lo convierte en algo nuevo, creando un nuevo array con los resultados.</p>
+<h4 id="sintaxis-basica">📝 Sintaxis básica:</h4>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">nuevoArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayOriginal</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">elemento</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">    </span><span class="c1">// transformación</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">elementoTransformado</span><span class="p">;</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="p">});</span>
+</span></code></pre></div>
+<h4 id="cuando-usarlo_5">🎯 ¿Cuándo usarlo?</h4>
+<p>Usa <code>map()</code> cuando necesites:
+- Transformar TODOS los elementos de un array
+- Crear un nuevo array basado en otro
+- Aplicar la misma operación a cada elemento</p>
+<h4 id="ejemplos-practicos">💡 Ejemplos prácticos:</h4>
+<p><strong>Ejemplo 1: Convertir precios a otra moneda</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">preciosUSD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="mf">45</span><span class="p">];</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">preciosMXN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">preciosUSD</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">precio</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">precio</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">20</span><span class="p">);</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">preciosMXN</span><span class="p">);</span><span class="w"> </span><span class="c1">// [200, 500, 600, 900]</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 2: Extraer información específica</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">usuarios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span><span class="w"> </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ana@mail.com&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Luis&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;luis@mail.com&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="p">];</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="c1">// Solo queremos los nombres</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">nombres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">usuarios</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">usuario</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">usuario</span><span class="p">.</span><span class="nx">nombre</span><span class="p">);</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nombres</span><span class="p">);</span><span class="w"> </span><span class="c1">// [&quot;Ana&quot;, &quot;Luis&quot;]</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 3: Crear elementos HTML (útil en React)</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">productos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Laptop&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mouse&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Teclado&quot;</span><span class="p">];</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">listaHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">productos</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">producto</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="sb">`&lt;li&gt;</span><span class="si">${</span><span class="nx">producto</span><span class="si">}</span><span class="sb">&lt;/li&gt;`</span><span class="p">);</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="c1">// [&quot;&lt;li&gt;Laptop&lt;/li&gt;&quot;, &quot;&lt;li&gt;Mouse&lt;/li&gt;&quot;, &quot;&lt;li&gt;Teclado&lt;/li&gt;&quot;]</span>
+</span></code></pre></div></p>
+<hr />
+<h3 id="2-filter-filtrar-elementos">2. <code>filter()</code> - Filtrar elementos</h3>
+<h4 id="que-es_1">🤔 ¿Qué es?</h4>
+<p><code>filter()</code> es como un <strong>colador o filtro</strong>: solo deja pasar los elementos que cumplen una condición específica.</p>
+<h4 id="sintaxis-basica_1">📝 Sintaxis básica:</h4>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">arrayFiltrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arrayOriginal</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">elemento</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="c1">// condición</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// mantener elemento</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// descartar elemento</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="p">});</span>
+</span></code></pre></div>
+<h4 id="cuando-usarlo_6">🎯 ¿Cuándo usarlo?</h4>
+<p>Usa <code>filter()</code> cuando necesites:
+- Obtener solo algunos elementos que cumplan una condición
+- Eliminar elementos no deseados
+- Crear subconjuntos de datos</p>
+<h4 id="ejemplos-practicos_1">💡 Ejemplos prácticos:</h4>
+<p><strong>Ejemplo 1: Filtrar números</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">25</span><span class="p">];</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">mayoresQue10</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numeros</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">num</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mayoresQue10</span><span class="p">);</span><span class="w"> </span><span class="c1">// [15, 20, 25]</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 2: Filtrar productos por precio</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">productos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Laptop&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">precio</span><span class="o">:</span><span class="w"> </span><span class="mf">1200</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mouse&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">precio</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Monitor&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">precio</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Teclado&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">precio</span><span class="o">:</span><span class="w"> </span><span class="mf">80</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="p">];</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="c1">// Solo productos baratos (menos de 100)</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">productosBaratos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">productos</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">producto</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">producto</span><span class="p">.</span><span class="nx">precio</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">productosBaratos</span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="c1">// [{ nombre: &quot;Mouse&quot;, precio: 25 }, { nombre: &quot;Teclado&quot;, precio: 80 }]</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 3: Filtrar tareas completadas</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">tareas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Estudiar JS&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">completada</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Hacer ejercicio&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">completada</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Leer libro&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">completada</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="p">];</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">tareasPendientes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tareas</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">tarea</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="nx">tarea</span><span class="p">.</span><span class="nx">completada</span><span class="p">);</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="c1">// Solo devuelve: [{ id: 2, titulo: &quot;Hacer ejercicio&quot;, completada: false }]</span>
+</span></code></pre></div></p>
+<hr />
+<h3 id="3-find-encontrar-un-elemento">3. <code>find()</code> - Encontrar UN elemento</h3>
+<h4 id="que-es_2">🤔 ¿Qué es?</h4>
+<p><code>find()</code> es como un <strong>detective</strong>: busca en el array hasta encontrar EL PRIMER elemento que cumple una condición y lo devuelve.</p>
+<h4 id="sintaxis-basica_2">📝 Sintaxis básica:</h4>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">elementoEncontrado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">find</span><span class="p">((</span><span class="nx">elemento</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">    </span><span class="c1">// condición de búsqueda</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">elemento</span><span class="p">.</span><span class="nx">propiedad</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">valorBuscado</span><span class="p">;</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="p">});</span>
+</span></code></pre></div>
+<h4 id="cuando-usarlo_7">🎯 ¿Cuándo usarlo?</h4>
+<p>Usa <code>find()</code> cuando necesites:
+- Buscar UN elemento específico
+- Encontrar un objeto por su ID
+- Obtener el primer elemento que cumple una condición</p>
+<h4 id="ejemplos-practicos_2">💡 Ejemplos prácticos:</h4>
+<p><strong>Ejemplo 1: Buscar un usuario por ID</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">usuarios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ana&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Luis&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;María&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="p">];</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">usuarios</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">u</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">u</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">usuario</span><span class="p">);</span><span class="w"> </span><span class="c1">// { id: 2, nombre: &quot;Luis&quot; }</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 2: Encontrar un producto</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">inventario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">codigo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;A001&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">producto</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Laptop&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">stock</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">codigo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;A002&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">producto</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mouse&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">stock</span><span class="o">:</span><span class="w"> </span><span class="mf">50</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">codigo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;A003&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">producto</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Teclado&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">stock</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="p">];</span>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">productoSinStock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">inventario</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">stock</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">productoSinStock</span><span class="p">);</span><span class="w"> </span><span class="c1">// { codigo: &quot;A003&quot;, producto: &quot;Teclado&quot;, stock: 0 }</span>
+</span></code></pre></div></p>
+<hr />
+<h3 id="4-findindex-encontrar-la-posicion">4. <code>findIndex()</code> - Encontrar la POSICIÓN</h3>
+<h4 id="que-es_3">🤔 ¿Qué es?</h4>
+<p><code>findIndex()</code> es como <code>find()</code>, pero en lugar de devolver el elemento, devuelve <strong>su posición (índice)</strong> en el array.</p>
+<h4 id="sintaxis-basica_3">📝 Sintaxis básica:</h4>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">posicion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">((</span><span class="nx">elemento</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">    </span><span class="c1">// condición de búsqueda</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">elemento</span><span class="p">.</span><span class="nx">propiedad</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">valorBuscado</span><span class="p">;</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="p">});</span>
+</span></code></pre></div>
+<h4 id="cuando-usarlo_8">🎯 ¿Cuándo usarlo?</h4>
+<p>Usa <code>findIndex()</code> cuando necesites:
+- Saber EN QUÉ POSICIÓN está un elemento
+- Actualizar o eliminar un elemento específico
+- Verificar si un elemento existe (devuelve -1 si no existe)</p>
+<h4 id="ejemplos-practicos_3">💡 Ejemplos prácticos:</h4>
+<p><strong>Ejemplo 1: Encontrar posición para actualizar</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">tareas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Estudiar&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ejercicio&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Leer&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="p">];</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="c1">// Encontrar posición de la tarea con id 2</span>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">indice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tareas</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">tarea</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">tarea</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">indice</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1 (segunda posición)</span>
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>
+</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="c1">// Actualizar esa tarea</span>
+</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">indice</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="w">    </span><span class="nx">tareas</span><span class="p">[</span><span class="nx">indice</span><span class="p">].</span><span class="nx">titulo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hacer ejercicio 30 min&quot;</span><span class="p">;</span>
+</span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 2: Verificar si existe</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">emails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ana@mail.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;luis@mail.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;maria@mail.com&quot;</span><span class="p">];</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">existe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">emails</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">email</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;pedro@mail.com&quot;</span><span class="p">);</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">existe</span><span class="p">);</span><span class="w"> </span><span class="c1">// -1 (no existe)</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">existe</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Email no registrado&quot;</span><span class="p">);</span>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="metodos-de-validacion-devuelven-truefalse">🔍 Métodos de Validación (Devuelven true/false)</h2>
+<h3 id="5-some-al-menos-uno-cumple">5. <code>some()</code> - ¿AL MENOS UNO cumple?</h3>
+<h4 id="que-es_4">🤔 ¿Qué es?</h4>
+<p><code>some()</code> verifica si <strong>AL MENOS UN elemento</strong> del array cumple una condición. Es como preguntar "¿Hay alguno que...?"</p>
+<h4 id="sintaxis-basica_4">📝 Sintaxis básica:</h4>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">hayAlguno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">some</span><span class="p">((</span><span class="nx">elemento</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">    </span><span class="c1">// condición</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">condicion</span><span class="p">;</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="p">});</span>
+</span></code></pre></div>
+<h4 id="cuando-usarlo_9">🎯 ¿Cuándo usarlo?</h4>
+<p>Usa <code>some()</code> cuando necesites saber si:
+- Existe al menos un elemento que cumple algo
+- Hay algún error en una lista
+- Al menos un usuario está activo
+- Hay algún producto en stock</p>
+<h4 id="ejemplos-practicos_4">💡 Ejemplos prácticos:</h4>
+<p><strong>Ejemplo 1: Verificar si hay productos caros</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">productos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Pan&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">precio</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Leche&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">precio</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Laptop&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">precio</span><span class="o">:</span><span class="w"> </span><span class="mf">1200</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="p">];</span>
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>
+</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">hayProductosCars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">productos</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">producto</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">producto</span><span class="p">.</span><span class="nx">precio</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hayProductosCars</span><span class="p">);</span><span class="w"> </span><span class="c1">// true (por la laptop)</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 2: Verificar errores en formulario</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">camposFormulario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">campo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;nombre&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">valor</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">campo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">valor</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">campo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;telefono&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">valor</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;123456&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="p">];</span>
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>
+</span><span id="__span-36-7"><a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">hayErrores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">camposFormulario</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">campo</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">campo</span><span class="p">.</span><span class="nx">error</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+</span><span id="__span-36-8"><a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">hayErrores</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-36-9"><a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Por favor corrige los errores&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Se ejecuta</span>
+</span><span id="__span-36-10"><a id="__codelineno-36-10" name="__codelineno-36-10" href="#__codelineno-36-10"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 3: Verificar permisos</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">permisos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;leer&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;escribir&quot;</span><span class="p">];</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">requiereAdmin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">permisos</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">permiso</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">permiso</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">);</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">requiereAdmin</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</span></code></pre></div></p>
+<hr />
+<h3 id="6-every-todos-cumplen">6. <code>every()</code> - ¿TODOS cumplen?</h3>
+<h4 id="que-es_5">🤔 ¿Qué es?</h4>
+<p><code>every()</code> verifica si <strong>TODOS los elementos</strong> del array cumplen una condición. Es como preguntar "¿Todos son...?"</p>
+<h4 id="sintaxis-basica_5">📝 Sintaxis básica:</h4>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">todosCumplen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">array</span><span class="p">.</span><span class="nx">every</span><span class="p">((</span><span class="nx">elemento</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w">    </span><span class="c1">// condición</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">condicion</span><span class="p">;</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="p">});</span>
+</span></code></pre></div>
+<h4 id="cuando-usarlo_10">🎯 ¿Cuándo usarlo?</h4>
+<p>Usa <code>every()</code> cuando necesites verificar si:
+- Todos los campos están completos
+- Todos los usuarios están activos
+- Todas las calificaciones son aprobatorias
+- Todos los productos tienen stock</p>
+<h4 id="ejemplos-practicos_5">💡 Ejemplos prácticos:</h4>
+<p><strong>Ejemplo 1: Validar formulario completo</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">formulario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">campo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;nombre&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">valor</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ana&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">campo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">valor</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ana@mail.com&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">campo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;telefono&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">valor</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;123456789&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="p">];</span>
+</span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>
+</span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">formularioCompleto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">formulario</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">campo</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">campo</span><span class="p">.</span><span class="nx">valor</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+</span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">formularioCompleto</span><span class="p">);</span><span class="w"> </span><span class="c1">// true (todos tienen valor)</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 2: Verificar edades</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">edades</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">22</span><span class="p">,</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="mf">28</span><span class="p">,</span><span class="w"> </span><span class="mf">19</span><span class="p">];</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">todosSonMayores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">edades</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">edad</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">edad</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">18</span><span class="p">);</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">todosSonMayores</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">todosMayoresDe21</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">edades</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">edad</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">edad</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">21</span><span class="p">);</span>
+</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">todosMayoresDe21</span><span class="p">);</span><span class="w"> </span><span class="c1">// false (hay uno de 19)</span>
+</span></code></pre></div></p>
+<p><strong>Ejemplo 3: Verificar stock</strong>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">carrito</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">producto</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Laptop&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">cantidad</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">hayStock</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">producto</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mouse&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">cantidad</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">hayStock</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">producto</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Teclado&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">cantidad</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">hayStock</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="p">];</span>
+</span><span id="__span-41-6"><a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>
+</span><span id="__span-41-7"><a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">todosDisponibles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">carrito</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">hayStock</span><span class="p">);</span>
+</span><span id="__span-41-8"><a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">todosDisponibles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-41-9"><a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Algunos productos no están disponibles&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Se ejecuta</span>
+</span><span id="__span-41-10"><a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="comparacion-visual">📊 Comparación Visual</h2>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>¿Qué devuelve?</th>
+<th>¿Cuándo usarlo?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>map()</code></td>
+<td>Nuevo array transformado</td>
+<td>Transformar TODOS los elementos</td>
+</tr>
+<tr>
+<td><code>filter()</code></td>
+<td>Nuevo array con elementos filtrados</td>
+<td>Obtener ALGUNOS elementos</td>
+</tr>
+<tr>
+<td><code>find()</code></td>
+<td>El PRIMER elemento encontrado</td>
+<td>Buscar UN elemento específico</td>
+</tr>
+<tr>
+<td><code>findIndex()</code></td>
+<td>La POSICIÓN del elemento</td>
+<td>Saber DÓNDE está un elemento</td>
+</tr>
+<tr>
+<td><code>some()</code></td>
+<td><code>true</code> o <code>false</code></td>
+<td>Verificar si AL MENOS UNO cumple</td>
+</tr>
+<tr>
+<td><code>every()</code></td>
+<td><code>true</code> o <code>false</code></td>
+<td>Verificar si TODOS cumplen</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ejemplos-combinados">🎮 Ejemplos Combinados</h2>
+<h3 id="sistema-de-tareas">Sistema de Tareas</h3>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">tareas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Comprar pan&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">completada</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">prioridad</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;baja&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Estudiar JS&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">completada</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">prioridad</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;alta&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Hacer ejercicio&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">completada</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">prioridad</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;media&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Leer emails&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">completada</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">prioridad</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;alta&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="p">];</span>
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>
+</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="c1">// 1. Obtener solo títulos de tareas (map)</span>
+</span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">titulos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tareas</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">titulo</span><span class="p">);</span>
+</span><span id="__span-42-10"><a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a>
+</span><span id="__span-42-11"><a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a><span class="c1">// 2. Filtrar tareas pendientes (filter)</span>
+</span><span id="__span-42-12"><a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a><span class="kd">const</span><span class="w"> </span><span class="nx">pendientes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tareas</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="nx">t</span><span class="p">.</span><span class="nx">completada</span><span class="p">);</span>
+</span><span id="__span-42-13"><a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a>
+</span><span id="__span-42-14"><a id="__codelineno-42-14" name="__codelineno-42-14" href="#__codelineno-42-14"></a><span class="c1">// 3. Buscar una tarea específica (find)</span>
+</span><span id="__span-42-15"><a id="__codelineno-42-15" name="__codelineno-42-15" href="#__codelineno-42-15"></a><span class="kd">const</span><span class="w"> </span><span class="nx">tareaEstudiar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tareas</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">titulo</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;Estudiar&quot;</span><span class="p">));</span>
+</span><span id="__span-42-16"><a id="__codelineno-42-16" name="__codelineno-42-16" href="#__codelineno-42-16"></a>
+</span><span id="__span-42-17"><a id="__codelineno-42-17" name="__codelineno-42-17" href="#__codelineno-42-17"></a><span class="c1">// 4. Encontrar posición para actualizar (findIndex)</span>
+</span><span id="__span-42-18"><a id="__codelineno-42-18" name="__codelineno-42-18" href="#__codelineno-42-18"></a><span class="kd">const</span><span class="w"> </span><span class="nx">posicion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tareas</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">3</span><span class="p">);</span>
+</span><span id="__span-42-19"><a id="__codelineno-42-19" name="__codelineno-42-19" href="#__codelineno-42-19"></a>
+</span><span id="__span-42-20"><a id="__codelineno-42-20" name="__codelineno-42-20" href="#__codelineno-42-20"></a><span class="c1">// 5. ¿Hay alguna tarea de alta prioridad pendiente? (some)</span>
+</span><span id="__span-42-21"><a id="__codelineno-42-21" name="__codelineno-42-21" href="#__codelineno-42-21"></a><span class="kd">const</span><span class="w"> </span><span class="nx">urgente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tareas</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">prioridad</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;alta&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="nx">t</span><span class="p">.</span><span class="nx">completada</span><span class="p">);</span>
+</span><span id="__span-42-22"><a id="__codelineno-42-22" name="__codelineno-42-22" href="#__codelineno-42-22"></a>
+</span><span id="__span-42-23"><a id="__codelineno-42-23" name="__codelineno-42-23" href="#__codelineno-42-23"></a><span class="c1">// 6. ¿Todas las tareas de alta prioridad están completadas? (every)</span>
+</span><span id="__span-42-24"><a id="__codelineno-42-24" name="__codelineno-42-24" href="#__codelineno-42-24"></a><span class="kd">const</span><span class="w"> </span><span class="nx">altasCompletadas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tareas</span>
+</span><span id="__span-42-25"><a id="__codelineno-42-25" name="__codelineno-42-25" href="#__codelineno-42-25"></a><span class="w">    </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">prioridad</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;alta&quot;</span><span class="p">)</span>
+</span><span id="__span-42-26"><a id="__codelineno-42-26" name="__codelineno-42-26" href="#__codelineno-42-26"></a><span class="w">    </span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">completada</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="carrito-de-compras">Carrito de Compras</h3>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">carrito</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">producto</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Laptop&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">precio</span><span class="o">:</span><span class="w"> </span><span class="mf">1200</span><span class="p">,</span><span class="w"> </span><span class="nx">cantidad</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">producto</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mouse&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">precio</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span><span class="w"> </span><span class="nx">cantidad</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">producto</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Teclado&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">precio</span><span class="o">:</span><span class="w"> </span><span class="mf">80</span><span class="p">,</span><span class="w"> </span><span class="nx">cantidad</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="p">];</span>
+</span><span id="__span-43-6"><a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a>
+</span><span id="__span-43-7"><a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a><span class="c1">// Calcular precio total con map y reduce</span>
+</span><span id="__span-43-8"><a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">carrito</span>
+</span><span id="__span-43-9"><a id="__codelineno-43-9" name="__codelineno-43-9" href="#__codelineno-43-9"></a><span class="w">    </span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">precio</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">cantidad</span><span class="p">)</span><span class="w"> </span><span class="c1">// [1200, 50, 80]</span>
+</span><span id="__span-43-10"><a id="__codelineno-43-10" name="__codelineno-43-10" href="#__codelineno-43-10"></a><span class="w">    </span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">suma</span><span class="p">,</span><span class="w"> </span><span class="nx">precio</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">suma</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">precio</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1330</span>
+</span><span id="__span-43-11"><a id="__codelineno-43-11" name="__codelineno-43-11" href="#__codelineno-43-11"></a>
+</span><span id="__span-43-12"><a id="__codelineno-43-12" name="__codelineno-43-12" href="#__codelineno-43-12"></a><span class="c1">// Verificar si hay productos caros</span>
+</span><span id="__span-43-13"><a id="__codelineno-43-13" name="__codelineno-43-13" href="#__codelineno-43-13"></a><span class="kd">const</span><span class="w"> </span><span class="nx">hayProductosCostosos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">carrito</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">precio</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1000</span><span class="p">);</span>
+</span><span id="__span-43-14"><a id="__codelineno-43-14" name="__codelineno-43-14" href="#__codelineno-43-14"></a>
+</span><span id="__span-43-15"><a id="__codelineno-43-15" name="__codelineno-43-15" href="#__codelineno-43-15"></a><span class="c1">// Buscar un producto específico</span>
+</span><span id="__span-43-16"><a id="__codelineno-43-16" name="__codelineno-43-16" href="#__codelineno-43-16"></a><span class="kd">const</span><span class="w"> </span><span class="nx">laptop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">carrito</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">producto</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Laptop&quot;</span><span class="p">);</span>
+</span><span id="__span-43-17"><a id="__codelineno-43-17" name="__codelineno-43-17" href="#__codelineno-43-17"></a>
+</span><span id="__span-43-18"><a id="__codelineno-43-18" name="__codelineno-43-18" href="#__codelineno-43-18"></a><span class="c1">// Todos los productos cuestan menos de 2000?</span>
+</span><span id="__span-43-19"><a id="__codelineno-43-19" name="__codelineno-43-19" href="#__codelineno-43-19"></a><span class="kd">const</span><span class="w"> </span><span class="nx">preciosRazonables</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">carrito</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">precio</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
+</span></code></pre></div>
+<hr />
+<h2 id="consejos">🚀 Consejos</h2>
+<ol>
+<li><strong>Empieza con <code>map()</code> y <code>filter()</code></strong> - Son los más comunes</li>
+<li><strong>Recuerda el valor de retorno</strong>:</li>
+<li><code>map()</code> y <code>filter()</code> → nuevo array</li>
+<li><code>find()</code> → un elemento o <code>undefined</code></li>
+<li><code>findIndex()</code> → número o <code>-1</code></li>
+<li><code>some()</code> y <code>every()</code> → <code>true</code> o <code>false</code></li>
+<li><strong>No modifiques el array original</strong> - Estos métodos crean copias</li>
+<li><strong>Usa el método correcto</strong>:</li>
+<li>¿Necesitas transformar? → <code>map()</code></li>
+<li>¿Necesitas filtrar? → <code>filter()</code></li>
+<li>¿Buscas uno? → <code>find()</code></li>
+<li>¿Necesitas verificar? → <code>some()</code> o <code>every()</code></li>
+</ol>
+<hr />
+<h2 id="ejercicios-de-practica">📝 Ejercicios de Práctica</h2>
+<h3 id="ejercicio-1-lista-de-estudiantes">Ejercicio 1: Lista de Estudiantes</h3>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">estudiantes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">calificacion</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="nx">asistencia</span><span class="o">:</span><span class="w"> </span><span class="mf">90</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Luis&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">calificacion</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">asistencia</span><span class="o">:</span><span class="w"> </span><span class="mf">85</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;María&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">calificacion</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="nx">asistencia</span><span class="o">:</span><span class="w"> </span><span class="mf">95</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Carlos&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">calificacion</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">asistencia</span><span class="o">:</span><span class="w"> </span><span class="mf">80</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-44-6"><a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a><span class="p">];</span>
+</span><span id="__span-44-7"><a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a>
+</span><span id="__span-44-8"><a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a><span class="c1">// TODO: </span>
+</span><span id="__span-44-9"><a id="__codelineno-44-9" name="__codelineno-44-9" href="#__codelineno-44-9"></a><span class="c1">// 1. Obtén solo los nombres de los estudiantes</span>
+</span><span id="__span-44-10"><a id="__codelineno-44-10" name="__codelineno-44-10" href="#__codelineno-44-10"></a><span class="c1">// 2. Filtra estudiantes con calificación mayor a 3</span>
+</span><span id="__span-44-11"><a id="__codelineno-44-11" name="__codelineno-44-11" href="#__codelineno-44-11"></a><span class="c1">// 3. Encuentra al estudiante &quot;María&quot;</span>
+</span><span id="__span-44-12"><a id="__codelineno-44-12" name="__codelineno-44-12" href="#__codelineno-44-12"></a><span class="c1">// 4. ¿Todos tienen asistencia mayor a 75%?</span>
+</span><span id="__span-44-13"><a id="__codelineno-44-13" name="__codelineno-44-13" href="#__codelineno-44-13"></a><span class="c1">// 5. ¿Hay algún estudiante reprobado (calificación &lt; 30)?</span>
+</span></code></pre></div>
+<h3 id="ejercicio-2-inventario-de-tienda">Ejercicio 2: Inventario de Tienda</h3>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">inventario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">codigo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;A001&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Camisa&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">precio</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span><span class="w"> </span><span class="nx">stock</span><span class="o">:</span><span class="w"> </span><span class="mf">50</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">codigo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;A002&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Pantalón&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">precio</span><span class="o">:</span><span class="w"> </span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="nx">stock</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">codigo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;A003&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Zapatos&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">precio</span><span class="o">:</span><span class="w"> </span><span class="mf">60</span><span class="p">,</span><span class="w"> </span><span class="nx">stock</span><span class="o">:</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">codigo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;A004&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Gorra&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">precio</span><span class="o">:</span><span class="w"> </span><span class="mf">15</span><span class="p">,</span><span class="w"> </span><span class="nx">stock</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a><span class="p">];</span>
+</span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a>
+</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a><span class="c1">// TODO:</span>
+</span><span id="__span-45-9"><a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a><span class="c1">// 1. Crea un array con los precios con 10% de descuento</span>
+</span><span id="__span-45-10"><a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a><span class="c1">// 2. Filtra productos sin stock</span>
+</span><span id="__span-45-11"><a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a><span class="c1">// 3. Encuentra la posición del producto &quot;Zapatos&quot;</span>
+</span><span id="__span-45-12"><a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a><span class="c1">// 4. ¿Todos los productos cuestan menos de $100?</span>
+</span><span id="__span-45-13"><a id="__codelineno-45-13" name="__codelineno-45-13" href="#__codelineno-45-13"></a><span class="c1">// 5. ¿Hay algún producto sin stock?</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Geovanny Mendoza
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/geovannymcode" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/geovannycode" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/geovannycode/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>

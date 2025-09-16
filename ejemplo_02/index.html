@@ -1,0 +1,1513 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="GeoLabs Workshop-React Docs">
+      
+      
+        <meta name="author" content="Geovanny Mendoza">
+      
+      
+        <link rel="canonical" href="https://geovannymcode.github.io/geolabs-react.github.io/ejemplo_02/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>📝 Lista de Tareas con React - GeoLabs Workshop-React</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lista-de-tareas-con-react" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="GeoLabs Workshop-React" class="md-header__button md-logo" aria-label="GeoLabs Workshop-React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GeoLabs Workshop-React
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📝 Lista de Tareas con React
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://geovannymcode.github.io/geolabs-react.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    /geovannymcode/geolabs-react.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GeoLabs Workshop-React" class="md-nav__button md-logo" aria-label="GeoLabs Workshop-React" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GeoLabs Workshop-React
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://geovannymcode.github.io/geolabs-react.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    /geovannymcode/geolabs-react.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a JavaScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejemplo Lista Tarea 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../react-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejecricios React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicios_react_vite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ejecricios React Vite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sesion_11_Final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creando una Tienda
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../repositorio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Repositorio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Referencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Índice
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-vamos-a-construir" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 ¿Qué vamos a construir?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 ¿Qué vamos a construir?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista-previa-del-resultado-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista previa del resultado final
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-de-esta-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Características de esta versión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-empezar-con-una-version-estatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por qué empezar con una versión estática
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Configuración Inicial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Configuración Inicial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-crear-el-proyecto-con-vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Crear el proyecto con Vite
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-entrar-al-proyecto-e-instalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Entrar al proyecto e instalar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-iniciar-el-servidor-de-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Iniciar el servidor de desarrollo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-limpiar-archivos-innecesarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Limpiar archivos innecesarios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 Estructura del Proyecto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📁 Estructura del Proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista general
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-esta-estructura" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Por qué esta estructura?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#construyendo-cada-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Construyendo Cada Archivo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Construyendo Cada Archivo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-indexhtml-la-base-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 1. index.html - La base HTML
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mainjsx-el-punto-de-entrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 2. main.jsx - El punto de entrada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-appjsx-el-componente-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 3. App.jsx - El componente principal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📄 3. App.jsx - El componente principal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-los-datos-array-de-tareas" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Los datos (array de tareas)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-el-metodo-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. El método map()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-la-prop-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. La prop key
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-taskitemjsx-componente-de-tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 4. TaskItem.jsx - Componente de tarea
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📄 4. TaskItem.jsx - Componente de tarea">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-destructuring-de-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Destructuring de props
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-estilo-condicional" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Estilo condicional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-estilos-inline-en-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Estilos inline en React
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flujo-de-datos-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Flujo de Datos Completo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Flujo de Datos Completo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualizacion-del-flujo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualización del flujo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrama-de-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama de componentes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-clave-de-react-aplicados" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Conceptos Clave de React Aplicados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Conceptos Clave de React Aplicados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-componentes-funcionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Componentes Funcionales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-props-propiedades" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Props (Propiedades)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-jsx-y-expresiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. JSX y Expresiones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-listas-y-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Listas y Keys
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-practicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 Ejercicios Prácticos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💻 Ejercicios Prácticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1-crear-archivo-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 1: Crear archivo de datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-2-agregar-contador-de-tareas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 2: Agregar contador de tareas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-3-agregar-iconos-de-estado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 3: Agregar iconos de estado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-4-anadir-categorias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio 4: Añadir categorías
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errores-comunes-y-soluciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ Errores Comunes y Soluciones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="❌ Errores Comunes y Soluciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-1-cannot-read-property-map-of-undefined" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error 1: "Cannot read property 'map' of undefined"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-2-each-child-should-have-unique-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error 2: "Each child should have unique key"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-3-module-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error 3: "Module not found"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-4-cambios-no-se-reflejan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error 4: Cambios no se reflejan
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Próximos Pasos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Resumen
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lista-de-tareas-con-react">📝 Lista de Tareas con React</h1>
+<h2 id="indice">📋 Índice</h2>
+<ol>
+<li><a href="#qué-vamos-a-construir">¿Qué vamos a construir?</a></li>
+<li><a href="#configuración-inicial">Configuración inicial paso a paso</a></li>
+<li><a href="#estructura-del-proyecto">Estructura del proyecto explicada</a></li>
+<li><a href="#construyendo-cada-archivo">Construyendo cada archivo</a></li>
+<li><a href="#conceptos-clave">Conceptos clave de React aplicados</a></li>
+<li><a href="#flujo-de-datos">Flujo de datos completo</a></li>
+<li><a href="#ejercicios-prácticos">Ejercicios prácticos</a></li>
+<li><a href="#errores-comunes">Errores comunes y soluciones</a></li>
+</ol>
+<hr />
+<h2 id="que-vamos-a-construir">🎯 ¿Qué vamos a construir?</h2>
+<h3 id="vista-previa-del-resultado-final">Vista previa del resultado final</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>📝 Lista de Tareas
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>─────────────────
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>• Estudiar React
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>• Hacer ejercicio (tachado)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>• Leer documentación
+</span></code></pre></div>
+<h3 id="caracteristicas-de-esta-version">Características de esta versión</h3>
+<ul>
+<li>✅ <strong>Versión estática</strong>: Sin botones ni interacciones (por ahora)</li>
+<li>✅ <strong>Componentes modulares</strong>: Código organizado y reutilizable</li>
+<li>✅ <strong>Props en acción</strong>: Pasando datos entre componentes</li>
+<li>✅ <strong>Renderizado condicional</strong>: Estilos diferentes según el estado</li>
+</ul>
+<h3 id="por-que-empezar-con-una-version-estatica">Por qué empezar con una versión estática</h3>
+<ol>
+<li><strong>Enfoque en la estructura</strong>: Primero diseñamos, luego agregamos funcionalidad</li>
+<li><strong>Menos complejidad</strong>: Sin estado ni eventos para confundirnos</li>
+<li><strong>Base sólida</strong>: Sobre esto agregaremos interactividad después</li>
+</ol>
+<hr />
+<h2 id="configuracion-inicial">🚀 Configuración Inicial</h2>
+<h3 id="1-crear-el-proyecto-con-vite">1. Crear el proyecto con Vite</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>npm<span class="w"> </span>create<span class="w"> </span>vite@latest<span class="w"> </span>tarea-react<span class="w"> </span>--<span class="w"> </span>--template<span class="w"> </span>react
+</span></code></pre></div>
+<p><strong>Desglose del comando:</strong>
+- <code>npm create vite@latest</code>: Usa la última versión de Vite
+- <code>tarea-react</code>: Nombre de tu proyecto
+- <code>--</code>: Separa el nombre de las opciones
+- <code>--template react</code>: Usa la plantilla de React (no vanilla JS)</p>
+<h3 id="2-entrar-al-proyecto-e-instalar">2. Entrar al proyecto e instalar</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>tarea-react
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>npm<span class="w"> </span>install
+</span></code></pre></div>
+<p><strong>¿Qué hace <code>npm install</code>?</strong>
+- Lee el archivo <code>package.json</code>
+- Descarga React, ReactDOM y otras dependencias
+- Las guarda en <code>node_modules/</code>
+- Crea <code>package-lock.json</code> con versiones exactas</p>
+<h3 id="3-iniciar-el-servidor-de-desarrollo">3. Iniciar el servidor de desarrollo</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npm<span class="w"> </span>run<span class="w"> </span>dev
+</span></code></pre></div>
+<p><strong>Resultado esperado:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>  VITE v4.4.0  ready in 500 ms
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  ➜  Local:   http://localhost:5173/
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  ➜  Network: use --host to expose
+</span></code></pre></div></p>
+<h3 id="4-limpiar-archivos-innecesarios">4. Limpiar archivos innecesarios</h3>
+<p>Antes de empezar, limpiemos el proyecto de Vite:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Eliminar archivos de ejemplo</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>rm<span class="w"> </span>src/App.css
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>rm<span class="w"> </span>src/index.css
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>rm<span class="w"> </span>src/assets/react.svg
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>rm<span class="w"> </span>public/vite.svg
+</span></code></pre></div>
+<hr />
+<h2 id="estructura-del-proyecto">📁 Estructura del Proyecto</h2>
+<h3 id="vista-general">Vista general</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>tarea-react/
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>├── 📄 index.html          # Punto de entrada HTML
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>├── 📁 public/             # Archivos estáticos
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>├── 📁 src/                # Código fuente
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>│   ├── 📄 main.jsx       # Punto de entrada React
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>│   ├── 📄 App.jsx        # Componente principal
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>│   └── 📁 components/    # Componentes reutilizables
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>│       └── 📄 TaskItem.jsx
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>├── 📄 package.json        # Configuración del proyecto
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>└── 📄 vite.config.js      # Configuración de Vite
+</span></code></pre></div>
+<h3 id="por-que-esta-estructura">¿Por qué esta estructura?</h3>
+<ol>
+<li><strong>Separación de responsabilidades</strong>: Cada archivo tiene un propósito</li>
+<li><strong>Escalabilidad</strong>: Fácil agregar más componentes</li>
+<li><strong>Convención estándar</strong>: Otros desarrolladores la reconocerán</li>
+</ol>
+<hr />
+<h2 id="construyendo-cada-archivo">🛠️ Construyendo Cada Archivo</h2>
+<h3 id="1-indexhtml-la-base-html">📄 1. index.html - La base HTML</h3>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="p">/&gt;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Lista de Tareas<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;root&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/src/main.jsx&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p><strong>Explicación línea por línea:</strong></p>
+<ol>
+<li><strong><code>&lt;!DOCTYPE html&gt;</code></strong>: Le dice al navegador que es HTML5</li>
+<li><strong><code>&lt;html lang="es"&gt;</code></strong>: Idioma español para accesibilidad</li>
+<li><strong><code>&lt;meta charset="UTF-8"&gt;</code></strong>: Soporta caracteres especiales (ñ, á, é, etc.)</li>
+<li><strong><code>&lt;meta name="viewport"...</code></strong>: Diseño responsive para móviles</li>
+<li><strong><code>&lt;title&gt;</code></strong>: Lo que aparece en la pestaña del navegador</li>
+<li><strong><code>&lt;div id="root"&gt;</code></strong>: Contenedor vacío donde React vivirá</li>
+<li><strong><code>&lt;script type="module"...</code></strong>: Carga main.jsx como módulo ES6</li>
+</ol>
+<h3 id="2-mainjsx-el-punto-de-entrada">📄 2. main.jsx - El punto de entrada</h3>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-dom/client&#39;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">import</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./App&#39;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)).</span><span class="nx">render</span><span class="p">(</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="p">&lt;</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">App</span><span class="w"> </span><span class="p">/&gt;</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="p">&lt;/</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Explicación detallada:</strong></p>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">// 1. Importaciones necesarias</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="w">           </span><span class="c1">// La librería React</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">import</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-dom/client&#39;</span><span class="w">  </span><span class="c1">// Para interactuar con el DOM</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">import</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./App&#39;</span><span class="w">             </span><span class="c1">// Nuestro componente principal</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1">// 2. Encontrar el div root</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="kd">const</span><span class="w"> </span><span class="nx">rootElement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1">// 3. Crear una raíz React</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="kd">const</span><span class="w"> </span><span class="nx">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nx">rootElement</span><span class="p">)</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="c1">// 4. Renderizar la app</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="nx">root</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">  </span><span class="p">&lt;</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span><span class="w">    </span><span class="p">{</span><span class="cm">/* Modo estricto para desarrollo */</span><span class="p">}</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">App</span><span class="w"> </span><span class="p">/&gt;</span><span class="w">             </span><span class="p">{</span><span class="cm">/* Nuestro componente principal */</span><span class="p">}</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">  </span><span class="p">&lt;/</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>¿Qué es StrictMode?</strong>
+- Herramienta de desarrollo
+- Detecta problemas potenciales
+- No afecta la producción
+- Puede causar doble renderizado en desarrollo (normal)</p>
+<h3 id="3-appjsx-el-componente-principal">📄 3. App.jsx - El componente principal</h3>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">TaskItem</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./components/TaskItem&#39;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">tareas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Estudiar React&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">completado</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Hacer ejercicio&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">completado</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Leer documentación&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">completado</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="err">📝</span><span class="w"> </span><span class="nx">Lista</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">Tareas</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">        </span><span class="p">{</span><span class="nx">tareas</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">tarea</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">          </span><span class="p">&lt;</span><span class="nt">TaskItem</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">            </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">tarea</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">            </span><span class="na">titulo</span><span class="o">=</span><span class="p">{</span><span class="nx">tarea</span><span class="p">.</span><span class="nx">titulo</span><span class="p">}</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">            </span><span class="na">completado</span><span class="o">=</span><span class="p">{</span><span class="nx">tarea</span><span class="p">.</span><span class="nx">completado</span><span class="p">}</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">          </span><span class="p">/&gt;</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">        </span><span class="p">))}</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">      </span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">  </span><span class="p">)</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="p">}</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span>
+</span></code></pre></div>
+<p><strong>Desglose conceptual:</strong></p>
+<h4 id="1-los-datos-array-de-tareas">1. <strong>Los datos (array de tareas)</strong></h4>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">tareas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w">                          </span><span class="c1">// Identificador único</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Estudiar React&quot;</span><span class="p">,</span><span class="w">       </span><span class="c1">// Texto de la tarea</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="nx">completado</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w">               </span><span class="c1">// Estado: pendiente</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">  </span><span class="c1">// ... más tareas</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="p">]</span>
+</span></code></pre></div>
+<h4 id="2-el-metodo-map">2. <strong>El método map()</strong></h4>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span><span class="nx">tareas</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">tarea</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="p">&lt;</span><span class="nt">TaskItem</span><span class="w"> </span><span class="na">...</span><span class="w"> </span><span class="p">/&gt;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">))}</span>
+</span></code></pre></div>
+<p><strong>¿Qué hace map?</strong>
+- Recorre cada elemento del array
+- Transforma cada objeto en un componente
+- Devuelve un nuevo array de componentes</p>
+<p><strong>Visualización del proceso:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Array de datos          →  map()  →     Array de componentes
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>[                                        [
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  {id:1, titulo:&quot;...&quot;}      →            &lt;TaskItem ... /&gt;
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>  {id:2, titulo:&quot;...&quot;}      →            &lt;TaskItem ... /&gt;
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>  {id:3, titulo:&quot;...&quot;}      →            &lt;TaskItem ... /&gt;
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>]                                        ]
+</span></code></pre></div></p>
+<h4 id="3-la-prop-key">3. <strong>La prop key</strong></h4>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">tarea</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>¿Por qué necesitamos key?</strong>
+- React la usa para identificar elementos únicos
+- Optimiza el renderizado
+- Evita bugs al reordenar listas
+- DEBE ser única entre hermanos</p>
+<p><strong>Error común sin key:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Warning: Each child in a list should have a unique &quot;key&quot; prop.
+</span></code></pre></div></p>
+<h3 id="4-taskitemjsx-componente-de-tarea">📄 4. TaskItem.jsx - Componente de tarea</h3>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">TaskItem</span><span class="p">({</span><span class="w"> </span><span class="nx">titulo</span><span class="p">,</span><span class="w"> </span><span class="nx">completado</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">span</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">textDecoration</span><span class="o">:</span><span class="w"> </span><span class="nx">completado</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;line-through&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;none&#39;</span><span class="w"> </span><span class="p">}}&gt;</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">        </span><span class="p">{</span><span class="nx">titulo</span><span class="p">}</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">      </span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">  </span><span class="p">)</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="p">}</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">TaskItem</span>
+</span></code></pre></div>
+<p><strong>Conceptos aplicados:</strong></p>
+<h4 id="1-destructuring-de-props">1. <strong>Destructuring de props</strong></h4>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">// Recibimos props desestructuradas</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kd">function</span><span class="w"> </span><span class="nx">TaskItem</span><span class="p">({</span><span class="w"> </span><span class="nx">titulo</span><span class="p">,</span><span class="w"> </span><span class="nx">completado</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="c1">// En lugar de:</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="c1">// function TaskItem(props) {</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">  </span><span class="c1">//   props.titulo</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span><span class="c1">//   props.completado</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="2-estilo-condicional">2. <strong>Estilo condicional</strong></h4>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">textDecoration</span><span class="o">:</span><span class="w"> </span><span class="nx">completado</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;line-through&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;none&#39;</span><span class="w"> </span><span class="p">}}</span>
+</span></code></pre></div>
+<p><strong>Desglose del operador ternario:</strong>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nx">completado</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;line-through&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;none&#39;</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="c1">//   ↑              ↑            ↑</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="c1">// condición    si true      si false</span>
+</span></code></pre></div></p>
+<p><strong>Casos:</strong>
+- Si <code>completado = true</code> → texto tachado
+- Si <code>completado = false</code> → texto normal</p>
+<h4 id="3-estilos-inline-en-react">3. <strong>Estilos inline en React</strong></h4>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1">// HTML normal</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="p">&lt;</span><span class="nt">span</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="s">&quot;text-decoration: line-through&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c1">// React JSX (objeto JavaScript)</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="p">&lt;</span><span class="nt">span</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">textDecoration</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;line-through&#39;</span><span class="w"> </span><span class="p">}}&gt;</span>
+</span></code></pre></div>
+<p><strong>Nota las diferencias:</strong>
+- Doble llave <code>{{ }}</code>
+- camelCase: <code>text-decoration</code> → <code>textDecoration</code>
+- Valores como strings: <code>'line-through'</code></p>
+<hr />
+<h2 id="flujo-de-datos-completo">🔄 Flujo de Datos Completo</h2>
+<h3 id="visualizacion-del-flujo">Visualización del flujo</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>App.jsx (Padre)
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    ↓
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>tiene array de tareas
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    ↓
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>map() sobre cada tarea
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    ↓
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>&lt;TaskItem                    ← Crea componente hijo
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>  key={1}
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>  titulo=&quot;Estudiar React&quot;    ← Pasa props
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>  completado={false}
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>/&gt;
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>    ↓
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>TaskItem.jsx (Hijo)
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>    ↓
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>recibe props
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>    ↓
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>renderiza &lt;li&gt; con estilo condicional
+</span></code></pre></div>
+<h3 id="diagrama-de-componentes">Diagrama de componentes</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>┌─────────────────────────────────┐
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>│           App                   │
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>│  ┌───────────────────────────┐  │
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>│  │  &lt;h1&gt;Lista de Tareas&lt;/h1&gt; │  │
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>│  └───────────────────────────┘  │
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>│  ┌───────────────────────────┐  │
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>│  │         &lt;ul&gt;              │  │
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>│  │  ┌───────────────────┐    │  │
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>│  │  │   TaskItem #1     │    │  │
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>│  │  │ Estudiar React    │    │  │
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>│  │  └───────────────────┘    │  │
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>│  │  ┌───────────────────┐    │  │
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>│  │  │   TaskItem #2     │    │  │
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>│  │  │ Hacer ejercicio   │    │  │
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>│  │  └───────────────────┘    │  │
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>│  │  ┌───────────────────┐    │  │
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>│  │  │   TaskItem #3     │    │  │
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>│  │  │ Leer docs         │    │  │
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>│  │  └───────────────────┘    │  │
+</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>│  └───────────────────────────┘  │
+</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>└─────────────────────────────────┘
+</span></code></pre></div>
+<hr />
+<h2 id="conceptos-clave-de-react-aplicados">🎯 Conceptos Clave de React Aplicados</h2>
+<h3 id="1-componentes-funcionales">1. <strong>Componentes Funcionales</strong></h3>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">TaskItem</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">elemento</span><span class="p">&gt;</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li>Son funciones que retornan JSX</li>
+<li>Reciben props como parámetro</li>
+<li>No tienen estado (en esta versión)</li>
+</ul>
+<h3 id="2-props-propiedades">2. <strong>Props (Propiedades)</strong></h3>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1">// Padre envía</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="p">&lt;</span><span class="nt">TaskItem</span><span class="w"> </span><span class="na">titulo</span><span class="o">=</span><span class="s">&quot;Mi tarea&quot;</span><span class="w"> </span><span class="na">completado</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1">// Hijo recibe</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="kd">function</span><span class="w"> </span><span class="nx">TaskItem</span><span class="p">({</span><span class="w"> </span><span class="nx">titulo</span><span class="p">,</span><span class="w"> </span><span class="nx">completado</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">  </span><span class="c1">// Usa titulo y completado</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>Características de las props:</strong>
+- Son de solo lectura (inmutables)
+- Fluyen de padre a hijo
+- Pueden ser cualquier tipo de dato</p>
+<h3 id="3-jsx-y-expresiones">3. <strong>JSX y Expresiones</strong></h3>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">{</span><span class="cm">/* Esto es un comentario en JSX */</span><span class="p">}</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="p">{</span><span class="cm">/* Expresión JavaScript */</span><span class="p">}</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Tengo</span><span class="w"> </span><span class="p">{</span><span class="nx">tareas</span><span class="p">.</span><span class="nx">length</span><span class="p">}</span><span class="w"> </span><span class="nx">tareas</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="p">{</span><span class="cm">/* Renderizado condicional */</span><span class="p">}</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="p">{</span><span class="nx">completado</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span><span class="err">✓</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;}</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="p">{</span><span class="cm">/* Mapeo de arrays */</span><span class="p">}</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="p">{</span><span class="nx">tareas</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">TaskItem</span><span class="w"> </span><span class="p">{</span><span class="na">...t</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;)}</span>
+</span></code></pre></div>
+<h3 id="4-listas-y-keys">4. <strong>Listas y Keys</strong></h3>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">{</span><span class="nx">items</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">  </span><span class="p">&lt;</span><span class="nt">Component</span><span class="w"> </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="p">))}</span>
+</span></code></pre></div>
+<p><strong>Reglas para keys:</strong>
+- Únicas entre hermanos
+- Estables (no usar Math.random())
+- No usar índice si el orden puede cambiar</p>
+<hr />
+<h2 id="ejercicios-practicos">💻 Ejercicios Prácticos</h2>
+<h3 id="ejercicio-1-crear-archivo-de-datos">Ejercicio 1: Crear archivo de datos</h3>
+<p><strong>Crear <code>src/data.js</code>:</strong>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">tareas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Estudiar React&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">completado</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Hacer ejercicio&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">completado</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Leer documentación&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">completado</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">  </span><span class="c1">// Agrega más tareas aquí</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Practicar código&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">completado</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ver tutoriales&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">completado</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="p">]</span>
+</span></code></pre></div></p>
+<p><strong>Modificar <code>App.jsx</code>:</strong>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">TaskItem</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./components/TaskItem&#39;</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">tareas</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./data&#39;</span><span class="w">  </span><span class="c1">// Nueva importación</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">  </span><span class="c1">// Ya no necesitas const tareas = [...]</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="w">    </span><span class="c1">// ... resto del código igual</span>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="w">  </span><span class="p">)</span>
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<h3 id="ejercicio-2-agregar-contador-de-tareas">Ejercicio 2: Agregar contador de tareas</h3>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">tareasCompletadas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tareas</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">t</span><span class="p">.</span><span class="nx">completado</span><span class="p">).</span><span class="nx">length</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">tareasPendientes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tareas</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="nx">t</span><span class="p">.</span><span class="nx">completado</span><span class="p">).</span><span class="nx">length</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="err">📝</span><span class="w"> </span><span class="nx">Lista</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">Tareas</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="w">        </span><span class="nx">Completadas</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">tareasCompletadas</span><span class="p">}</span><span class="w"> </span><span class="o">|</span><span class="w"> </span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="w">        </span><span class="nx">Pendientes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">tareasPendientes</span><span class="p">}</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="w">      </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="w">      </span><span class="p">{</span><span class="cm">/* ... resto del código */</span><span class="p">}</span>
+</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="w">  </span><span class="p">)</span>
+</span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="ejercicio-3-agregar-iconos-de-estado">Ejercicio 3: Agregar iconos de estado</h3>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">TaskItem</span><span class="p">({</span><span class="w"> </span><span class="nx">titulo</span><span class="p">,</span><span class="w"> </span><span class="nx">completado</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;{</span><span class="nx">completado</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;✅&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;⭕&#39;</span><span class="p">}&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">span</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="w">        </span><span class="nx">textDecoration</span><span class="o">:</span><span class="w"> </span><span class="nx">completado</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;line-through&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="w">        </span><span class="nx">marginLeft</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;8px&#39;</span>
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="w">      </span><span class="p">}}&gt;</span>
+</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="w">        </span><span class="p">{</span><span class="nx">titulo</span><span class="p">}</span>
+</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="w">      </span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="w">  </span><span class="p">)</span>
+</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="ejercicio-4-anadir-categorias">Ejercicio 4: Añadir categorías</h3>
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1">// En data.js</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">tareas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">    </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Estudiar React&quot;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="w">    </span><span class="nx">completado</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="w">    </span><span class="nx">categoria</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;estudio&quot;</span><span class="w"> </span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="w">  </span><span class="c1">// ... más tareas con categorías</span>
+</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="p">]</span>
+</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>
+</span><span id="__span-31-12"><a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a><span class="c1">// En TaskItem.jsx</span>
+</span><span id="__span-31-13"><a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a><span class="kd">function</span><span class="w"> </span><span class="nx">TaskItem</span><span class="p">({</span><span class="w"> </span><span class="nx">titulo</span><span class="p">,</span><span class="w"> </span><span class="nx">completado</span><span class="p">,</span><span class="w"> </span><span class="nx">categoria</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-31-14"><a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">coloresCategorias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-31-15"><a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a><span class="w">    </span><span class="nx">estudio</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#3498db&#39;</span><span class="p">,</span>
+</span><span id="__span-31-16"><a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a><span class="w">    </span><span class="nx">ejercicio</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#2ecc71&#39;</span><span class="p">,</span>
+</span><span id="__span-31-17"><a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a><span class="w">    </span><span class="nx">trabajo</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#e74c3c&#39;</span>
+</span><span id="__span-31-18"><a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-31-19"><a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a>
+</span><span id="__span-31-20"><a id="__codelineno-31-20" name="__codelineno-31-20" href="#__codelineno-31-20"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-31-21"><a id="__codelineno-31-21" name="__codelineno-31-21" href="#__codelineno-31-21"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-31-22"><a id="__codelineno-31-22" name="__codelineno-31-22" href="#__codelineno-31-22"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">span</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span>
+</span><span id="__span-31-23"><a id="__codelineno-31-23" name="__codelineno-31-23" href="#__codelineno-31-23"></a><span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="nx">coloresCategorias</span><span class="p">[</span><span class="nx">categoria</span><span class="p">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+</span><span id="__span-31-24"><a id="__codelineno-31-24" name="__codelineno-31-24" href="#__codelineno-31-24"></a><span class="w">        </span><span class="nx">marginRight</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;8px&#39;</span>
+</span><span id="__span-31-25"><a id="__codelineno-31-25" name="__codelineno-31-25" href="#__codelineno-31-25"></a><span class="w">      </span><span class="p">}}&gt;</span>
+</span><span id="__span-31-26"><a id="__codelineno-31-26" name="__codelineno-31-26" href="#__codelineno-31-26"></a><span class="w">        </span><span class="err">●</span>
+</span><span id="__span-31-27"><a id="__codelineno-31-27" name="__codelineno-31-27" href="#__codelineno-31-27"></a><span class="w">      </span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span><span id="__span-31-28"><a id="__codelineno-31-28" name="__codelineno-31-28" href="#__codelineno-31-28"></a><span class="w">      </span><span class="p">{</span><span class="cm">/* ... resto del componente */</span><span class="p">}</span>
+</span><span id="__span-31-29"><a id="__codelineno-31-29" name="__codelineno-31-29" href="#__codelineno-31-29"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span id="__span-31-30"><a id="__codelineno-31-30" name="__codelineno-31-30" href="#__codelineno-31-30"></a><span class="w">  </span><span class="p">)</span>
+</span><span id="__span-31-31"><a id="__codelineno-31-31" name="__codelineno-31-31" href="#__codelineno-31-31"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h2 id="errores-comunes-y-soluciones">❌ Errores Comunes y Soluciones</h2>
+<h3 id="error-1-cannot-read-property-map-of-undefined">Error 1: "Cannot read property 'map' of undefined"</h3>
+<p><strong>Causa</strong>: <code>tareas</code> no está definido o es null</p>
+<p><strong>Solución</strong>:
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1">// Agregar valor por defecto</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">tareas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">datosExternos</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="c1">// O verificar antes de mapear</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="p">{</span><span class="nx">tareas</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">tareas</span><span class="p">.</span><span class="nx">map</span><span class="p">(...)}</span>
+</span></code></pre></div></p>
+<h3 id="error-2-each-child-should-have-unique-key">Error 2: "Each child should have unique key"</h3>
+<p><strong>Causa</strong>: Falta la prop <code>key</code> en elementos de lista</p>
+<p><strong>Solución</strong>:
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">{</span><span class="nx">tareas</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">tarea</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">  </span><span class="p">&lt;</span><span class="nt">TaskItem</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">    </span><span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">tarea</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="na">Siempre</span><span class="w"> </span><span class="na">agregar</span><span class="w"> </span><span class="na">key</span><span class="w"> </span><span class="na">única</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="w">    </span><span class="p">{</span><span class="na">...tarea</span><span class="p">}</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="w">  </span><span class="p">/&gt;</span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="p">))}</span>
+</span></code></pre></div></p>
+<h3 id="error-3-module-not-found">Error 3: "Module not found"</h3>
+<p><strong>Causa</strong>: Ruta de importación incorrecta</p>
+<p><strong>Solución</strong>:
+<div class="language-jsx highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c1">// ❌ Mal</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">TaskItem</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;TaskItem&#39;</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="k">import</span><span class="w"> </span><span class="nx">TaskItem</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./TaskItem&#39;</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="c1">// ✅ Bien</span>
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="k">import</span><span class="w"> </span><span class="nx">TaskItem</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./components/TaskItem&#39;</span>
+</span></code></pre></div></p>
+<h3 id="error-4-cambios-no-se-reflejan">Error 4: Cambios no se reflejan</h3>
+<p><strong>Causa</strong>: Servidor no está corriendo o necesita reinicio</p>
+<p><strong>Solución</strong>:
+1. Verifica que el terminal muestre "ready"
+2. Guarda todos los archivos (Ctrl+S)
+3. Si persiste, reinicia con Ctrl+C y <code>npm run dev</code></p>
+<hr />
+<h2 id="proximos-pasos">🚀 Próximos Pasos</h2>
+<p>Esta versión estática es la base perfecta para:</p>
+<ol>
+<li><strong>Agregar interactividad</strong> (useState)</li>
+<li>Marcar tareas como completadas</li>
+<li>Agregar nuevas tareas</li>
+<li>
+<p>Eliminar tareas</p>
+</li>
+<li>
+<p><strong>Persistencia de datos</strong> (localStorage)</p>
+</li>
+<li>Guardar tareas al cerrar</li>
+<li>
+<p>Cargar tareas al abrir</p>
+</li>
+<li>
+<p><strong>Filtros y búsqueda</strong></p>
+</li>
+<li>Mostrar solo completadas/pendientes</li>
+<li>
+<p>Buscar por título</p>
+</li>
+<li>
+<p><strong>Estilos mejorados</strong></p>
+</li>
+<li>CSS modules o styled-components</li>
+<li>Animaciones con Framer Motion</li>
+<li>Diseño responsive</li>
+</ol>
+<hr />
+<h2 id="resumen">🎯 Resumen</h2>
+<p>Has aprendido a:</p>
+<ul>
+<li>✅ Estructurar una aplicación React</li>
+<li>✅ Crear componentes reutilizables</li>
+<li>✅ Pasar datos con props</li>
+<li>✅ Renderizar listas con map()</li>
+<li>✅ Aplicar estilos condicionales</li>
+<li>✅ Organizar código de forma profesional</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Geovanny Mendoza
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/geovannymcode" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M202.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M496 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/geovannycode" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/geovannycode/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>
